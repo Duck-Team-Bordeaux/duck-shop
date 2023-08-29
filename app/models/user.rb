@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :shops
-  belongs_to :favorite_shop, class_name: 'Shop'
+  belongs_to :favorite_shop, class_name: 'Shop', optional: true
 end

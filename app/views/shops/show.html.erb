@@ -1,0 +1,11 @@
+<h1>Best Sellers</h1>
+
+<ul>
+<% @shop.products.each do |product| %>
+<li>
+<%= product.name %>
+<%= product.price %>
+<%= product.category %>
+</li>
+<% end %>
+</ul>
