@@ -3,7 +3,7 @@ class Product < ApplicationRecord
 
   include PgSearch::Model
 
-  pg_search_scope :search_by_name_and_category,
+  pg_search_scope :global_search,
     against: [ :name, :category ],
     using: {
       tsearch: { prefix: true }
