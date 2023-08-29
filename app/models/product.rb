@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  belongs_to :shop
+  belongs_to :shop, optional: true
 
   include PgSearch::Model
 
