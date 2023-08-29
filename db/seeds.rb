@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+p 'Deleting DB'
+User.destroy_all
+Shop.destroy_all
+Product.destroy_all
+p 'Deleted'
+
+p 'Creating DB'
+
+User.create!(email: 'toto@gmail.com', password: 'qwertyuiop')
+
+Shop.create!(location: '82 Cr Balguerie Stuttenberg')
+
+Product.create!(name: 'apricot', category: 'fruits', stock_quantity: 5, price: 3.49)
+Product.create!(name: 'nutella', category: 'snacks', stock_quantity: 10, price: 5.99)
+Product.create!(name: 'kinder bueno', category: 'snacks', stock_quantity: 15, price: 7.01)
+
+p 'Done'
