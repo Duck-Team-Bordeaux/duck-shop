@@ -1,3 +1,7 @@
+ <%= form_with url: shop_product_path(@shop), method: :get do |f| %>
+    <%= f.text_field :query, placeholder: "Search Product...", value: params[:query]%>
+<% end %>
+
 <h1>Best Sellers</h1>
 
 <ul>
