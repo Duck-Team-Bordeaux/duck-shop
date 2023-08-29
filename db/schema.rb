@@ -80,8 +80,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_100349) do
     t.float "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_shops_on_user_id"
+    t.bigint "manager_id"
+    t.index ["manager_id"], name: "index_shops_on_manager_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -99,10 +99,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_100349) do
     t.float "longitude"
     t.float "latitude"
     t.integer "role"
-    t.bigint "shop_id"
+    t.bigint "favorite_shop_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["favorite_shop_id"], name: "index_users_on_favorite_shop_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["shop_id"], name: "index_users_on_shop_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -112,6 +112,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_100349) do
   add_foreign_key "carts", "users"
   add_foreign_key "items", "products"
   add_foreign_key "products", "shops"
-  add_foreign_key "shops", "users"
-  add_foreign_key "users", "shops"
+  add_foreign_key "shops", "users", column: "manager_id"
+  add_foreign_key "users", "shops", column: "favorite_shop_id"
 end
