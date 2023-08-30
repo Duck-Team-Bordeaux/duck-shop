@@ -165,14 +165,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-darwin)
       racc (~> 1.4)
-<<<<<<< HEAD
-    openfoodfacts (0.6.2)
-      hashie (>= 3.4, < 6.0)
-      nokogiri (~> 1.7)
-=======
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
->>>>>>> 5fc346ab43dd4823f848f96c2cb0d5b01b20ff1a
     orm_adapter (0.5.0)
     pg (1.5.3)
     pg_search (2.3.6)
