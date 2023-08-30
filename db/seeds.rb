@@ -1,6 +1,8 @@
 p 'Deleting DB'
 User.destroy_all
+p 'User => cleaned'
 Shop.destroy_all
+p 'Shop => cleaned'
 Product.destroy_all
 p 'Deleted'
 
