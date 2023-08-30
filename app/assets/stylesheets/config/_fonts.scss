@@ -1,0 +1,62 @@
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import "config/variables";
+
+// Theme fonts
+$body-font: 'Poppins', sans-serif;
+
+// Font Style Mixin
+@mixin h1($color: $text-color) {
+  color: $color;
+  font-family: $body-font;
+  font-size: 2.5em;
+}
+@mixin h2($color: $text-color) {
+  color: $color;
+  font-family: $body-font;
+  font-size: 2em;
+}
+@mixin h3($color: $text-color) {
+  color: $color;
+  font-family: $body-font;
+  font-size: 2.5em;
+}
+@mixin h4($color: $text-color) {
+  color: $color;
+  font-family: $body-font;
+  font-size: 1.5em;
+}
+@mixin h5($color: $text-color) {
+  color: $color;
+  font-family: $body-font;
+  font-size: 1em;
+}
+@mixin text-content($color: $text-color) {
+  color: $color;
+  font-family: $body-font;
+  font-size: 1em;
+}
+@mixin text-content-bold($color: $text-color) {
+  color: $color;
+  font-family: $body-font;
+  font-size: 1em;
+  font-weight: 700;
+}
+@mixin text-content-small($color: $text-color) {
+  color: $color;
+  font-family: $body-font;
+  font-size: 0.75em;
+}
+@mixin link($color: $text-color) {
+  color: $color;
+  font-family: $body-font;
+  font-size: 1em;
+  text-decoration: none;
+}
+@mixin link-bold($color: $text-color) {
+  color: $color;
+  font-family: $body-font;
+  font-size: 1em;
+  font-weight: 700;
+  text-decoration: none;
+}
