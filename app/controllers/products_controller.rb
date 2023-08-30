@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: :show
 
   def index
-    # raise
+    @products = Product.where(category: params[:category])
   end
 
   def show

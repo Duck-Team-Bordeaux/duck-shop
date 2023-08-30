@@ -6,11 +6,9 @@
     <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
 <% end %>
 
-<% @unique_categories = @shop.products.distinct.pluck(:category) %>
-
 <% @unique_categories.each do |category| %>
   <div>
-    <%= category %>
+    <%= link_to "#{category}", shop_products_path(@shop, :category => category) %>
   </div>
 <% end %>
 

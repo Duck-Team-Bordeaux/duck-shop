@@ -1,13 +1,7 @@
-
-
-
-
-
-
-
-
-<%= Product.where(category:"snacks").find_each do |product| %>
-
-<h1><%= product.name %></h1>
-
+<% @products.each do |product| %>
+  <div class="my-3">
+    <%= product.name %>
+    <%= product.description %>
+    <%= product.price %>
+  </div>
 <% end %>
