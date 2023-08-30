@@ -11,8 +11,7 @@
   </head>
 
   <body>
-    <div class="iphone-screen-container">
-
+      <%= render 'components/navbar' unless @hide_navbar == true %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
