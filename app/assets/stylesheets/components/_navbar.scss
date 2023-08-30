@@ -1,0 +1,14 @@
+nav {
+  position: sticky;
+  background-color: $primary-color;
+  border-bottom: 1px solid #ccc;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  border-bottom: 50px;
+
+  p{
+    margin: 0;
+    color: black;
+  }
+}
