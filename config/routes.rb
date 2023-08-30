@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'shops/show'
   devise_for :users
 
-  root to: "pages#home"
+  root to: 'pages#home'
 
   resources :shops, only: %i[index show] do
     resources :products, only: %i[index, show]
