@@ -9,3 +9,15 @@ $line-color: #CCCCDF;
 $success-color: #248A3D;
 $warn-color: #FF9532;
 $error-color: #FF3232;
+
+// Theme gradient
+
+@mixin primary-gradient-background {
+  background: rgb(255,80,60);
+  background: linear-gradient(90deg, rgb(255,245,211) 0%, rgb(255, 198, 7) 100%);
+}
+
+@mixin secondary-gradient-background {
+  background: rgb(255,80,60);
+  background: linear-gradient(90deg, rgb(186,181,200) 0%, rgb(63, 10, 204) 100%);
+}
