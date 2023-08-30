@@ -1,0 +1,18 @@
+.button {
+  border: 0.5px solid $line-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  border-radius: 25px;
+  margin-left: 25%;
+  margin-bottom: 16px;
+  @include secondary-gradient-background();
+  // position: relative;
+  // z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  h1{
+    margin: 0;
+    padding: 0;
+  }
+}
