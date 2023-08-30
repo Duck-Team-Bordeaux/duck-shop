@@ -15,7 +15,7 @@
 <% end %>
 
 <% if params[:query].present? %>
-  <% @products.each do |product| %>
+  <% Product.global_search(params[:query]).each do |product| %>
   <h3><%= product.name %></h3>
   <p><%= product.description %></p>
   <p>Stock: <%= product.stock_quantity %></p>
