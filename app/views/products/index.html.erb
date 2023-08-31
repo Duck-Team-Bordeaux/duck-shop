@@ -6,6 +6,6 @@
        <h5 class="price"><%= product.price %>€</h5>
        <p class="stock_quantity"><%= product.stock_quantity %> en stock</p>
 
-      <%= link_to "view details", shop_product_path(id: product.id)%>
+      <%= link_to "view details", shop_product_path(@shop, product)%>
     </div>
   <% end %>
