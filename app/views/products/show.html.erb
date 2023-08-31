@@ -1,26 +1,28 @@
-<div class="product-show-continer">
+<div class="product-show-container">
 
   <div class="box product-img-box">
 
   </div>
-
-  <div class="box product-box">
-    <div class="name-price-box">
-      <h4 class="name"><%= @product.name %></h4>
-      <h4 class="price"><%= @product.price %> €</h4>
+    <div class="box product-box">
+      <div class="name-price-box">
+        <h4 class="name"><%= @product.name %></h4>
+        <h4 class="price"><%= @product.price %> €</h4>
+      </div>
+      <div class="unit-category-box">
+        <h5 class="unit">350g</h5>
+        <h5 class="category"><i class="fa-solid fa-tag"></i><%= @product.category %></h5>
+      </div>
     </div>
-    <div class="unit-category-box">
-    <h5 class="unit">350g</h5>
-    <h5 class="category"><i class="fa-solid fa-tag"></i><%= @product.category %></h5>
+
+    <div class="box product-stock-box">
+      <% if @product.stock_quantity > 0 %>
+        <h5 class="disponibility"><i class="fa-solid fa-circle-check in-stock"></i><%= @product.stock_quantity %> en stock</h5>
+      <% else %>
+        <h5 class="disponibility"><i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i><%= @product.stock_quantity %> pas en stock</h5>
+      <% end %>
+      <p class="shop"><i class="fa-solid fa-location-dot "></i><%= @product.shop.location %> </p>
     </div>
-  </div>
-
-  <div class="box product-stock-box">
-    <h5 class="disponibility"><i class="fa-solid fa-circle-check in-stock"></i><%= @product.stock_quantity %> in stock</h5>
-    <p class="shop"><i class="fa-solid fa-location-dot "></i><%= @product.shop.location %> </p>
-  </div>
-
- <%= link_to :back, class:"btn-back-category" do%>
+ <%= link_to :back, class:"btn-back-category" do %>
   <%= @product.category %>
  <% end %>
 

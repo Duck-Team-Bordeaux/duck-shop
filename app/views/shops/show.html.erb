@@ -4,7 +4,8 @@
 <%= form_with url: shop_path(@shop), method: :get, class: "search-bar-box" do %>
     <%= text_field_tag :query,
         params[:query],
-        placeholder: "Search Product..."
+        class: "input-search",
+        placeholder: "Search"
       %>
     <%= submit_tag "Search", name: "", class: "search-bar-btn" %>
 <% end %>
