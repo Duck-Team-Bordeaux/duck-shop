@@ -11,12 +11,11 @@
   </head>
 
   <body>
-      <%= render 'components/navbar' unless @hide_navbar == true %>
+    <%= render 'components/navbar' unless @hide_navbar == true %>
+    <div class="main-container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-
       <%= yield %>
-
-
+    </div>
   </body>
 </html>

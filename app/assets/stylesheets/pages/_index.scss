@@ -1,2 +1,12 @@
 // Import page-specific CSS files here.
+
+// ---> Home page
 @import "home";
+
+// ---> Shops
+@import "shops#index";
+@import "shops#show";
+
+// ---> Products
+@import "products#index";
+@import "products#show";
