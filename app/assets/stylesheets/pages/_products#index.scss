@@ -1,0 +1,18 @@
+.product-card-box{
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  a{
+    font-weight: 700;
+    color: $secondary-color;
+  }
+  .name{
+    margin: 0;
+  }
+  .price{
+    margin: 0;
+  }
+  .stock_quantity{
+    margin: 0;
+  }
+}

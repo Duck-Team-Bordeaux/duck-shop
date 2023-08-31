@@ -1,7 +1,7 @@
 nav {
   background-color: $primary-color;
   border-bottom: 1px solid #ccc;
-  height: 2.5em;
+  height: 2em;
   display: flex;
   align-items: center;
   border-bottom-left-radius: 6px;
@@ -9,9 +9,14 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
+  padding: 1em;
 
   p{
     margin: 0;
     color: black;
+  }
+
+  a{
+    font-weight: 700;
   }
 }

@@ -2,25 +2,41 @@
 
 h1{
   @include h1;
+  margin: 0;
+  padding: 0;
 }
 h2{
   @include h2;
+  margin: 0;
+  padding: 0;
 }
 h3{
   @include h3;
+  margin: 0;
+  padding: 0;
 }
 h4{
   @include h4;
+  margin: 0;
+  padding: 0;
 }
 h5{
   @include h5;
+  margin: 0;
+  padding: 0;
 }
 P{
   @include text-content;
+  margin: 0;
+  padding: 0;
 }
 span{
   @include text-content;
+  margin: 0;
+  padding: 0;
 }
 a{
   @include link;
+  margin: 0;
+  padding: 0;
 }
