@@ -1,10 +1,24 @@
-<% @shops.each do |shop| %>
+<%# MAP %>
+<div style="width: 100%; height: 60vh;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 
-  <%= link_to shop_path(shop.id) do%>
-    <div>
-      <h3> DuckShop </h3>
-      <h4> <%= shop.location %> </h4>
+<%# SHOPS LIST %>
+<div class="shops-container">
+  <% @shops.each do |shop| %>
+    <div class="box">
+      <% distance_km = shop.distance_to([@user.latitude, @user.longitude]) %>
+      <% distance_min = distance_km * 10 %>
+      <%= link_to shop_path(shop.id) do%>
+        <div>
+          <h3> DuckShop </h3>
+          <p> <%= shop.location %> </p>
+          <p>Distance: <%= distance_km.round(3) %> km</p>
+          <p><%= distance_min.round(0) %> minutes away</p>
+        </div>
+      <% end %>
     </div>
   <% end %>
-
-<% end %>
+</div>
