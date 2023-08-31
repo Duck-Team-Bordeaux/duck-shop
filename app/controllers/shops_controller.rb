@@ -6,7 +6,7 @@ class ShopsController < ApplicationController
     @user = User.last
     @markers = @shops.geocoded.map do |shop|
       @distance_km = shop.distance_to([@user.latitude, @user.longitude])
-      @distance_min = @distance_km * 10
+      @distance_min = @distance_km*10
       {
         lat: shop.latitude,
         lng: shop.longitude,
