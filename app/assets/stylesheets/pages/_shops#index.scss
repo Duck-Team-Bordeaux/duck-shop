@@ -5,8 +5,9 @@ h3{
   font-size: 28px;
 }
 
-.box {
+.card-shop {
   @include secondary-gradient-background;
+  @include box;
 
   h3, p, i{
     color: white;
