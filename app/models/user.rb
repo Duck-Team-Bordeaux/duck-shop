@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_many :shops
   belongs_to :favorite_shop, class_name: 'Shop', optional: true
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
