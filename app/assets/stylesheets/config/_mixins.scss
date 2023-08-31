@@ -1,5 +1,15 @@
 // Theme gradient
 
+@mixin box{
+  background-color: white;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.box{
+  @include box
+}
+
 @mixin primary-gradient-background {
   background: rgb(255,80,60);
   background: linear-gradient(90deg, rgb(255,245,211) 0%, rgb(255, 198, 7) 100%);

@@ -1,9 +1,12 @@
-<%= form_with url: shop_path(@shop), method: :get do %>
+<h1>DuckShop</h1>
+<h5><i class="fa-solid fa-location-dot"></i><%= @shop.location %></h5>
+
+<%= form_with url: shop_path(@shop), method: :get, class: "search-bar-box" do %>
     <%= text_field_tag :query,
         params[:query],
         placeholder: "Search Product..."
       %>
-    <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <%= submit_tag "Search", name: "", class: "search-bar-btn" %>
 <% end %>
 
 <% @unique_categories.each do |category| %>

@@ -1,1 +1,10 @@
-<h1>yay works</h1>
+<% @shops.each do |shop| %>
+
+  <%= link_to shop_path(shop.id) do%>
+    <div>
+      <h3> DuckShop </h3>
+      <h4> <%= shop.location %> </h4>
+    </div>
+  <% end %>
+
+<% end %>
