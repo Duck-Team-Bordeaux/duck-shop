@@ -10,16 +10,16 @@ p 'DB successfully cleaned'
 # -------------USER-------------------------------------------------------------
 
 p 'creating user'
-User.create!(email: 'toto@gmail.com', password: 'qwertyuiop')
+User.create!(email: 'toto@gmail.com', password: 'qwertyuiop', address: 'Rue Poquelin Molière, 33000 Bordeaux, France')
 
 # -------------SHOP-------------------------------------------------------------
 
 p 'creating shop'
-shop = Shop.create!(location: '82 Cr Balguerie Stuttenberg')
-Shop.create!(location: '15 Cr Portal')
 Shop.create!(location: 'Place du Parlement')
-Shop.create!(location: '36 Rue de la Faïencerie')
 Shop.create!(location: "36 Allées d'Orléans")
+Shop.create!(location: '15 Cours Portal, 33000 Bordeaux, France')
+Shop.create!(location: '82 Cr Balguerie Stuttenberg')
+Shop.create!(location: '36 Rue de la Faïencerie')
 
 
 
