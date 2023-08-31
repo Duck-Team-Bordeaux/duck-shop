@@ -7,7 +7,9 @@
         class: "input-search",
         placeholder: "Search"
       %>
-    <%= submit_tag "Search", name: "", class: "search-bar-btn" %>
+    <%= button_tag "S", name: "", class: "search-bar-btn" do %>
+      <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+    <% end %>
 <% end %>
 
 <% @unique_categories.each do |category| %>
