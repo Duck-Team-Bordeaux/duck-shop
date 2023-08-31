@@ -43,6 +43,7 @@ Product.create!(
   category: category,
   stock_quantity: 10,
   price: 4.76,
+  image_url: '',
   shop_id: shop.id
 )
 
@@ -52,6 +53,7 @@ Product.create!(
   category: category,
   stock_quantity: 10,
   price: 1.58,
+  image_url: '',
   shop_id: shop.id
 )
 
@@ -61,6 +63,7 @@ Product.create!(
   category: category,
   stock_quantity: 10,
   price: 4.33,
+  image_url: '',
   shop_id: shop.id
 )
 
@@ -76,6 +79,7 @@ Product.create!(
   category: category,
   stock_quantity: 10,
   price: 3.99,
+  image_url: '',
   shop_id: shop.id
 )
 
@@ -85,6 +89,7 @@ Product.create!(
   category: category,
   stock_quantity: 10,
   price: 4.99,
+  image_url: '',
   shop_id: shop.id
 )
 
@@ -94,6 +99,7 @@ Product.create!(
   category: category,
   stock_quantity: 10,
   price: 4.99,
+  image_url: '',
   shop_id: shop.id
 )
 
@@ -103,6 +109,7 @@ Product.create!(
   category: category,
   stock_quantity: 10,
   price: 2.99,
+  image_url: '',
   shop_id: shop.id
 )
 
@@ -112,6 +119,7 @@ Product.create!(
   category: category,
   stock_quantity: 10,
   price: 4.33,
+  image_url: '',
   shop_id: shop.id
 )
 
