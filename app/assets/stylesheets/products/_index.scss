@@ -4,7 +4,9 @@
   gap: 1em;
 
   .category-banner{
-    background-color: rgb(169, 169, 169);
+    position: relative;
+    background-size: cover;
+    background-position: center;
     height: 150px;
     display: flex;
     justify-content: center;
@@ -17,7 +19,13 @@
       font-size: 1.5em;
       color: $white-color;
       filter: drop-shadow(0 0 0.4em black);
+      position: absolute;
     }
+
+    // img{
+    //   object-fit: cover;
+    //   width: fit-content;
+    // }
 
     &::after{
       content: "";
@@ -61,6 +69,7 @@
       img{
         width: 60px;
         height: 60px;
+
       }
       &::after{
         content: "";
@@ -76,7 +85,7 @@
 
 
     info{
-
+      margin-left: 0.3em;
       a{
         font-weight: 700;
         color: $secondary-color;
@@ -93,5 +102,17 @@
         margin: 0;
       }
     }
+  }
+}
+
+.info-box{
+  max-width: 200px;
+  margin-left: 0.3em;
+}
+
+.disponibility{
+  margin-top: 0.3em;
+  i{
+    margin-right: 0.3em;
   }
 }
