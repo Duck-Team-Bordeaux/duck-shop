@@ -16,8 +16,9 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
-    @distance = @shop.distance_to([current_user.latitude, current_user.longitude]).round(3)
-    @walk_time = (@shop.distance_to([current_user.latitude, current_user.longitude]) * 10).round(0)
-    @categories = Category.all.last(4)
+    @user = User.last
+    @distance = @shop.distance_to([@user.latitude, @user.longitude]).round(3)
+    @walk_time = (@shop.distance_to([@user.latitude, @user.longitude]) * 10).round(0)
+    @categories = Category.limit(4)
   end
 end
