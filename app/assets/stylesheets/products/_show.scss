@@ -37,11 +37,11 @@ justify-content: center;
 }
 
 .product-img-box {
-  width: 380px;
-  height: 250px;
+  width: 355px;
+  height: 240px;
 
   img {
-    width: 360px;
+    width: 355px;
     object-fit: contain;
   }
 }
@@ -114,21 +114,22 @@ justify-content: center;
 }
 
 .btn-back-category{
+  outline: 2px solid $secondary-color;
   text-align: center;
   font-weight: 500;
-  font-size: 1.3em;
+  font-size: 1em;
   margin-top: 2em;
-  padding: 1em 2em 1em 2em;
-  background-color: $secondary-color;
+  padding: 0.5em 1em 0.5em 1em ;
+  background: white;
   border-radius: 2em;
-  color: white;
+  color: $secondary-color;
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
   position: absolute;
   bottom: 1em;
   width: 358px;
-  @include secondary-gradient-background();
+
   &:hover {
-    outline: 2px solid $secondary-color;
+    outline: none;
     color: $secondary-color;
     background: $white-color;
   }
