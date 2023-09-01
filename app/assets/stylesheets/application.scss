@@ -8,10 +8,22 @@
 @import "config/mixins";
 @import "config/_default_html";
 
-// Your CSS partials
+// CSS components
 @import "components/index";
-@import "pages/index";
-@import "components/map";
+
+// CSS pages
+@import "pages/home";
+
+// CSS products
+@import "products/index";
+@import "products/show";
+
+// CSS shops
+@import "shops/index";
+@import "shops/show";
+
+// CSS carts
+@import "carts/new";
 
 body {
   width: 100%;

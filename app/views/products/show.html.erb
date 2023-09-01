@@ -3,8 +3,7 @@
   <%= @product.category %>
  <% end %>
   <div class="box product-img-box">
-  <%= image_tag(@product.image_url) %>
-  <h4 class="price"><%= @product.price %> €</h4>
+    <img src="<%= @product.image_url %>" alt="">
   </div>
     <div class="box product-box">
       <div class="name-price-box">
@@ -12,7 +11,7 @@
       </div>
       <div class="unit-category-box">
         <h5 class="unit">350g</h5>
-        <h5 class="category"><i class="fa-solid fa-tag"></i><%= @product.category %></h5>
+        <h5 class="category"><i class="fa-solid fa-tag"></i><%= @product.category.name %></h5>
       </div>
     </div>
 
@@ -24,5 +23,8 @@
       <% end %>
       <p class="shop"><i class="fa-solid fa-location-dot "></i><%= @product.shop.location %> </p>
     </div>
+ <%= link_to :back, class:"btn-back-category" do %>
+  <%= @product.category.name %>
+ <% end %>
 
 </div>

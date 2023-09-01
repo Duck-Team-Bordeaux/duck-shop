@@ -33,4 +33,17 @@
 
 
 
+<div class='index-products-container'>
+  <h3><%= @category.name %></h3>
+  <% @products.each do |product| %>
+    <div class="product-card-box">
+      <img src="<%= product.image_url %>" alt="" class='img'>
+      <div>
+        <p class="name"><%= product.name %></p>
+        <p class="price"><%= product.price %> €</p>
+        <p class="stock_quantity"><%= product.stock_quantity %> en stock</p>
+        <%= link_to "view details", shop_product_path(@shop, product)%>
+      </div>
+    </div>
+  <% end %>
 </div>

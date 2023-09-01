@@ -1,24 +1,29 @@
 <%# MAP %>
-<div style="width: 100%; height: 60vh;"
+<div style="width: 100%; height: 60vh; border-radius: 5px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-<%# SHOPS LIST %>
-<div class="shops-container">
+<%# SHOPS CARDS %>
+<div class="shops-container my-3">
   <% @shops.each do |shop| %>
-    <div class="box">
+    <div class="card-shop my-3">
       <% distance_km = shop.distance_to([@user.latitude, @user.longitude]) %>
       <% distance_min = distance_km * 10 %>
       <%= link_to shop_path(shop.id) do%>
-        <div>
-          <h3> DuckShop </h3>
-          <p> <%= shop.location %> </p>
-          <p>Distance: <%= distance_km.round(3) %> km</p>
-          <p><%= distance_min.round(0) %> minutes away</p>
-        </div>
+        <h3> DuckShop </h3>
+        <p> <%= shop.location %> </p>
       <% end %>
+      <div class="d-flex justify-content-between align-items-end">
+        <div>
+          <p><%= distance_km.round(3) %> km</p>
+        </div>
+        <div class="d-flex gap-2">
+          <i class="fa-solid fa-person-walking"></i>
+          <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

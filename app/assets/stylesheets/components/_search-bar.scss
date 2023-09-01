@@ -1,26 +1,31 @@
 .search-bar-box{
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 
   .input-search {
-    width: 100vw;
+    width: 150vw;
     height: 40px;
     border-radius: 3vh;
     background-color: white;
     border: none;
     padding-left: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    position: relative;
   }
 
   .search-bar-btn{
     background-color: $primary-color;
     height: 40px;
-    width: 100px;
+    width: 50px;
     border-radius: 3vh;
     color: $white-color;
     background-color: $primary-color;
     border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    position: absolute;
+    z-index: 100;
     &:hover{
       color: $primary-color;
       background-color: $white-color;
