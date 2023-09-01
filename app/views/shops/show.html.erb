@@ -49,6 +49,7 @@
 </div>
 
   <%# searched items cards %>
+<<<<<<< HEAD
   <div class="shop-show-container my-2 p-3">
     <% if params[:query].present? %>
       <h3 class="my-2">Produits</h3>
@@ -58,5 +59,13 @@
       <p>Stock: <%= product.stock_quantity %></p>
       <p>Category: <%= product.category.name %></p>
       <% end %>
+=======
+  <% if params[:query].present? %>
+    <h3 class="my-2">Produits</h3>
+    <% @shop.products.global_search(params[:query]).each do |product| %>
+    <h3><%= product.name %></h3>
+    <p><%= product.description %></p>
+    <p>Stock: <%= product.stock_quantity %></p>
+>>>>>>> d55b808c7dd204db9740b314486157b6a3f0bdb7
     <% end %>
   </div>
