@@ -193,234 +193,234 @@ svg {
       <path class="dragIcon" d="M10.59,0a.36.36,0,0,0-.18.08A27.66,27.66,0,0,0,6.87,4.14a.52.52,0,0,0,0,.49A.43.43,0,0,0,7.29,5H9.09V9.1H5V7.29a.46.46,0,0,0-.26-.41.68.68,0,0,0-.57,0A27.66,27.66,0,0,0,.08,10.42c0,.08-.08.25-.08.34a.51.51,0,0,0,.08.34,23.48,23.48,0,0,0,4.06,3.54.68.68,0,0,0,.57,0A.46.46,0,0,0,5,14.22V12.41H9.09v4.13H7.29a.46.46,0,0,0-.41.26.52.52,0,0,0,0,.49,27.66,27.66,0,0,0,3.54,4.06c.08.08.17.08.34.08s.25,0,.34-.08a23.48,23.48,0,0,0,3.54-4.06.51.51,0,0,0,0-.49.46.46,0,0,0-.41-.26H12.4V12.41h4.13v1.81a.46.46,0,0,0,.26.41.52.52,0,0,0,.49,0,27.66,27.66,0,0,0,4.06-3.54c.08-.08.08-.17.08-.34s0-.25-.08-.34a23.48,23.48,0,0,0-4.06-3.54.52.52,0,0,0-.49,0,.46.46,0,0,0-.26.41V9.1H12.4V5h1.81a.46.46,0,0,0,.41-.26.52.52,0,0,0,0-.49A27.66,27.66,0,0,0,11.08.16.62.62,0,0,0,10.75,0,.77.77,0,0,0,10.59,0Z" fill="#002e68" />
     </g>
   </svg>
-  <script>
-    var xmlns = "http://www.w3.org/2000/svg",
-  xlinkns = "http://www.w3.org/1999/xlink",
-  select = function (s) {
-    return document.querySelector(s);
-  },
-  selectAll = function (s) {
-    return document.querySelectorAll(s);
-  },
-  duckMatrix = select(".duckMatrix"),
-  darkDuckArray = getMatrixValue([0, 6, 34], [0, 6, 34]);
+</body>
+<script>
+  var xmlns = "http://www.w3.org/2000/svg",
+xlinkns = "http://www.w3.org/1999/xlink",
+select = function (s) {
+  return document.querySelector(s);
+},
+selectAll = function (s) {
+  return document.querySelectorAll(s);
+},
+duckMatrix = select(".duckMatrix"),
+darkDuckArray = getMatrixValue([0, 6, 34], [0, 6, 34]);
 
-  TweenMax.set("svg", {
-    visibility: "visible"
-  });
+TweenMax.set("svg", {
+  visibility: "visible"
+});
 
-  TweenMax.set(".pointerHit", {
-    skewY: -20,
-    svgOrigin: "471 436"
-  });
+TweenMax.set(".pointerHit", {
+  skewY: -20,
+  svgOrigin: "471 436"
+});
 
-  TweenMax.set("#speedLines line", {
-    drawSVG: "100% 100%"
-  });
+TweenMax.set("#speedLines line", {
+  drawSVG: "100% 100%"
+});
 
-  var mainTl = new TimelineMax({
-    repeat: -1
-  });
+var mainTl = new TimelineMax({
+  repeat: -1
+});
 
-  var allBoxesTl = new TimelineMax();
-  allBoxesTl
-    .fromTo(
-      ".allBoxes",
-      1,
-      {
-        x: -55,
-        y: -110
-      },
-      {
-        x: "-=100",
-        y: "+=70",
-        ease: Power2.easeInOut
-      }
-    )
-    .to(
-      [".pointer", ".dragIcon"],
-      0.9,
-      {
-        x: 408,
-        y: 320,
-        ease: Power2.easeInOut
-      },
-      "-=1"
-    );
-
-  var boxTl = new TimelineMax();
-  boxTl
-    .set([".pointer", ".dragIcon"], {
-      x: 408,
-      y: 320
-    })
-    .set(".dragIcon", {
-      autoAlpha: 0
-    })
-    .to(".pointerHit", 1, {
-      attr: {
-        r: 40
-      },
-      strokeWidth: 0,
-      alpha: 0
-    })
-    .from(
-      ".mainDuck",
-      1.2,
-      {
-        y: 200,
-        rotation: -107,
-        transformOrigin: "50% 50%",
-        ease: Elastic.easeOut.config(0.7, 0.45)
-      },
-      "-=0.2"
-    )
-    .to(
-      darkDuckArray,
-      0.3,
-      {
-        endArray: getResetMatrixValue(),
-        onUpdate: function () {
-          duckMatrix.setAttribute("values", darkDuckArray);
-        },
-        ease: Circ.easeInOut
-      },
-      "-=1.2"
-    )
-    .to(
-      "#speedLines line",
-      0.1,
-      {
-        drawSVG: "40% 100%",
-        ease: Linear.easeNone
-      },
-      "-=1"
-    )
-    .to(
-      "#speedLines line",
-      0.23,
-      {
-        drawSVG: "0% 0%"
-      },
-      "-=0.9"
-    )
-
-    .to(
-      ".eyeGroup ellipse",
-      0.05,
-      {
-        attr: {
-          ry: "-=1.2"
-        },
-        ease: Linear.easeNone,
-        repeat: 3,
-        repeatDelay: 0.051,
-        yoyo: true
-      },
-      "-=0.5"
-    )
-    .to(
-      ".wholeBox1 .lidR",
-      1,
-      {
-        morphSVG: ".wholeBox1 .lidREnd",
-        ease: Elastic.easeOut.config(0.8, 0.75)
-      },
-      "-=1.8"
-    )
-
-    .to(
-      ".wholeBox1 .lidL",
-      1,
-      {
-        morphSVG: {
-          shape: ".wholeBox1 .lidLEnd",
-          shapeIndex: 5
-        },
-        ease: Elastic.easeOut.config(0.8, 0.75)
-      },
-      "-=1.78"
-    )
-
-    .to([".pointer", ".dragIcon"], 0.5, {
-      x: "+=100",
-      y: "-=70",
-      ease: Power1.easeInOut
-    })
-    .staggerTo(
-      [".pointer", ".dragIcon"],
-      0,
-      {
-        cycle: {
-          autoAlpha: [0, 1]
-        }
-      },
-      0,
-      "-=0.2"
-    );
-
-  //this cool function is taken from https://codepen.io/jmperez/details/LGqaxQ/ by https://codepen.io/jmperez/ - I've made my own versions below
-  /* function convertToDueTone(color1, color2) {
-    var matrix = document.querySelector('feColorMatrix');
-    var value = [];
-    value = value.concat(
-    [color1[0]/256 - color2[0]/256, 0, 0, 0, color2[0]/256]);
-    value = value.concat(
-    [color1[1]/256 - color2[1]/256, 0, 0, 0, color2[1]/256]);
-    value = value.concat(
-    [color1[2]/256 - color2[2]/256, 0, 0, 0, color2[2]/256]);
-    value = value.concat([0, 0, 0, 1, 0]);
-    //matrix.setAttribute('values', value.join(' '));
-    //console.log(matrix)
-  }
-  */
-  function getResetMatrixValue() {
-    var matrix = document.querySelector("feColorMatrix");
-    var value = [];
-    value = value.concat([1, 0, 0, 0, 0]);
-    value = value.concat([0, 1, 0, 0, 0]);
-    value = value.concat([0, 0, 1, 0, 0]);
-    value = value.concat([0, 0, 0, 1, 0]);
-    return value;
-  }
-
-  function getMatrixValue(color1, color2) {
-    var matrix = duckMatrix;
-
-    if (!color1) {
-      return duckMatrix.getAttribute("values");
+var allBoxesTl = new TimelineMax();
+allBoxesTl
+  .fromTo(
+    ".allBoxes",
+    1,
+    {
+      x: -55,
+      y: -110
+    },
+    {
+      x: "-=100",
+      y: "+=70",
+      ease: Power2.easeInOut
     }
-    var value = [];
-    value = value.concat([
-      color1[0] / 256 - color2[0] / 256,
-      0,
-      0,
-      0,
-      color2[0] / 256
-    ]);
-    value = value.concat([
-      color1[1] / 256 - color2[1] / 256,
-      0,
-      0,
-      0,
-      color2[1] / 256
-    ]);
-    value = value.concat([
-      color1[2] / 256 - color2[2] / 256,
-      0,
-      0,
-      0,
-      color2[2] / 256
-    ]);
-    value = value.concat([0, 0, 0, 1, 0]);
-    //matrix.setAttribute('values', value.join(' '));
-    return value; //.split(' ');
+  )
+  .to(
+    [".pointer", ".dragIcon"],
+    0.9,
+    {
+      x: 408,
+      y: 320,
+      ease: Power2.easeInOut
+    },
+    "-=1"
+  );
+
+var boxTl = new TimelineMax();
+boxTl
+  .set([".pointer", ".dragIcon"], {
+    x: 408,
+    y: 320
+  })
+  .set(".dragIcon", {
+    autoAlpha: 0
+  })
+  .to(".pointerHit", 1, {
+    attr: {
+      r: 40
+    },
+    strokeWidth: 0,
+    alpha: 0
+  })
+  .from(
+    ".mainDuck",
+    1.2,
+    {
+      y: 200,
+      rotation: -107,
+      transformOrigin: "50% 50%",
+      ease: Elastic.easeOut.config(0.7, 0.45)
+    },
+    "-=0.2"
+  )
+  .to(
+    darkDuckArray,
+    0.3,
+    {
+      endArray: getResetMatrixValue(),
+      onUpdate: function () {
+        duckMatrix.setAttribute("values", darkDuckArray);
+      },
+      ease: Circ.easeInOut
+    },
+    "-=1.2"
+  )
+  .to(
+    "#speedLines line",
+    0.1,
+    {
+      drawSVG: "40% 100%",
+      ease: Linear.easeNone
+    },
+    "-=1"
+  )
+  .to(
+    "#speedLines line",
+    0.23,
+    {
+      drawSVG: "0% 0%"
+    },
+    "-=0.9"
+  )
+
+  .to(
+    ".eyeGroup ellipse",
+    0.05,
+    {
+      attr: {
+        ry: "-=1.2"
+      },
+      ease: Linear.easeNone,
+      repeat: 3,
+      repeatDelay: 0.051,
+      yoyo: true
+    },
+    "-=0.5"
+  )
+  .to(
+    ".wholeBox1 .lidR",
+    1,
+    {
+      morphSVG: ".wholeBox1 .lidREnd",
+      ease: Elastic.easeOut.config(0.8, 0.75)
+    },
+    "-=1.8"
+  )
+
+  .to(
+    ".wholeBox1 .lidL",
+    1,
+    {
+      morphSVG: {
+        shape: ".wholeBox1 .lidLEnd",
+        shapeIndex: 5
+      },
+      ease: Elastic.easeOut.config(0.8, 0.75)
+    },
+    "-=1.78"
+  )
+
+  .to([".pointer", ".dragIcon"], 0.5, {
+    x: "+=100",
+    y: "-=70",
+    ease: Power1.easeInOut
+  })
+  .staggerTo(
+    [".pointer", ".dragIcon"],
+    0,
+    {
+      cycle: {
+        autoAlpha: [0, 1]
+      }
+    },
+    0,
+    "-=0.2"
+  );
+
+//this cool function is taken from https://codepen.io/jmperez/details/LGqaxQ/ by https://codepen.io/jmperez/ - I've made my own versions below
+/* function convertToDueTone(color1, color2) {
+  var matrix = document.querySelector('feColorMatrix');
+  var value = [];
+  value = value.concat(
+  [color1[0]/256 - color2[0]/256, 0, 0, 0, color2[0]/256]);
+  value = value.concat(
+  [color1[1]/256 - color2[1]/256, 0, 0, 0, color2[1]/256]);
+  value = value.concat(
+  [color1[2]/256 - color2[2]/256, 0, 0, 0, color2[2]/256]);
+  value = value.concat([0, 0, 0, 1, 0]);
+  //matrix.setAttribute('values', value.join(' '));
+  //console.log(matrix)
+}
+*/
+function getResetMatrixValue() {
+  var matrix = document.querySelector("feColorMatrix");
+  var value = [];
+  value = value.concat([1, 0, 0, 0, 0]);
+  value = value.concat([0, 1, 0, 0, 0]);
+  value = value.concat([0, 0, 1, 0, 0]);
+  value = value.concat([0, 0, 0, 1, 0]);
+  return value;
+}
+
+function getMatrixValue(color1, color2) {
+  var matrix = duckMatrix;
+
+  if (!color1) {
+    return duckMatrix.getAttribute("values");
   }
-  //ScrubGSAPTimeline(mainTl)
-  mainTl.add(boxTl, 0);
-  mainTl.add(allBoxesTl);
-  //TweenMax.globalTimeScale(0.5)
+  var value = [];
+  value = value.concat([
+    color1[0] / 256 - color2[0] / 256,
+    0,
+    0,
+    0,
+    color2[0] / 256
+  ]);
+  value = value.concat([
+    color1[1] / 256 - color2[1] / 256,
+    0,
+    0,
+    0,
+    color2[1] / 256
+  ]);
+  value = value.concat([
+    color1[2] / 256 - color2[2] / 256,
+    0,
+    0,
+    0,
+    color2[2] / 256
+  ]);
+  value = value.concat([0, 0, 0, 1, 0]);
+  //matrix.setAttribute('values', value.join(' '));
+  return value; //.split(' ');
+}
+//ScrubGSAPTimeline(mainTl)
+mainTl.add(boxTl, 0);
+mainTl.add(allBoxesTl);
+//TweenMax.globalTimeScale(0.5)
 
 </script>
-</body>
 </html>
