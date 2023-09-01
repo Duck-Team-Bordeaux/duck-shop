@@ -14,15 +14,15 @@
 
 <div class="shop-show-container my-2 p-3">
 <%# Search Bar %>
-  <h3 class="my-2">Voir disponibilité</h3>
+  <h3 class="my-2">Voir les disponibilité</h3>
   <%= form_with url: shop_path(@shop), method: :get, class: "search-bar-box" do %>
       <%= text_field_tag :query,
           params[:query],
           class: "input-search",
-          placeholder: "Search a product..."
+          placeholder: "Trouve ton produit"
         %>
       <%= button_tag "S", name: "", class: "search-bar-btn" do %>
-        <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+        <i class="fa-solid fa-magnifying-glass"></i>
       <% end %>
   <% end %>
 
@@ -49,7 +49,6 @@
     <h3><%= product.name %></h3>
     <p><%= product.description %></p>
     <p>Stock: <%= product.stock_quantity %></p>
-    <p>Category: <%= product.category.name %></p>
     <% end %>
   <% end %>
 </div>

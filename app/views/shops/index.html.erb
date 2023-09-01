@@ -12,20 +12,18 @@
       <% distance_km = shop.distance_to([@user.latitude, @user.longitude]) %>
       <% distance_min = distance_km * 10 %>
       <%= link_to shop_path(shop.id) do%>
-        <h3> DuckShop </h3>
-        <p> <%= shop.location %> </p>
+        <div class="d-flex justify-content-between align-items-end">
+          <div>
+            <h3> DuckShop </h3>
+            <p> <%= shop.location %> </p>
+            <p><%= distance_km.round(3) %> km</p>
+          </div>
+          <div class="d-flex gap-2">
+            <i class="fa-solid fa-person-walking"></i>
+            <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
+          </div>
+        </div>
       <% end %>
-      <div class="d-flex justify-content-between align-items-end">
-        <div>
-          <h3> DuckShop </h3>
-          <p> <%= shop.location %> </p>
-          <p><%= distance_km.round(3) %> km</p>
-        </div>
-        <div class="d-flex gap-2">
-          <i class="fa-solid fa-person-walking"></i>
-          <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
-        </div>
-      </div>
     </div>
   <% end %>
 </div>

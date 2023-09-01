@@ -26,8 +26,13 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     position: absolute;
     z-index: 100;
+    .fa-solid{
+      color: #ffffff;
+    }
     &:hover{
-      color: $primary-color;
+      .fa-solid{
+        color: $primary-color;
+      }
       background-color: $white-color;
     }
   }
