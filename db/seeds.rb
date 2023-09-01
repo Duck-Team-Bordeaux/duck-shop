@@ -13,10 +13,6 @@ p 'DB successfully cleaned'
 
 p 'creating user'
 User.create!(email: 'toto@gmail.com', password: 'qwertyuiop', address: 'Rue Poquelin Molière, 33000 Bordeaux, France')
-User.create!(email: 'tata@gmail.com', password: 'qwertyuiop', address: 'Rue Poquelin Molière, 33000 Bordeaux, France')
-User.create!(email: 'titi@gmail.com', password: 'qwertyuiop', address: 'Rue Poquelin Molière, 33000 Bordeaux, France')
-User.create!(email: 'tonton@gmail.com', password: 'qwertyuiop', address: 'Rue Poquelin Molière, 33000 Bordeaux, France')
-User.create!(email: 'tutu@gmail.com', password: 'qwertyuiop', address: 'Rue Poquelin Molière, 33000 Bordeaux, France')
 
 # -------------SHOP-------------------------------------------------------------
 
@@ -25,7 +21,7 @@ Shop.create!(location: 'Place du Parlement')
 Shop.create!(location: '36 Allées d\'Orléans')
 Shop.create!(location: '15 Cours Portal, 33000 Bordeaux, France')
 Shop.create!(location: '24 Quai de Bacalan')
-Shop.create!(location: '36 Rue De La Faïencerie, 33300 Bordeaux, France')
+Shop.create!(location: '36 Rue de la Faïencerie, 33000 Bordeaux')
 
 p 'creating categories'
 snack = Category.new(name: "Snacks")

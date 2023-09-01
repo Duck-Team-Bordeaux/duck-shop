@@ -1,9 +1,6 @@
 <div class="home-container">
   <%= image_tag "logo-home.svg", :class => "logo-home" %>
-  <h1>WHAT<br/>YOU<br/>WANT<br/>WHEN<br/>YOU<br/>WHANT</h1>
-  <% if current_user != nil %>
-    <%= link_to '-> start', shops_path, :class=>"btn-shops-near" %>
-  <% else %>
-    <%= link_to '-> start', user_session_path, :class=>"btn-shops-near" %>
-  <% end %>
+  <h1>Trouve un Duckshop près de chez toi</h1>
+  <%= link_to 'Magasins près de moi', shops_path, :class=>"btn-shops-near" %>
 </div>
+<%= render 'components/footer' unless @hide_footer == true%>

@@ -1,0 +1,24 @@
+.footer {
+  width: 100%;
+  margin: 20px;
+
+  .container-footer {
+    width: 90%;
+    margin: 30px;
+  }
+
+  p {
+    @include text-content($primary-color);
+  }
+
+  .bold {
+    @include text-content-bold($primary-color);
+    margin-right: 1em;
+  }
+}
+
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+}
