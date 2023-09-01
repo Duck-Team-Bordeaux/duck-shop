@@ -4,8 +4,14 @@
   gap: 1em;
 }
 
-.product-img-box{
-height: 250px;
+.product-img-box {
+  width: 380px;
+  height: 250px;
+
+  img {
+    width: 360px;
+    object-fit: contain;
+  }
 }
 
 .product-box{

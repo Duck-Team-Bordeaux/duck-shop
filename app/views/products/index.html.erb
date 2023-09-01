@@ -2,7 +2,7 @@
   <h3><%= @category.name %></h3>
   <% @products.each do |product| %>
     <div class="product-card-box">
-      <%= image_tag "drinks.jpg", class: "img" %>
+      <img src="<%= product.image_url %>" alt="" class='img'>
       <div>
         <p class="name"><%= product.name %></p>
         <p class="price"><%= product.price %> €</p>

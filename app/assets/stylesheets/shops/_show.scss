@@ -83,6 +83,13 @@
   }
 }
 
+.width {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn {
   width: 200px;
   height: 60px;
