@@ -6,9 +6,26 @@
 </div>
 
 <%# SHOPS CARDS %>
-<div class="shops-container my-3">
+<div class="shops-container">
+  <div class="card-shop active mb-2">
+    <% distance_km = Shop.first.distance_to([@user.latitude, @user.longitude]) %>
+    <% distance_min = distance_km * 10 %>
+    <%= link_to shop_path(Shop.first.id) do%>
+      <h3> DuckShop </h3>
+      <p> <%= Shop.first.location %> </p>
+      <div class="d-flex justify-content-between align-items-end">
+        <div>
+          <p><%= distance_km.round(3) %> km</p>
+        </div>
+        <div class="d-flex gap-2">
+          <i class="fa-solid fa-person-walking"></i>
+          <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
   <% @shops.each do |shop| %>
-    <div class="card-shop my-3">
+    <div class="card-shop mb-2">
       <% distance_km = shop.distance_to([@user.latitude, @user.longitude]) %>
       <% distance_min = distance_km * 10 %>
       <%= link_to shop_path(shop.id) do%>
