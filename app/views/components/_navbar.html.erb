@@ -1,10 +1,19 @@
 <nav>
-  <div class="nav-box">
-    <%= link_to root_path, class: 'nav-profil' do %>
-      <%= image_tag "logo-home.svg", class: 'img' %>
-      <%# <p class='pseudo-name'><%= current_user.email[0..3] %>
-    <% end %>
-    <%= link_to 'DuckShop', shops_path, :class => 'root-link' %>
-    <p>54<%= image_tag "duckcoin.svg", class: 'img' %></p>
-  </div>
+ <h1>DuckShop</h1>
+
+ <div class="user-box">
+  <p class="username"> Erica </p>
+  <%= image_tag "profile-pic.png", class: 'avatar' %>
+ </div>
+
 </nav>
+
+
+<%# --------- CODE NATEO --------------- %>
+
+<%# <%= link_to root_path, class: 'nav-profil' do %>
+<%# <%= image_tag "logo-home.svg", class: 'img' %>
+<%# <p class='pseudo-name'><%= current_user.email[0..3] %>
+<%# <% end %>
+<%# <%= link_to 'DuckShop', shops_path, :class => 'root-link' %>
+<%# <p>54<%= image_tag "duckcoin.svg", class: 'img'</p>   %>
