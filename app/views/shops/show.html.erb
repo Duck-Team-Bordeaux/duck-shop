@@ -1,32 +1,37 @@
+<%# DuckShop Details %>
 <h3> DuckShop </h3>
-<p><i class="fa-solid fa-location-dot"></i><%= @shop.location %></p>
+<div class="d-flex gap-2">
+  <i class="fa-solid fa-location-dot"></i>
+  <p><%= @shop.location %></p>
+</div>
 <% distance_km = @shop.distance_to([@user.latitude, @user.longitude]) %>
 <% distance_min = distance_km * 10 %>
 <div class="d-flex justify-content-between align-items-end">
-    <div>
-      <p><%= distance_km.round(3) %> km</p>
-    </div>
-    <div class="d-flex gap-2">
-      <i class="fa-solid fa-person-walking"></i>
-      <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
-    </div>
+  <div>
+    <p><%= distance_km.round(3) %> km</p>
+  </div>
+  <div class="d-flex gap-2">
+    <i class="fa-solid fa-person-walking"></i>
+    <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
+  </div>
 </div>
 
-<div class="shop-show-container my-2 p-3">
 <%# Search Bar %>
+<div class="shop-show-container my-2 p-3">
   <h3 class="my-2">Voir disponibilité</h3>
   <%= form_with url: shop_path(@shop), method: :get, class: "search-bar-box" do %>
-      <%= text_field_tag :query,
-          params[:query],
-          class: "input-search",
-          placeholder: "Search a product..."
-        %>
-      <%= button_tag "S", name: "", class: "search-bar-btn" do %>
-        <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
-      <% end %>
+    <%= text_field_tag :query,
+        params[:query],
+        class: "input-search",
+        placeholder: "Search a product..."
+      %>
+    <%= button_tag "S", name: "", class: "search-bar-btn" do %>
+    <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+    <% end %>
   <% end %>
-
+</div>
   <%# categories cards %>
+<div class="shop-show-container my-2 p-3">
   <div class="d-flex justify-content-between mt-3 align-items-end">
     <h3>Rayon</h3>
     <p>tout voir</p>
@@ -41,15 +46,17 @@
         </div>
     <% end %>
   </div>
+</div>
 
   <%# searched items cards %>
-  <% if params[:query].present? %>
-    <h3 class="my-2">Produits</h3>
-    <% @shop.products.global_search(params[:query]).each do |product| %>
-    <h3><%= product.name %></h3>
-    <p><%= product.description %></p>
-    <p>Stock: <%= product.stock_quantity %></p>
-    <p>Category: <%= product.category.name %></p>
+  <div class="shop-show-container my-2 p-3">
+    <% if params[:query].present? %>
+      <h3 class="my-2">Produits</h3>
+      <% @shop.products.global_search(params[:query]).each do |product| %>
+      <h3><%= product.name %></h3>
+      <p><%= product.description %></p>
+      <p>Stock: <%= product.stock_quantity %></p>
+      <p>Category: <%= product.category.name %></p>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
