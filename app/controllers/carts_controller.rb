@@ -9,19 +9,21 @@ class CartsController < ApplicationController
   end
 
   def create
-    @cart = Cart.new(cart_params)
+    @cart = Cart.new(user_id: current_user.id, shop_id: params[:shop_id], progress: 0)
     if @cart.save!
-      redirect_to cart_path(@cart)
+      redirect_to edit_shop_cart_path(id: @cart.id)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def finish() end
+  def edit
 
-  private
-
-  def cart_params
-    params.require(:cart).permit(:user_id, :shop_id, :progress)
   end
+
+  def update
+
+  end
+
+  def finish() end
 end
