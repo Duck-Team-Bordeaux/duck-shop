@@ -29,7 +29,7 @@ file = URI.open('https://res.cloudinary.com/ds1o2o82j/image/upload/v1693495595/u
 snack.photo.attach(io: file, filename: "snack.jpg", content_type: "image/jpg")
 snack.save
 
-drinks = Category.new(name: "Boisson")
+drinks = Category.new(name: "Boissons")
 file = URI.open('https://res.cloudinary.com/ds1o2o82j/image/upload/v1693495541/egrduxqjbm6dfdrlkdjf.jpg')
 drinks.photo.attach(io: file, filename: "drinks.jpg", content_type: "image/jpg")
 drinks.save
@@ -258,7 +258,7 @@ shops.each do |shop|
 
   # -------------Boisson -------------------------------------------------
 
-  p "Creating Boisson"
+  p "Creating Boissons"
 
   Product.create!(
     name: 'Eau minérale naturelle plate VITTEL',

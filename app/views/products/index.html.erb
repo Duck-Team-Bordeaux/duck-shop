@@ -10,16 +10,16 @@
 
       <div class="product-card-box box">
 
+
         <div class="img-box">
           <%= image_tag(product.image_url) %>
         </div>
 
         <div>
           <h5 class="name"><%= product.name %></h5>
-          <p class="stock_quantity"><%= product.stock_quantity %> en stock</p>
 
           <% if product.stock_quantity > 0 %>
-            <h5 class="disponibility"><i class="fa-solid fa-circle-check in-stock"></i><%= product.stock_quantity %> en stock</h5>
+            <h5 class="disponibility"><i class="fa-solid fa-circle-check in-stock" style="color: green;"></i><%= product.stock_quantity %> en stock</h5>
           <% else %>
             <h5 class="disponibility"><i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i><%= product.stock_quantity %> pas en stock</h5>
           <% end %>
@@ -27,8 +27,6 @@
 
         <h5 class="price"><%= product.price %>€</h5>
       </div>
-
-      <%= link_to "voir le détails", shop_product_path(@shop, product)%>
-    </div>
-
     <% end %>
+  <% end %>
+</div>
