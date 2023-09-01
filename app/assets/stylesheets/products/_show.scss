@@ -34,6 +34,7 @@ justify-content: center;
     padding: 1em;
 
   }
+}
 
 .product-img-box {
   width: 380px;
@@ -126,7 +127,7 @@ justify-content: center;
   bottom: 1em;
   width: 358px;
   @include secondary-gradient-background();
-  &:hover{
+  &:hover {
     outline: 2px solid $secondary-color;
     color: $secondary-color;
     background: $white-color;
