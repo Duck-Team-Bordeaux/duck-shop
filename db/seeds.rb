@@ -13,6 +13,10 @@ p 'DB successfully cleaned'
 
 p 'creating user'
 User.create!(email: 'toto@gmail.com', password: 'qwertyuiop', address: 'Rue Poquelin Molière, 33000 Bordeaux, France')
+User.create!(email: 'tata@gmail.com', password: 'qwertyuiop', address: 'Rue Poquelin Molière, 33000 Bordeaux, France')
+User.create!(email: 'titi@gmail.com', password: 'qwertyuiop', address: 'Rue Poquelin Molière, 33000 Bordeaux, France')
+User.create!(email: 'tonton@gmail.com', password: 'qwertyuiop', address: 'Rue Poquelin Molière, 33000 Bordeaux, France')
+User.create!(email: 'tutu@gmail.com', password: 'qwertyuiop', address: 'Rue Poquelin Molière, 33000 Bordeaux, France')
 
 # -------------SHOP-------------------------------------------------------------
 
