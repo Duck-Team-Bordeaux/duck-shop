@@ -61,6 +61,7 @@
       img{
         width: 60px;
         height: 60px;
+        outline: red solid 2px;
       }
       &::after{
         content: "";
