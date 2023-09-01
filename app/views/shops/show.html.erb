@@ -1,16 +1,45 @@
-<%# Duckshop Details %>
-<h3> DuckShop </h3>
-<p><i class="fa-solid fa-location-dot"></i><%= @shop.location %></p>
-<% distance_km = @shop.distance_to([@user.latitude, @user.longitude]) %>
-<% distance_min = distance_km * 10 %>
-<div class="d-flex justify-content-between align-items-end">
+<div class='show-shop-container'>
+  <div class='shop-location'>
     <div>
-      <p><%= distance_km.round(3) %> km</p>
+      <h3>DuckShop</h3>
+      <p><i class="fa-solid fa-location-dot"></i><%= @shop.location %></p>
     </div>
-    <div class="d-flex gap-2">
-      <i class="fa-solid fa-person-walking"></i>
-      <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
+    <div>
+      <p><%= @distance %> km</p>
+      <p><i class="fa-solid fa-person-walking"></i><%= @walk_time %> min</p>
     </div>
+  </div>
+  <div>
+    <div class='search'>
+      <h3>Disponibility</h3>
+      <%= form_with url: shop_path(@shop), method: :get, class: "search-bar-box" do %>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "input-search",
+              placeholder: "Search a product..."
+            %>
+          <%= button_tag "S", name: "", class: "search-bar-btn" do %>
+            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="categories">
+      <h3>Categories</h3>
+      <div>
+        <% @categories.each do |category| %>
+          <%= link_to shop_products_path(@shop, category: category) do %>
+            <div class="card-category">
+              <%= image_tag "drinks.jpg", class: "img" %>
+              <p><%= category.name %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class='products'>
+      <h3>Products</h3>
+    </div>
+  </div>
 </div>
 
 <div class="shop-show-container my-2 p-3">
@@ -53,4 +82,7 @@
     <p>Category: <%= product.category.name %></p>
     <% end %>
   <% end %>
+</div>
+<div class='width'>
+  <%= link_to 'Enter to the shop', new_shop_cart_path(@shop), :class=>"btn" %>
 </div>
