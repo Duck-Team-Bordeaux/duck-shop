@@ -1,7 +1,7 @@
 
 
 <div class="home-container">
-  <h1>Find a DuckShop near you</h1>
-  <%= link_to 'shops near me', shops_path, :class=>"btn-shops-near" %>
+  <h1>Trouve un Duckshop près de chez toi</h1>
+  <%= link_to 'Magasins près de moi', shops_path, :class=>"btn-shops-near" %>
 </div>
-
+<%= render 'components/footer' unless @hide_footer == true%>

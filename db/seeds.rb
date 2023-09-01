@@ -18,8 +18,8 @@ p 'creating shop'
 Shop.create!(location: 'Place du Parlement')
 Shop.create!(location: "36 Allées d'Orléans")
 Shop.create!(location: '15 Cours Portal, 33000 Bordeaux, France')
-Shop.create!(location: '82 Cr Balguerie Stuttenberg')
-Shop.create!(location: '36 Rue de la Faïencerie')
+Shop.create!(location: '24 Quai de Bacalan')
+Shop.create!(location: '36 Rue de la Faïencerie, 33000 Bordeaux')
 
 
 
