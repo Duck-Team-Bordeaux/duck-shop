@@ -1,12 +1,13 @@
 <div class="product-show-container">
-
+<%= link_to :back, class:"btn-back-category" do %>
+  <%= @product.category %>
+ <% end %>
   <div class="box product-img-box">
     <img src="<%= @product.image_url %>" alt="">
   </div>
     <div class="box product-box">
       <div class="name-price-box">
         <h4 class="name"><%= @product.name %></h4>
-        <h4 class="price"><%= @product.price %> €</h4>
       </div>
       <div class="unit-category-box">
         <h5 class="unit">350g</h5>
