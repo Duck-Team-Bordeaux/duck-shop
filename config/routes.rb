@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
-  get 'shops/show'
   devise_for :users
-
   root to: 'pages#home'
 
   resources :shops, only: %i[index show] do
+    resources :carts, only: %i[new create edit update destroy] do
+      collection do
+        get :finish
+      end
+    end
     resources :products, only: %i[index show]
-    resources :carts, only: %i[index show edit update destroy]
   end
-  resources :carts do
+  resources :carts, only: %i[index show] do
     resources :items, only: %i[create edit update destroy]
   end
-
 end

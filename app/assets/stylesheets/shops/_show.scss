@@ -1,0 +1,37 @@
+.shop-show-container {
+
+  border-radius: 1em 1em 0 0;
+  background-color: white;
+
+  h3 {
+    font-weight: lighter;
+  }
+
+  p {
+    color: $line-color;
+    font-size: 16px;
+  }
+}
+
+.card-category {
+  @include box;
+  border-radius: $border-radius;
+  box-shadow: $btn-shadow;
+  padding: 0;
+  margin-bottom: 1em;
+  width: 45%;
+
+  img {
+    border-radius: 1em 1em 0 0;
+    width: 100%;
+    height: 10vh;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  p {
+    font-weight: bold;
+    padding: 3px 8px;
+    color: black;
+  }
+}
