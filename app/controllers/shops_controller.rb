@@ -19,6 +19,6 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find(params[:id])
     @user = User.last
-    @categories = Category.all
+    @categories = Category.limit(4)
   end
 end

@@ -28,7 +28,11 @@
   <% end %>
 
   <%# categories cards %>
-  <div class="category-container row my-3 justify-content-around">
+  <div class="d-flex justify-content-between mt-3 align-items-end">
+    <h3>Rayon</h3>
+    <p>tout voir</p>
+  </div>
+  <div class="category-container row justify-content-around">
     <% @categories.each do |category| %>
       <div class="card-category col-6">
         <%= link_to shop_products_path(@shop, category: category) do %>
