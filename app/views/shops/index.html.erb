@@ -7,6 +7,7 @@
 
 <%# SHOPS CARDS %>
 <div class="shops-container">
+  <%# FAKE ACTIVE SHOP %>
   <div class="card-shop active mb-2">
     <% distance_km = Shop.first.distance_to([@user.latitude, @user.longitude]) %>
     <% distance_min = distance_km * 10 %>
@@ -24,6 +25,7 @@
       </div>
     <% end %>
   </div>
+  <%# CORRECT SHOP ITERATIONS %>
   <% @shops.each do |shop| %>
     <div class="card-shop mb-2">
       <% distance_km = shop.distance_to([@user.latitude, @user.longitude]) %>
