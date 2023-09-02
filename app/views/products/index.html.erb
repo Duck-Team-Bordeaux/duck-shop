@@ -1,8 +1,11 @@
 
 <div class="product-index-container">
 
-  <div class="category-banner">
-    <h1><%= params["category"] %></h1>
+
+  <div class="category-banner" style="background-image: url(<%= cl_image_path(@category.photo.key) %>)">
+
+    <h1><%= @category.name %></h1>
+
   </div>
 
   <% @products.each do |product| %>
@@ -10,12 +13,11 @@
 
       <div class="product-card-box box">
 
-
         <div class="img-box">
           <%= image_tag(product.image_url) %>
         </div>
 
-        <div>
+        <div class="info-box">
           <h5 class="name"><%= product.name %></h5>
 
           <% if product.stock_quantity > 0 %>

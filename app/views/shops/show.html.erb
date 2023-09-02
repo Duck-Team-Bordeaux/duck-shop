@@ -42,8 +42,8 @@
       <div class="card-category col-6">
         <%= link_to shop_products_path(@shop, category: category) do %>
           <%= cl_image_tag category.photo.key %>
-          <% end %>
           <p><%= category.name %></p>
+    <% end %>
         </div>
     <% end %>
   </div>
