@@ -1,0 +1,20 @@
+<h3>Mon ticket de caisse</h3>
+<div class="show-item">
+<%# lister les items de la carts et l'afficher
+pour chaque item afficher leur prix
+faire le total des prix des items  %>
+<% total_price = 0 %>
+<% @items.each do |item| %>
+  <div class= "item-box">
+    <div class="name"><%= item.product.name %></div>
+    <div class="price"><%= item.product.price %>€</div>
+  </div>
+  <% total_price += item.product.price %>
+<% end %>
+<div id="bar">- - - - - - - - - </div>
+<div class="total">
+  <h5>TOTAL</h5>
+    <div class="total-price"><%= total_price %>€</div>
+</div>
+</div>
+<div class="button">Payer</div>
