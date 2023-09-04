@@ -1,11 +1,14 @@
 require "open-uri"
 
 p 'Cleaning DB'
+Shop.destroy_all
+Product.destroy_all
+Cart.destroy_all
+Item.destroy_all
+p 'Cart => cleaned'
 User.destroy_all
 p 'User => cleaned'
-Shop.destroy_all
 p 'Shop => cleaned'
-Product.destroy_all
 p 'Product => cleaned'
 p 'DB successfully cleaned'
 
@@ -458,59 +461,46 @@ shops.each do |shop|
   p "SHOP #{shop.id} finished seeding"
 end
 
-# # -------------ITEM-------------------------------------------------------------
-# p 'creating items...'
-
-
-# Item.create!(
-#   product_id: shop.id,
-#   quantity: (0..3).to_a.sample
-# )
-
-# Item.create!(
-#   product_id: shop.id,
-#   quantity: (0..3).to_a.sample
-# )
-
-# Item.create!(
-#   product_id: shop.id,
-#   quantity: (0..3).to_a.sample
-# )
-
-# Item.create!(
-#   product_id: shop.id,
-#   quantity: (0..3).to_a.sample
-# )
-
-# Item.create!(
-#   product_id: shop.id,
-#   quantity: (0..3).to_a.sample
-# )
-
-# Item.create!(
-#   product_id: shop.id,
-#   quantity: (0..3).to_a.sample
-# )
-
-# Item.create!(
-#   product_id: shop.id,
-#   quantity: (0..3).to_a.sample
-# )
-
-# Item.create!(
-#   product_id: shop.id,
-#   quantity: (0..3).to_a.sample
-# )
-
-p 'new items are created'
-
-
 # -------------CART-------------------------------------------------------------
+
 p 'creating carts...'
 
+cart = Cart.create!(
+  shop: Shop.first,
+  user: User.first
+)
+p 'new carts are created'
+# -------------ITEM-------------------------------------------------------------
+p 'creating items...'
 
 
-p 'new cartss are created'
+Item.create!(
+  cart: cart,
+  quantity: (0..3).to_a.sample
+)
+
+Item.create!(
+  cart: cart,
+  quantity: (0..3).to_a.sample
+)
+
+Item.create!(
+  cart: cart,
+  quantity: (0..3).to_a.sample
+)
+
+Item.create!(
+  cart: cart,
+  quantity: (0..3).to_a.sample
+)
+
+Item.create!(
+  cart: cart,
+  quantity: (0..3).to_a.sample
+)
+
+
+p 'new items are created'
 
 
 # ------------------------ END OF SEED------------------------------------------
