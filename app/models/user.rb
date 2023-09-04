@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :shops, dependent: :destroy
+  has_many :shops, foreign_key: 'manager_id', class_name: 'User'
+  has_many :carts, dependent: :destroy
   belongs_to :favorite_shop, class_name: 'Shop', optional: true
 
   geocoded_by :address

@@ -1,0 +1,9 @@
+<h3>My carts</h3>
+
+<%# lister les items de la carts et l'afficher
+pour chaque item afficher leur prix
+faire le total des prix des items  %>
+<% @items.each do |item| %>
+  <%= item.product.name %>
+  <%= item.product.price %>
+<% end %>
