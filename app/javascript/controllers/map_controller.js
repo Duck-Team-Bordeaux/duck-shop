@@ -17,6 +17,11 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
 
+    // this.map = new maplibregl.Map({
+    //   container: this.element,
+    //   style: `https://maps.geoapify.com/v1/styles/klokantech-basic/style.json?apiKey=${ENV[MAPBOX_API_KEY]}`,
+    // });
+
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
 

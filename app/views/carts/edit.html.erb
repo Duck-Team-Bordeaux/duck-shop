@@ -1,5 +1,6 @@
-<div style='height: 300px; width: 300px; background-color: red;'>
-  <p>Ceci est un scan</p>
+<div data-controller='bar-code'>
+  <video data-bar-code-target='video'></video>
 </div>
 <p>scaner vos premiers articles</p>
+
 <%= link_to 'Pay', finish_shop_carts_path,  :class=>"btn" %>

@@ -1,6 +1,6 @@
 class Shop < ApplicationRecord
   belongs_to :manager, class_name: 'User', optional: true
-  has_many :users
+  has_many :users, dependent: :destroy
   has_many :products, dependent: :destroy
 
   geocoded_by :location
