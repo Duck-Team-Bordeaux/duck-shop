@@ -1,24 +1,19 @@
-<<<<<<< HEAD
-<div data-controller='bar-code'>
-  <video data-bar-code-target='video'></video>
+<%# Barcode scanner accordion %>
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        Open to Scan
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body" data-controller="bar-code">
+        <video data-bar-code-target='video'></video>
+      </div>
+    </div>
+  </div>
 </div>
-<p>scaner vos premiers articles</p>
+
+
 
 <%= link_to 'Pay', finish_shop_carts_path,  :class=>"btn" %>
-=======
-
-
-<%= @items.each do |item| %>
-
-
-<p>
-<%# Product.where(id: i.product_id) %>
-
-
-
-
-
-</p>
-
-<% end %>
->>>>>>> 0a727669348db4fe51862534a43e863de93707c2

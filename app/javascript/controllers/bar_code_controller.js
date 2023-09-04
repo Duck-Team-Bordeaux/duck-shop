@@ -6,15 +6,15 @@ export default class extends Controller {
   static targets = ["video"]
 
   connect() {
-  //   navigator.mediaDevices
-  //     .getUserMedia({ video: true })
-  //     .then((stream) => {
-  //       const videoElement = this.videoTarget;
+    navigator.mediaDevices
+      .getUserMedia({ video: true })
+      .then((stream) => {
+        const videoElement = this.videoTarget;
 
-  //       videoElement.srcObject = stream;
-  //       videoElement.play();
-  //       this.initCamera();
-  // });
+        videoElement.srcObject = stream;
+        videoElement.play();
+        this.initCamera();
+  });
   }
 
   disconnect() {
