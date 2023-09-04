@@ -30,7 +30,7 @@ class CartsController < ApplicationController
     @cart = Cart.last
     @shop = Shop.find(params[:shop_id])
     @items = Item.where(cart: @user.cart_ids)
-    raise
+
   end
 
   def update
