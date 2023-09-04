@@ -10,7 +10,7 @@
   <%# FAKE ACTIVE SHOP %>
   <div class="card-shop active mb-2">
     <% distance_km = Shop.first.distance_to([@user.latitude, @user.longitude]) %>
-    <% distance_min = distance_km * 10 %>
+    <% distance_min = distance_km*10 %>
     <%= link_to shop_path(Shop.first.id) do%>
       <h3> DuckShop </h3>
       <p> <%= Shop.first.location %> </p>
