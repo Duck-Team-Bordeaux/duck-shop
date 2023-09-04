@@ -1,5 +1,15 @@
-<div style='height: 300px; width: 300px; background-color: red;'>
-  <p>Ceci est un scan</p>
-</div>
-<p>scaner vos premiers articles</p>
-<%= link_to 'Pay', finish_shop_carts_path,  :class=>"btn" %>
+
+
+<%= @items.each do |item| %>
+
+
+<p>
+<%# Product.where(id: i.product_id) %>
+
+
+
+
+
+</p>
+
+<% end %>
