@@ -476,32 +476,57 @@ p 'creating items...'
 
 Item.create!(
   cart: cart,
+<<<<<<< HEAD
+  quantity: (0..3).to_a.sample,
+  product_id: (0..31)
+=======
   product: Product.order('RANDOM()').first,
   quantity: (0..3).to_a.sample
+>>>>>>> 0a727669348db4fe51862534a43e863de93707c2
 )
 
 Item.create!(
   cart: cart,
+<<<<<<< HEAD
+  quantity: (0..3).to_a.sample,
+  product_id: (0..31)
+=======
   product: Product.order('RANDOM()').first,
   quantity: (0..3).to_a.sample
+>>>>>>> 0a727669348db4fe51862534a43e863de93707c2
 )
 
 Item.create!(
   cart: cart,
+<<<<<<< HEAD
+  quantity: (0..3).to_a.sample,
+  product_id: (0..31)
+=======
   product: Product.order('RANDOM()').first,
   quantity: (0..3).to_a.sample
+>>>>>>> 0a727669348db4fe51862534a43e863de93707c2
 )
 
 Item.create!(
   cart: cart,
+<<<<<<< HEAD
+  quantity: (0..3).to_a.sample,
+  product_id: (0..31)
+=======
   product: Product.order('RANDOM()').first,
   quantity: (0..3).to_a.sample
+>>>>>>> 0a727669348db4fe51862534a43e863de93707c2
 )
 
 Item.create!(
   cart: cart,
+<<<<<<< HEAD
+  quantity: (0..3).to_a.sample,
+  product_id: (0..31)
+=======
   product: Product.order('RANDOM()').first,
   quantity: (0..3).to_a.sample
+>>>>>>> 0a727669348db4fe51862534a43e863de93707c2
 )
 
 

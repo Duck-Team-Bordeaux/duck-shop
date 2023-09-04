@@ -23,7 +23,7 @@
     <%= text_field_tag :query,
         params[:query],
         class: "input-search",
-        placeholder: "Cherchez un produit..."
+        placeholder: "Rechercher un produit..."
       %>
     <%= button_tag "S", name: "", class: "search-bar-btn" do %>
     <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
@@ -99,4 +99,4 @@
 
 
 <%# Go to Shop Button %>
-<%= link_to 'Entrer le magasin', new_shop_cart_path(@shop.id), class: "shop-button" %>
+<%= link_to 'Entrer dans le magasin', new_shop_cart_path(@shop.id), class: "shop-button" %>

@@ -14,12 +14,12 @@ class CartsController < ApplicationController
 
   def create
     @user = User.last
-    # @user = current_user
-    @cart = Cart.new(user_id: @user.id, shop_id: params[:shop_id], progress: 0)
+    @cart = Cart.new(user_id: @user.id, shop_id: params[:shop_id])
     if @cart.save!
+      @cart.progress = 1
       redirect_to edit_shop_cart_path(id: @cart.id)
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
