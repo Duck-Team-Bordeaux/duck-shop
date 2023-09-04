@@ -20,5 +20,6 @@ class ShopsController < ApplicationController
     @distance = @shop.distance_to([@user.latitude, @user.longitude]).round(3)
     @walk_time = (@shop.distance_to([@user.latitude, @user.longitude]) * 10).round(0)
     @categories = Category.limit(4)
+    @all_categories = Category.all
   end
 end
