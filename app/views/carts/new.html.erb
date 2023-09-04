@@ -2,7 +2,7 @@
       data-controller= "qrcode">
   <h1 class="text-center">Scan</h1>
   <%= image_tag "qr-code.svg", class: "box", data: { qrcode_target: 'qrcode'} %>
-  <%= simple_form_for @cart, url: shop_carts_path(user_id: @user.id, shop_id: @shop.id, progress: 0), method: :post do |f| %>
+  <%= simple_form_for @cart, url: shop_carts_path(user_id: @user.id, shop_id: @shop.id), method: :post do |f| %>
     <%= f.button :submit, 'Start shopping', class: 'btn'%>
   <% end %>
 </div>
