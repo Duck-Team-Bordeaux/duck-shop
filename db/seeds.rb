@@ -66,7 +66,7 @@ shops.each do |shop|
   p 'creating snacks'
 
   Product.create!(
-    name: 'TANOSHI Cup nouilles japonaises instantanées saveur poulet teriyaki',
+    name: 'Cup nouilles japonaises instantanées TANOSHI ',
     description: 'La saveur “teriyaki”, qui accompagne ces nouilles, vient d’une technique culinaire utilisée au Japon qui consiste à faire griller une viande préalablement marinée dans une sauce soja sucrée au mirin.',
     unit: '65g',
     stock_quantity: (0..15).to_a.sample,

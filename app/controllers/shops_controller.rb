@@ -1,7 +1,7 @@
 # shops_controller
 class ShopsController < ApplicationController
   def index
-    @shops = Shop.all
+    @shops = Shop.limit(4)
     @user = User.last
     @markers = @shops.geocoded.map do |shop|
       @distance_km = shop.distance_to([@user.latitude, @user.longitude])

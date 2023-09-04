@@ -1,6 +1,6 @@
 <div class="product-show-container">
 <%= link_to :back, class:"btn-back-category" do %>
-  <%= @product.category %>
+   voir tout les <%= @product.category.name %>
  <% end %>
   <div class="box product-img-box">
     <img src="<%= @product.image_url %>" alt="">

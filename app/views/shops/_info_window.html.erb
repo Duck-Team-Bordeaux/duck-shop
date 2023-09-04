@@ -1,3 +1,9 @@
-<h4><%= shop.location %></h4>
-<p>Distance: <%= @distance_km.round(2) %> km</p>
-<p><%= @distance_min.round(0) %> minutes</p>
+<h3><%= shop.location %></h3>
+<div>
+  <p><%= @distance_km.round(2) %> km</p>
+  <div class="d-flex gap-1">
+    <i class="fa-solid fa-person-walking"></i>
+    <p><%= @distance_min.round(0) %> minutes</p>
+  </div>
+</div>
+<%= link_to 'Go to Shop', shop_path(shop.id), class: "button mt-2" %>

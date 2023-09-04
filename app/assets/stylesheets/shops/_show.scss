@@ -1,6 +1,6 @@
 .shop-show-container {
 
-  border-radius: 1em 1em 0 0;
+  border-radius: 1em;
   background-color: white;
 
   h3 {
@@ -36,5 +36,23 @@
     padding: 3px 8px;
     color: black;
     font-size: 15px;
+  }
+}
+
+.shop-button {
+  border: 0.5px solid $line-color;
+  padding: 1em 2em;
+  border-radius: 25px;
+  position: fixed;
+  bottom: 2em;
+  left: 50%;
+  margin-left: -60px;
+  color: white;
+  @include secondary-gradient-background();
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  h1{
+    margin: 0;
+    padding: 0;
   }
 }
