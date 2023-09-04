@@ -2,6 +2,7 @@
 @import "font-awesome";
 @import "bootstrap";
 
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -24,6 +25,7 @@
 
 // CSS carts
 @import "carts/new";
+@import "carts/edit";
 
 body {
   width: 100%;
