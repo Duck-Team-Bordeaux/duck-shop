@@ -1,4 +1,4 @@
-class ItemController < ApplicationController
+class ItemsController < ApplicationController
   def index
     # raise
   end
@@ -7,6 +7,7 @@ class ItemController < ApplicationController
   end
 
   def new
+    @item = Item.new
   end
 
   def create

@@ -1,13 +1,11 @@
 class CartsController < ApplicationController
   def index
-    # @user = User.last
-    @user = current_user
+    @user = User.last
     @carts = Cart.where(user_id: @user.id).reverse
   end
 
   def new
-    # @user = User.last
-    @user = current_user
+    @user = User.last
     @cart = Cart.new
     @shop = Shop.find(params[:shop_id])
   end
