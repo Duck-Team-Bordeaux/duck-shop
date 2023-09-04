@@ -6,421 +6,171 @@
   <title>Ma 500</title>
 </head>
 <style>
-  body {
-  background-color: #a1d6b3;
-  overflow: hidden;
+@import url("https://fonts.googleapis.com/css?family=VT323");
+:root {
+  --width: 280px;
+  --height: 180px;
+}
+
+body {
+  background: #FDCC27;
+}
+
+.error-500 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "VT323";
+  color: #4614CD;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.error-500:after {
+  content: attr(data-text);
+  display: block;
+  margin-top: calc(var(--height) / 10 + 15px);
+  font-size: 28pt;
   text-align: center;
 }
 
-body,
-html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+spaguetti {
+  width: var(--width);
+  height: var(--height);
+  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.2));
+  display: block;
+  margin: 0 auto;
+  position: relative;
 }
 
-svg {
+plate {
   width: 100%;
-  height: 100%;
-  visibility: hidden;
-  overflow: visible;
+  height: calc(var(--height) / 2.5);
+  background: #cad7e4;
+  position: absolute;
+  bottom: 0;
+  border-radius: 0 0 50px 50px;
+  z-index: 4;
 }
+
+plate:before {
+  content: "500 Spaghetti Error";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+plate:after {
+  content: "";
+  width: calc(var(--width) / 2);
+  height: calc(var(--height) / 10);
+  background: #b5c3d0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+pasta {
+  width: calc(var(--width) / 4);
+  height: calc(var(--width) / 4);
+  border: 5px solid #dea631;
+  background: #eed269;
+  border-radius: 50%;
+  position: absolute;
+  bottom: calc(calc(var(--height) / 2.5) / 3);
+  right: 10px;
+  box-shadow: calc(-1 * calc(var(--width) / 4) - 60px) 10px 1px 10px #eed269,
+    calc(-1 * calc(var(--width) / 4) - 60px) 10px 0 15px #dea631;
+  z-index: 2;
+}
+
+pasta:before {
+  content: "";
+  width: calc(var(--width) / 4);
+  height: calc(var(--width) / 4);
+  border: 5px solid #dea631;
+  background: #eed269;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -5px;
+  right: 60px;
+  box-shadow: calc(-1 * calc(var(--width) / 4) - 30px) 10px 1px 1px #eed269,
+    calc(-1 * calc(var(--width) / 4) - 30px) 10px 0 5px #dea631;
+}
+
+pasta:after {
+  content: "";
+  width: calc(var(--width) / 3);
+  height: calc(var(--width) / 4);
+  border: 5px solid #dea631;
+  background: #eed269;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -15px;
+  right: 100px;
+  box-shadow: calc(var(--width) / 4) 10px 1px 1px #eed269,
+    calc(var(--width) / 4) 10px 0 5px #dea631;
+}
+
+meat {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #b64c19;
+  position: absolute;
+  bottom: calc(var(--height) / 2.5);
+  right: 64px;
+  box-shadow: -150px -2px 0 0 #b64c19, -50px -7px 0 0 #b64c19,
+    -100px 8px 0 0 #b64c19;
+  z-index: 3;
+}
+
+fork {
+  width: 20px;
+  height: calc(var(--height) - 30px);
+  background: #d3d3d3;
+  border-right: 3px solid #b7b7b7;
+  border-radius: 50px 50px 0 0;
+  position: absolute;
+  bottom: 25%;
+  left: 75%;
+  transform: translate(-75%, 0%) rotate(25deg);
+}
+
 
 </style>
 <body>
-  <svg class="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
-    <defs>
-      <filter id="brightness">
-        <feComponentTransfer class="brightnessCompTran">
-          <feFuncR class="brightness" type="linear" slope="0" />
-          <feFuncG class="brightness" type="linear" slope="0" />
-          <feFuncB class="brightness" type="linear" slope="0" />
-        </feComponentTransfer>
-      </filter>
-
-      <filter id="duckColorize">
-        <feColorMatrix in="SourceGraphic" class="duckMatrix" type="matrix" values="1 0 0 0 0
-                0 1 0 0 0
-                0 0 1 0 0
-                0 0 0 1 0" />
-      </filter>
-
-      <g id="duck">
-        <path d="M394.85,187.8l-.69.12s-11.48,2-19.12,7.48c1.76,1.34,3.17,2.7,3.17,2.7a1.79,1.79,0,0,1,.6.87c1.87,1.26,0,1.6-.48,1.66h-.08c-.67,0-2.78,0-2.78,0l-.29,0a10.69,10.69,0,0,1-3.54-.32,6.77,6.77,0,0,1-.67-.31c-.08,3.12.48,13,10.74,14.8a26.68,26.68,0,0,0,5.16-.22c4.83-.64,11.77-2.81,14.92-9.71,0,0,4.83-9.78-3.21-16.52,0,0-1.08-1-3.72-.64" transform="translate(55.9 116.46)" fill="#FBD600" />
-        <path d="M376.44,200.53s2,2.19,5.84,1.12c0,0,9.08-2.1,6.69-13.38,0,0-2.63-8-12.06-4.3,0,0-4.72,2.19-6.11,10.18Z" transform="translate(55.9 116.46)" fill="#fdd912" />
-        <path d="M388,207s5.8,2.74,9.84-.81a3.19,3.19,0,0,0,1.54-2.88s1.58-2.55.14-4.62c0,0,.63-4-2.1-2,0,0-3.48,4.64-8.59,5.83C388.83,202.53,384.37,204.8,388,207Z" transform="translate(55.9 116.46)" fill="#ffc718" />
-        <g class="eyeGroup">
-          <ellipse cx="381.5" cy="194.01" rx="3.07" ry="3.03" transform="translate(33.59 168.61) rotate(-7.6)" fill="#fff" />
-          <ellipse cx="381.5" cy="194.01" rx="1.8" ry="1.8" transform="translate(33.59 168.61) rotate(-7.6)" fill="#00adee" />
-          <ellipse cx="381.5" cy="194.01" rx="1.2" ry="1.15" transform="matrix(0.99, -0.13, 0.13, 0.99, 33.59, 168.61)" />
-        </g>
-        <path d="M378.81,199a1.79,1.79,0,0,0-.6-.87s-1.42-1.36-3.17-2.7A16.36,16.36,0,0,0,371.1,193a3.9,3.9,0,0,1-2.29,1.26,3.16,3.16,0,0,1-.47,0,.52.52,0,0,0-.39.41c-.22.31.18,1.13.18,1.13a6.51,6.51,0,0,0,1,1.31h0a.73.73,0,0,0,0,.25v0a2.84,2.84,0,0,0,1.82,2.71,6.77,6.77,0,0,0,.67.31,10.69,10.69,0,0,0,3.54.32l.29,0s2.11-.06,2.78,0h.08C378.76,200.56,380.68,200.22,378.81,199Z" transform="translate(55.9 116.46)" fill="#f05a28" />
-      </g>
-    </defs>
-    <g class="allBoxes">
-      <g class="wholeBox1">
-        <polygon points="412.27 394.46 451.4 369.96 491.4 394.46 452.27 419.96 412.27 394.46" fill="none" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-        <polygon points="412.39 394.47 451.52 369.97 491.52 394.47 452.39 419.97 412.39 394.47" fill="#002e68" />
-        <polygon points="412.27 444.46 412.27 394.46 452.27 419.96 452.4 469.46 412.27 444.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-        <polygon points="491.4 442.86 452.4 469.46 452.27 419.96 491.4 394.46 491.4 442.86" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-        <polygon points="508.32 431.81 491.4 442.86 491.4 420.46 508.32 431.81" fill="#002e68" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-        <polygon class="lidR" points="431.27 406.46 470.4 381.96 491.4 394.46 452.27 419.96 431.27 406.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-        <polygon class="lidREnd" points="455.9 399.64 496.66 372.63 491.4 394.46 452.27 419.96 455.9 399.64" fill="none" stroke="none" stroke-linejoin="round" stroke-width="3" />
-        <polygon class="lidL" points="412.63 394.24 451.4 369.96 470.4 381.96 431.27 406.46 412.63 394.24" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-        <polygon class="lidLEnd" points="412.27 394.46 451.4 369.96 443.49 351.5 401.5 375.65 412.27 394.46" fill="none" stroke="none" stroke-linejoin="round" stroke-width="3" />
-
-      </g>
-
-      <g class="openBoxes">
-
-        <g class="wholeBox">
-          <polygon points="312.27 464.46 351.4 439.96 391.4 464.46 352.27 489.96 312.27 464.46" fill="none" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="312.39 464.47 351.52 439.97 391.52 464.47 352.39 489.97 312.39 464.47" fill="#002e68" />
-          <polygon points="312.27 514.46 312.27 464.46 352.27 489.96 352.4 539.46 312.27 514.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="391.4 512.86 352.4 539.46 352.27 489.96 391.4 464.46 391.4 512.86" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="408.32 501.81 391.4 512.86 391.4 490.46 408.32 501.81" fill="#002e68" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidREnd-2" data-name="lidREnd" points="355.9 469.64 396.66 442.63 391.4 464.46 352.27 489.96 355.9 469.64" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidLEnd-2" points="312.27 464.46 351.4 439.96 343.49 421.5 301.5 445.65 312.27 464.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-        </g>
-        <g class="wholeBox-2" data-name="wholeBox">
-          <polygon points="212.27 534.46 251.4 509.96 291.4 534.46 252.27 559.96 212.27 534.46" fill="none" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="212.4 534.47 251.52 509.97 291.52 534.47 252.4 559.97 212.4 534.47" fill="#002e68" />
-          <polygon points="212.27 584.46 212.27 534.46 252.27 559.96 252.4 609.46 212.27 584.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="291.4 582.86 252.4 609.46 252.27 559.96 291.4 534.46 291.4 582.86" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="308.32 571.81 291.4 582.86 291.4 560.46 308.32 571.81" fill="#002e68" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidREnd-3" data-name="lidREnd" points="255.9 539.64 296.66 512.63 291.4 534.46 252.27 559.96 255.9 539.64" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidLEnd-3" points="212.27 534.46 251.4 509.96 243.49 491.5 201.5 515.65 212.27 534.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-        </g>
-        <g class="wholeBox-3" data-name="wholeBox">
-          <polygon points="112.27 604.46 151.4 579.96 191.4 604.46 152.27 629.96 112.27 604.46" fill="none" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="112.39 604.47 151.52 579.97 191.52 604.47 152.4 629.97 112.39 604.47" fill="#002e68" />
-          <polygon points="112.27 654.46 112.27 604.46 152.27 629.96 152.4 679.46 112.27 654.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="191.4 652.86 152.4 679.46 152.27 629.96 191.4 604.46 191.4 652.86" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="208.32 641.81 191.4 652.86 191.4 630.46 208.32 641.81" fill="#002e68" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidREnd-4" data-name="lidREnd" points="155.9 609.64 196.66 582.63 191.4 604.46 152.27 629.96 155.9 609.64" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidLEnd-4" points="112.27 604.46 151.4 579.96 143.49 561.5 101.5 585.65 112.27 604.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-        </g>
-        <g class="wholeBox-4" data-name="wholeBox">
-          <polygon points="12.27 674.46 51.4 649.96 91.4 674.46 52.27 699.96 12.27 674.46" fill="none" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="12.39 674.47 51.52 649.97 91.52 674.47 52.4 699.97 12.39 674.47" fill="#002e68" />
-          <polygon points="12.27 724.46 12.27 674.46 52.27 699.96 52.4 749.46 12.27 724.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="91.4 722.86 52.4 749.46 52.27 699.96 91.4 674.46 91.4 722.86" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="108.32 711.81 91.4 722.86 91.4 700.46 108.32 711.81" fill="#002e68" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidREnd-5" data-name="lidREnd" points="55.9 679.64 96.66 652.63 91.4 674.46 52.27 699.96 55.9 679.64" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidLEnd-5" points="12.27 674.46 51.4 649.96 43.49 631.5 1.5 655.65 12.27 674.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-        </g>
-      </g>
-      <g class="closedBoxes">
-        <g class="wholeBox2">
-          <polygon points="512.27 324.46 551.4 299.96 591.4 324.46 552.27 349.96 512.27 324.46" fill="none" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="512.39 324.47 551.52 299.97 591.52 324.47 552.39 349.97 512.39 324.47" fill="#002e68" />
-          <polygon points="512.27 374.46 512.27 324.46 552.27 349.96 552.4 399.46 512.27 374.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="591.4 372.86 552.4 399.46 552.27 349.96 591.4 324.46 591.4 372.86" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="608.32 361.81 591.4 372.86 591.4 350.46 608.32 361.81" fill="#002e68" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidR-2" data-name="lidR" points="531.27 336.46 570.4 311.96 591.4 324.46 552.27 349.96 531.27 336.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-
-          <polygon class="lidL-2" data-name="lidL" points="512.63 324.24 551.4 299.96 570.4 311.96 531.27 336.46 512.63 324.24" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-
-        </g>
-        <g class="wholeBox3">
-          <polygon points="612.27 254.46 651.4 229.96 691.4 254.46 652.27 279.96 612.27 254.46" fill="none" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="612.39 254.47 651.52 229.97 691.52 254.47 652.39 279.97 612.39 254.47" fill="#002e68" />
-          <polygon points="612.27 304.46 612.27 254.46 652.27 279.96 652.4 329.46 612.27 304.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="691.4 302.86 652.4 329.46 652.27 279.96 691.4 254.46 691.4 302.86" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="708.32 291.81 691.4 302.86 691.4 280.46 708.32 291.81" fill="#002e68" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidR-3" data-name="lidR" points="631.27 266.46 670.4 241.96 691.4 254.46 652.27 279.96 631.27 266.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidL-3" data-name="lidL" points="612.63 254.24 651.4 229.96 670.4 241.96 631.27 266.46 612.63 254.24" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-
-        </g>
-        <g class="wholeBox4">
-          <polygon points="712.27 184.46 751.4 159.96 791.4 184.46 752.27 209.96 712.27 184.46" fill="none" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="712.39 184.47 751.52 159.97 791.52 184.47 752.39 209.97 712.39 184.47" fill="#002e68" />
-          <polygon points="712.27 234.46 712.27 184.46 752.27 209.96 752.4 259.46 712.27 234.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="791.4 232.86 752.4 259.46 752.27 209.96 791.4 184.46 791.4 232.86" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="808.32 221.81 791.4 232.86 791.4 210.46 808.32 221.81" fill="#002e68" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidR-4" data-name="lidR" points="731.27 196.46 770.4 171.96 791.4 184.46 752.27 209.96 731.27 196.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-
-          <polygon class="lidL-4" data-name="lidL" points="712.63 184.24 751.4 159.96 770.4 171.96 731.27 196.46 712.63 184.24" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-
-        </g>
-        <g class="wholeBox5">
-          <polygon points="812.27 114.46 851.4 89.96 891.4 114.46 852.27 139.96 812.27 114.46" fill="none" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="812.39 114.47 851.52 89.97 891.52 114.47 852.39 139.97 812.39 114.47" fill="#002e68" />
-          <polygon points="812.27 164.46 812.27 114.46 852.27 139.96 852.4 189.46 812.27 164.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="891.4 162.86 852.4 189.46 852.27 139.96 891.4 114.46 891.4 162.86" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="908.32 151.81 891.4 162.86 891.4 140.46 908.32 151.81" fill="#002e68" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidR-5" data-name="lidR" points="831.27 126.46 870.4 101.96 891.4 114.46 852.27 139.96 831.27 126.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-
-          <polygon class="lidL-5" data-name="lidL" points="812.63 114.23 851.4 89.96 870.4 101.96 831.27 126.46 812.63 114.23" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-
-        </g>
-        <g class="wholeBox6">
-          <polygon points="912.27 44.46 951.4 19.96 991.4 44.46 952.27 69.96 912.27 44.46" fill="none" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="912.39 44.47 951.52 19.97 991.52 44.47 952.39 69.97 912.39 44.47" fill="#002e68" />
-          <polygon points="912.27 94.46 912.27 44.46 952.27 69.96 952.4 119.46 912.27 94.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="991.4 92.86 952.4 119.46 952.27 69.96 991.4 44.46 991.4 92.86" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon points="1008.32 81.81 991.4 92.86 991.4 70.46 1008.32 81.81" fill="#002e68" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-          <polygon class="lidR-6" data-name="lidR" points="931.27 56.46 970.4 31.96 991.4 44.46 952.27 69.96 931.27 56.46" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-
-          <polygon class="lidL-6" data-name="lidL" points="912.63 44.23 951.4 19.96 970.4 31.96 931.27 56.46 912.63 44.23" fill="#ffce9b" stroke="#002e68" stroke-linejoin="round" stroke-width="3" />
-
-        </g>
-
-      </g>
-      <circle class="pointerHit" cx="471.5" cy="436" r="0" fill="none" stroke="#FFF" stroke-width="10" />
-      <mask id="duckMask">
-        <polygon points="330.9 342.88 330.9 194.46 579.9 194.46 579.9 318.11 477.06 385.58 491.71 394.57 452.44 420.12 330.9 342.88" fill="#fff" />
-        <polygon points="496.66 372.62 455.9 399.64 452.32 419.68 451.9 419.84 411.9 394.46 411.9 444.46 451.9 469.3 451.9 469.46 451.89 469.38 451.9 469.46 451.9 469.29 490.9 442.86 490.9 394.79 491.4 394.46 496.66 372.62" />
-      </mask>
-      <g mask="url(#duckMask)">
-        <use xlink:href="#duck" class="mainDuck" filter="url(#duckColorize)" />
-      </g>
-      <use xlink:href="#duck" x="-100" y="70" />
-      <use xlink:href="#duck" x="-200" y="140" />
-      <use xlink:href="#duck" x="-300" y="210" />
-      <use xlink:href="#duck" x="-400" y="280" />
-
-      <g id="speedLines" stroke="#FBD600">
-        <line x1="439.4" y1="332.46" x2="439.4" y2="387.46" fill="none" stroke-linejoin="round" stroke-width="2" />
-        <line x1="448.4" y1="313.46" x2="448.4" y2="374.46" fill="none" stroke-linejoin="round" stroke-width="2" />
-      </g>
-    </g>
-
-    <g class="cursors">
-      <polygon class="pointer" points="0 12.26 11.79 0 11.79 17.46 8.02 14.17 4.82 22.22 1.21 20.69 4.81 12.76 0 12.26" fill="#002e68" />
-      <path class="dragIcon" d="M10.59,0a.36.36,0,0,0-.18.08A27.66,27.66,0,0,0,6.87,4.14a.52.52,0,0,0,0,.49A.43.43,0,0,0,7.29,5H9.09V9.1H5V7.29a.46.46,0,0,0-.26-.41.68.68,0,0,0-.57,0A27.66,27.66,0,0,0,.08,10.42c0,.08-.08.25-.08.34a.51.51,0,0,0,.08.34,23.48,23.48,0,0,0,4.06,3.54.68.68,0,0,0,.57,0A.46.46,0,0,0,5,14.22V12.41H9.09v4.13H7.29a.46.46,0,0,0-.41.26.52.52,0,0,0,0,.49,27.66,27.66,0,0,0,3.54,4.06c.08.08.17.08.34.08s.25,0,.34-.08a23.48,23.48,0,0,0,3.54-4.06.51.51,0,0,0,0-.49.46.46,0,0,0-.41-.26H12.4V12.41h4.13v1.81a.46.46,0,0,0,.26.41.52.52,0,0,0,.49,0,27.66,27.66,0,0,0,4.06-3.54c.08-.08.08-.17.08-.34s0-.25-.08-.34a23.48,23.48,0,0,0-4.06-3.54.52.52,0,0,0-.49,0,.46.46,0,0,0-.26.41V9.1H12.4V5h1.81a.46.46,0,0,0,.41-.26.52.52,0,0,0,0-.49A27.66,27.66,0,0,0,11.08.16.62.62,0,0,0,10.75,0,.77.77,0,0,0,10.59,0Z" fill="#002e68" />
-    </g>
-  </svg>
+  <div class="error-500" data-text="Oh no! Our spaghetti code is not working properly. We will be back soon!">
+    <spaguetti>
+    <fork></fork>
+    <meat></meat>
+    <pasta></pasta>
+    <plate></plate>
+  </spaguetti>
+</div>
   <script>
-    var xmlns = "http://www.w3.org/2000/svg",
-  xlinkns = "http://www.w3.org/1999/xlink",
-  select = function (s) {
-    return document.querySelector(s);
-  },
-  selectAll = function (s) {
-    return document.querySelectorAll(s);
-  },
-  duckMatrix = select(".duckMatrix"),
-  darkDuckArray = getMatrixValue([0, 6, 34], [0, 6, 34]);
+    const error = document.querySelector(".error-500");
+let i = 0,
+  data = "",
+  text = error.getAttribute("data-text");
 
-  TweenMax.set("svg", {
-    visibility: "visible"
-  });
-
-  TweenMax.set(".pointerHit", {
-    skewY: -20,
-    svgOrigin: "471 436"
-  });
-
-  TweenMax.set("#speedLines line", {
-    drawSVG: "100% 100%"
-  });
-
-  var mainTl = new TimelineMax({
-    repeat: -1
-  });
-
-  var allBoxesTl = new TimelineMax();
-  allBoxesTl
-    .fromTo(
-      ".allBoxes",
-      1,
-      {
-        x: -55,
-        y: -110
-      },
-      {
-        x: "-=100",
-        y: "+=70",
-        ease: Power2.easeInOut
-      }
-    )
-    .to(
-      [".pointer", ".dragIcon"],
-      0.9,
-      {
-        x: 408,
-        y: 320,
-        ease: Power2.easeInOut
-      },
-      "-=1"
-    );
-
-  var boxTl = new TimelineMax();
-  boxTl
-    .set([".pointer", ".dragIcon"], {
-      x: 408,
-      y: 320
-    })
-    .set(".dragIcon", {
-      autoAlpha: 0
-    })
-    .to(".pointerHit", 1, {
-      attr: {
-        r: 40
-      },
-      strokeWidth: 0,
-      alpha: 0
-    })
-    .from(
-      ".mainDuck",
-      1.2,
-      {
-        y: 200,
-        rotation: -107,
-        transformOrigin: "50% 50%",
-        ease: Elastic.easeOut.config(0.7, 0.45)
-      },
-      "-=0.2"
-    )
-    .to(
-      darkDuckArray,
-      0.3,
-      {
-        endArray: getResetMatrixValue(),
-        onUpdate: function () {
-          duckMatrix.setAttribute("values", darkDuckArray);
-        },
-        ease: Circ.easeInOut
-      },
-      "-=1.2"
-    )
-    .to(
-      "#speedLines line",
-      0.1,
-      {
-        drawSVG: "40% 100%",
-        ease: Linear.easeNone
-      },
-      "-=1"
-    )
-    .to(
-      "#speedLines line",
-      0.23,
-      {
-        drawSVG: "0% 0%"
-      },
-      "-=0.9"
-    )
-
-    .to(
-      ".eyeGroup ellipse",
-      0.05,
-      {
-        attr: {
-          ry: "-=1.2"
-        },
-        ease: Linear.easeNone,
-        repeat: 3,
-        repeatDelay: 0.051,
-        yoyo: true
-      },
-      "-=0.5"
-    )
-    .to(
-      ".wholeBox1 .lidR",
-      1,
-      {
-        morphSVG: ".wholeBox1 .lidREnd",
-        ease: Elastic.easeOut.config(0.8, 0.75)
-      },
-      "-=1.8"
-    )
-
-    .to(
-      ".wholeBox1 .lidL",
-      1,
-      {
-        morphSVG: {
-          shape: ".wholeBox1 .lidLEnd",
-          shapeIndex: 5
-        },
-        ease: Elastic.easeOut.config(0.8, 0.75)
-      },
-      "-=1.78"
-    )
-
-    .to([".pointer", ".dragIcon"], 0.5, {
-      x: "+=100",
-      y: "-=70",
-      ease: Power1.easeInOut
-    })
-    .staggerTo(
-      [".pointer", ".dragIcon"],
-      0,
-      {
-        cycle: {
-          autoAlpha: [0, 1]
-        }
-      },
-      0,
-      "-=0.2"
-    );
-
-  //this cool function is taken from https://codepen.io/jmperez/details/LGqaxQ/ by https://codepen.io/jmperez/ - I've made my own versions below
-  /* function convertToDueTone(color1, color2) {
-    var matrix = document.querySelector('feColorMatrix');
-    var value = [];
-    value = value.concat(
-    [color1[0]/256 - color2[0]/256, 0, 0, 0, color2[0]/256]);
-    value = value.concat(
-    [color1[1]/256 - color2[1]/256, 0, 0, 0, color2[1]/256]);
-    value = value.concat(
-    [color1[2]/256 - color2[2]/256, 0, 0, 0, color2[2]/256]);
-    value = value.concat([0, 0, 0, 1, 0]);
-    //matrix.setAttribute('values', value.join(' '));
-    //console.log(matrix)
+let typing = setInterval(() => {
+  if (i == text.length) {
+    clearInterval(typing);
+  } else {
+    data += text[i];
+    document.querySelector(".error-500").setAttribute("data-text", data);
+    i++;
   }
-  */
-  function getResetMatrixValue() {
-    var matrix = document.querySelector("feColorMatrix");
-    var value = [];
-    value = value.concat([1, 0, 0, 0, 0]);
-    value = value.concat([0, 1, 0, 0, 0]);
-    value = value.concat([0, 0, 1, 0, 0]);
-    value = value.concat([0, 0, 0, 1, 0]);
-    return value;
-  }
+}, 100);
 
-  function getMatrixValue(color1, color2) {
-    var matrix = duckMatrix;
 
-    if (!color1) {
-      return duckMatrix.getAttribute("values");
-    }
-    var value = [];
-    value = value.concat([
-      color1[0] / 256 - color2[0] / 256,
-      0,
-      0,
-      0,
-      color2[0] / 256
-    ]);
-    value = value.concat([
-      color1[1] / 256 - color2[1] / 256,
-      0,
-      0,
-      0,
-      color2[1] / 256
-    ]);
-    value = value.concat([
-      color1[2] / 256 - color2[2] / 256,
-      0,
-      0,
-      0,
-      color2[2] / 256
-    ]);
-    value = value.concat([0, 0, 0, 1, 0]);
-    //matrix.setAttribute('values', value.join(' '));
-    return value; //.split(' ');
-  }
-  //ScrubGSAPTimeline(mainTl)
-  mainTl.add(boxTl, 0);
-  mainTl.add(allBoxesTl);
-  //TweenMax.globalTimeScale(0.5)
-
-</script>
+  </script>
 </body>
 </html>
