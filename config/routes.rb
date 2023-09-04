@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'item/index'
+  get 'item/show'
+  get 'item/create'
+  get 'item/new'
+  get 'item/delete'
+  get 'item/edit'
   devise_for :users
   root to: 'pages#home'
 
