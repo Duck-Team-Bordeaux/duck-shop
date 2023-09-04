@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :shop, optional: true
   belongs_to :category
+  has_many :items
 
   include PgSearch::Model
 

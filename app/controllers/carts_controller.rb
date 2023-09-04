@@ -21,11 +21,14 @@ class CartsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
+  end
 
+  def show
+    @cart = Cart.find(params[:id])
+    @items = @cart.items
   end
 
   def finish() end

@@ -1,12 +1,12 @@
 require "open-uri"
 
 p 'Cleaning DB'
+User.destroy_all
 Shop.destroy_all
 Product.destroy_all
-Cart.destroy_all
 Item.destroy_all
+Cart.destroy_all
 p 'Cart => cleaned'
-User.destroy_all
 p 'User => cleaned'
 p 'Shop => cleaned'
 p 'Product => cleaned'
@@ -75,7 +75,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 1.74,
     image_url: 'https://media.auchan.fr/A0220090227000612872PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id,
+    shop: shop,
     category: snack
   )
 
@@ -87,7 +87,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.99,
     image_url: 'https://media.auchan.fr/A0220100531000021019PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -98,7 +98,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.20,
     image_url: 'https://media.auchan.fr/A0220070126000042383PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -109,7 +109,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 4.12,
     image_url: 'https://media.auchan.fr/A0220140226000659593PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -120,7 +120,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.20,
     image_url: 'https://media.auchan.fr/A0220150911000863615PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -131,7 +131,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 2.99,
     image_url: 'https://media.auchan.fr/P02000000000100PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   p "Done!"
@@ -148,7 +148,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 2.85,
     image_url: 'https://media.auchan.fr/P02000000001E9VPRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -159,7 +159,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.20,
     image_url: 'https://media.auchan.fr/P020000000016CVPRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -170,7 +170,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.59,
     image_url: 'https://media.auchan.fr/P02000000000WD2PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -181,7 +181,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 1.54,
     image_url: 'https://media.auchan.fr/A0220150721000623554PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -192,7 +192,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 2.99,
     image_url: 'https://media.auchan.fr/A0219900101000063153PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
   p " Done!"
 
@@ -209,7 +209,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 1.99,
     image_url: 'https://media.auchan.fr/A0220150623000860369PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -220,7 +220,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 2.99,
     image_url: 'https://media.auchan.fr/A0219970916000039575PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -231,7 +231,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.99,
     image_url: 'https://media.auchan.fr/A0220020220000048644PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -242,7 +242,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 1.99,
     image_url: 'https://media.auchan.fr/A0220090326000342866PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -253,7 +253,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 2.49,
     image_url: 'https://media.auchan.fr/A0220211005000024521PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -271,7 +271,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 1.47,
     image_url: 'https://media.auchan.fr/S0100000004001RPRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -283,7 +283,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.20,
     image_url: 'https://media.auchan.fr/A0220121004000405652PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -295,7 +295,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 2.03,
     image_url: 'https://media.auchan.fr/A0220190321000539344PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -306,7 +306,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.74,
     image_url: 'https://media.auchan.fr/A0220140425000791333PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
   Product.create!(
@@ -318,7 +318,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 1.95,
     image_url: 'https://media.auchan.fr/A0219900101000055487PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -337,7 +337,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 7.81,
     image_url: 'https://media.auchan.fr/MEDIASTEP177050828_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -349,7 +349,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 4.75,
     image_url: 'https://media.auchan.fr/P02000000001MDMPRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -361,7 +361,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.20,
     image_url: 'https://media.auchan.fr/S010000000403NNPRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -373,7 +373,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 5.34,
     image_url: 'https://media.auchan.fr/P02000000001MMJPRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -385,7 +385,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.20,
     image_url: 'https://media.auchan.fr/A0220110520000566205PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -403,7 +403,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 4.39,
     image_url: 'https://media.auchan.fr/S010000000403W4PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -415,7 +415,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 2.68,
     image_url: 'https://media.auchan.fr/P02000000001L6GPRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -427,7 +427,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 1.48,
     image_url: 'https://media.auchan.fr/A0219980402000514726PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -439,7 +439,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 2.73,
     image_url: 'https://media.auchan.fr/A0220170804000453371PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -451,7 +451,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.28,
     image_url: 'https://media.auchan.fr/A0220110905000767775PRIMARY_1200x1200/B2CD/',
-    shop_id: shop.id
+    shop: shop
   )
 
 
@@ -476,26 +476,31 @@ p 'creating items...'
 
 Item.create!(
   cart: cart,
+  product: Product.order('RANDOM()').first,
   quantity: (0..3).to_a.sample
 )
 
 Item.create!(
   cart: cart,
+  product: Product.order('RANDOM()').first,
   quantity: (0..3).to_a.sample
 )
 
 Item.create!(
   cart: cart,
+  product: Product.order('RANDOM()').first,
   quantity: (0..3).to_a.sample
 )
 
 Item.create!(
   cart: cart,
+  product: Product.order('RANDOM()').first,
   quantity: (0..3).to_a.sample
 )
 
 Item.create!(
   cart: cart,
+  product: Product.order('RANDOM()').first,
   quantity: (0..3).to_a.sample
 )
 
