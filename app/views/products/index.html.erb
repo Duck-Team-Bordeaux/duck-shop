@@ -1,7 +1,7 @@
 <div class="product-index-container">
 
   <%# BACK LINK %>
-  <%= link_to '<< Back to Shop', shop_path(@shop.id) %>
+  <%= link_to '< Retour au DuckShop', shop_path(@shop.id), class: 'back-btn' %>
 
   <%# BANNER %>
     <div class="category-banner" style="background-image: url(<%= cl_image_path(@category.photo.key) %>)">

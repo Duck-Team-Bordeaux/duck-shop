@@ -6,8 +6,8 @@ class CartsController < ApplicationController
   end
 
   def new
-    # @user = User.last
-    @user = current_user
+    @user = User.last
+    # @user = current_user
     @cart = Cart.new
     @shop = Shop.find(params[:shop_id])
   end
