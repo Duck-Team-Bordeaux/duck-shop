@@ -458,14 +458,49 @@ shops.each do |shop|
   p "SHOP #{shop.id} finished seeding"
 end
 
-# -------------ITEM-------------------------------------------------------------
-p 'creating items...'
+# # -------------ITEM-------------------------------------------------------------
+# p 'creating items...'
 
 
-Item.create!(
-  product_id: shop.id,
-  quantity: (0..3).to_a.sample
-)
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
 
 p 'new items are created'
 
