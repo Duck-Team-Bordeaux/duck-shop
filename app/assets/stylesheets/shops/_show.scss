@@ -1,16 +1,12 @@
 .shop-show-container {
 
-  border-radius: 1em 1em 0 0;
+  border-radius: 1em;
   background-color: white;
 
   h3 {
     font-weight: lighter;
   }
 
-  p {
-    color: $line-color;
-    font-size: 16px;
-  }
 }
 
 .card-category {
@@ -19,9 +15,8 @@
   box-shadow: $btn-shadow;
   padding: 0;
   margin-bottom: 1em;
-  width: 45%;
-  height: 50%;
-  margin-top: 1em;
+  width: 48%;
+
 
   img {
     border-radius: 1em 1em 0 0;
@@ -37,5 +32,34 @@
     color: black;
     font-size: 15px;
     //font size
+  }
+}
+
+.shop-button {
+  border: 0.5px solid $line-color;
+  padding: .5em 1.5em;
+  border-radius: 25px;
+  position: fixed;
+  bottom: 1em;
+  left: 50%;
+  margin-left: -100px;
+  color: white;
+  @include secondary-gradient-background();
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  h1{
+    margin: 0;
+    padding: 0;
+  }
+}
+
+#see-all{
+  color: $line-color;
+  font-size: 16px;
+  border: none;
+  background-color: white;
+
+  &:hover{
+    text-decoration: underline;
   }
 }

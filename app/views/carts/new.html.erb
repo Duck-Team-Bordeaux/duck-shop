@@ -1,7 +1,7 @@
 <div class='new-cart-container'>
   <h1>Scan</h1>
   <%= image_tag "qr-code.svg" %>
-  <%= simple_form_for @cart, url: shop_carts_path(user_id: current_user.id, shop_id: @shop.id, progress: 0), method: :post do |f| %>
+  <%= simple_form_for @cart, url: shop_carts_path(user_id: @user.id, shop_id: @shop.id, progress: 0), method: :post do |f| %>
     <%= f.button :submit, 'Start shopping', class: 'btn'%>
   <% end %>
 </div>

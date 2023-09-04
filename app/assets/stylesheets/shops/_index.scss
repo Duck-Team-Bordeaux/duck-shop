@@ -6,8 +6,16 @@ h3{
 }
 
 .card-shop {
-  @include secondary-gradient-background;
+  background-color: white;
   @include box;
+
+  h3, p, i{
+    color: black;
+  }
+}
+
+.active {
+  @include secondary-gradient-background;
 
   h3, p, i{
     color: white;

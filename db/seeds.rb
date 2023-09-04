@@ -66,7 +66,7 @@ shops.each do |shop|
   p 'creating snacks'
 
   Product.create!(
-    name: 'TANOSHI Cup nouilles japonaises instantanées saveur poulet teriyaki',
+    name: 'Cup nouilles japonaises instantanées TANOSHI ',
     description: 'La saveur “teriyaki”, qui accompagne ces nouilles, vient d’une technique culinaire utilisée au Japon qui consiste à faire griller une viande préalablement marinée dans une sauce soja sucrée au mirin.',
     unit: '65g',
     stock_quantity: (0..15).to_a.sample,
@@ -457,5 +457,61 @@ shops.each do |shop|
   # --------- fin du Shop.each do |shop|
   p "SHOP #{shop.id} finished seeding"
 end
+
+# # -------------ITEM-------------------------------------------------------------
+# p 'creating items...'
+
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+# Item.create!(
+#   product_id: shop.id,
+#   quantity: (0..3).to_a.sample
+# )
+
+p 'new items are created'
+
+
+# -------------CART-------------------------------------------------------------
+p 'creating carts...'
+
+
+
+p 'new cartss are created'
+
+
 # ------------------------ END OF SEED------------------------------------------
 p 'seed success'

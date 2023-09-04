@@ -1,21 +1,36 @@
-
 <div class="product-index-container">
 
-  <div class="category-banner">
-    <h1><%= params["category"] %></h1>
-  </div>
+  <%# BACK LINK %>
+  <%= link_to '<< Back to Shop', shop_path(@shop.id) %>
 
-  <% @shop.products.each do |product| %>
+  <%# BANNER %>
+    <div class="category-banner" style="background-image: url(<%= cl_image_path(@category.photo.key) %>)">
+      <h1><%= @category.name %></h1>
+    </div>
+
+  <%# Search Bar %>
+    <%= form_with url: shop_products_path(@shop, category: @category), method: :get, class: "search-bar-box" do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "input-search",
+          placeholder: "Cherchez un produit..."
+        %>
+      <%= button_tag "S", name: "", class: "search-bar-btn" do %>
+      <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+      <% end %>
+    <% end %>
+
+  <%# PRODUCT LIST PER CATEGORY %>
+  <% @products.each do |product| %>
     <%= link_to shop_product_path(@shop, product, params["category"]) do%>
 
       <div class="product-card-box box">
-
 
         <div class="img-box">
           <%= image_tag(product.image_url) %>
         </div>
 
-        <div>
+        <div class="info-box">
           <h5 class="name"><%= product.name %></h5>
 
           <% if product.stock_quantity > 0 %>
@@ -28,5 +43,34 @@
         <h5 class="price"><%= product.price %>€</h5>
       </div>
     <% end %>
+  <% end %>
+
+  <%# searched items cards %>
+  <% if params[:query].present? %>
+    <div class="product-index-container">
+    <h3 class="my-2">Produits</h3>
+
+    <% search_results = @products.global_search(params[:query]) %>
+    <% if search_results.empty? %>
+      <p>No products found for "<%= params[:query] %>".</p>
+    <% else %>
+      <% search_results.each do |product| %>
+        <div class="product-card-box box">
+          <div class="img-box">
+            <%= image_tag(product.image_url) %>
+          </div>
+          <div class="info-box">
+            <h5 class="name"><%= product.name %></h5>
+            <% if product.stock_quantity > 0 %>
+              <h5 class="disponibility"><i class="fa-solid fa-circle-check in-stock" style="color: green;"></i><%= product.stock_quantity %> en stock</h5>
+            <% else %>
+              <h5 class="disponibility"><i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i><%= product.stock_quantity %> pas en stock</h5>
+            <% end %>
+            <h5 class="price"><%= product.price %>€</h5>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
   <% end %>
 </div>
