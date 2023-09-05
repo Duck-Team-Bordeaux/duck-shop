@@ -1,0 +1,20 @@
+.container-index-profil {
+  height: 70vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+
+  .btn-profil {
+    height: 50px;
+    width: 300px;
+    padding: 5px;
+    background-color: $primary-color;
+    border-radius: $border-radius-l;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
