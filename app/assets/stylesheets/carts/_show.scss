@@ -7,6 +7,7 @@
 .show-item {
   background-color: white;
   font-family: 'Fira Code', sans-serif;
+  padding-top: 12px;
 }
 
 .item-box {
@@ -14,37 +15,56 @@
   justify-content: space-between;
 }
 
+.flex-item{
+  display: flex;
+
+}
+
+.quantity{
+  margin-left: 9px;
+  margin-top: 2px;
+}
+
 .name{
-  margin-left: 4%;
-  margin-top: 1em;
+  margin-left: 9px;
+  margin-top: 2px;
+  margin-bottom: 4px;
 }
 
 .price{
-  margin-top: 1em;
-  margin-right: 6%;
+  margin-top: 2px;
+  margin-right: 5%;
   margin-left: 14%;
 }
 
 #bar {
   display: flex;
   justify-content: end;
+  margin-top: 1em;
 }
 
 .total{
   display: flex;
   justify-content: end;
+  margin-top: 12px;
 }
-
+#h5{
+  margin-top: 5px;
+  font-size: x-large;
+  font-family: 'Fira Code', sans-serif;
+}
 .total-price{
   margin-left: 56px;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   margin-right: 6%;
+  font-weight: 700;
+  font-size: x-large;
 }
 
 .button{
   width: 67%;
   height: 60px;
-  margin-top: 30px;
+  margin-top: 17px;
   margin-bottom: 30px;
   background-color: $secondary-color;
   border-radius: 2em;

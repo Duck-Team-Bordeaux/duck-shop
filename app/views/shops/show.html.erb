@@ -99,4 +99,8 @@
 
 
 <%# Go to Shop Button %>
-<%= link_to 'Entrer dans le magasin', new_shop_cart_path(@shop.id), class: "shop-button" %>
+<% if current_user != nil %>
+  <%= link_to 'Entrer dans le magasin', new_shop_cart_path(@shop.id), class: "shop-button" %>
+<% else %>
+  <%= link_to 'Connectez-vous !', new_user_session_path, class: "shop-button" %>
+<% end %>

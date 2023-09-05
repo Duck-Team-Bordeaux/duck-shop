@@ -1,8 +1,8 @@
 require "open-uri"
 
 p 'Cleaning DB'
-User.destroy_all
 Shop.destroy_all
+User.destroy_all
 Product.destroy_all
 Item.destroy_all
 Cart.destroy_all
@@ -476,31 +476,31 @@ p 'creating items...'
 
 Item.create!(
   cart: cart,
-  quantity: (0..3).to_a.sample,
+  quantity: (1..3).to_a.sample,
   product_id: (0..31).to_a.sample
 )
 
 Item.create!(
   cart: cart,
-  quantity: (0..3).to_a.sample,
+  quantity: (1..3).to_a.sample,
   product_id: (0..31).to_a.sample
 )
 
 Item.create!(
   cart: cart,
-  quantity: (0..3).to_a.sample,
+  quantity: (1..3).to_a.sample,
   product_id: (0..31).to_a.sample
 )
 
 Item.create!(
   cart: cart,
-  quantity: (0..3).to_a.sample,
+  quantity: (1..3).to_a.sample,
   product_id: (0..31).to_a.sample
 )
 
 Item.create!(
   cart: cart,
-  quantity: (0..3).to_a.sample,
+  quantity: (1..3).to_a.sample,
   product_id: (0..31).to_a.sample
 )
 
