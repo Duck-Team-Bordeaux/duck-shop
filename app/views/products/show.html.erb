@@ -1,9 +1,9 @@
 <%# BACK LINK %>
-<%= link_to '<< Back to Products', :back %>
+<%= link_to '< retour aux produits ', :back, class: 'back-btn' %>
 
 <div class="product-show-container">
 <%= link_to shop_path(@shop), class:"btn-back-category" do %>
-   Back to Shop
+   Accéder au DuckShop
  <% end %>
   <div class="box product-img-box">
     <img src="<%= @product.image_url %>" alt="">
