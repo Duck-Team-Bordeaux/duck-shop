@@ -469,6 +469,17 @@ cart = Cart.create!(
   shop: Shop.first,
   user: User.first
 )
+
+cart = Cart.create!(
+  shop: Shop.second,
+  user: User.first
+)
+
+cart = Cart.create!(
+  shop: Shop.last,
+  user: User.first
+)
+
 p 'new carts are created'
 # -------------ITEM-------------------------------------------------------------
 p 'creating items...'
