@@ -1,22 +1,20 @@
 .shop-show-container {
 
-  border-radius: 1em;
-  background-color: white;
+  @include box;
 
   h3 {
     font-weight: lighter;
   }
-
+  padding: 1em;
 }
 
 .card-category {
-    @include box;
-    border-radius: $border-radius;
-    box-shadow: $btn-shadow;
-    padding: 0;
-    margin-bottom: 1em;
-    width: 48%;
 
+  border-radius: $border-radius;
+  box-shadow: $btn-shadow;
+  margin-bottom: 1em;
+  width: 47%;
+  padding: 0;
 
     img {
       border-radius: 1em 1em 0 0;
@@ -34,6 +32,7 @@
       //font size
     }
   }
+
 
   .button-box{
   display: flex;
@@ -72,3 +71,4 @@
       text-decoration: underline;
     }
   }
+
