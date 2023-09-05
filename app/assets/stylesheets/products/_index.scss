@@ -32,7 +32,6 @@
       display: block;
       width: 100%;
       height: 80px;
-      // background-color: red;
       background: rgb(244,239,255);
       background: linear-gradient(0deg, rgba(244,239,255,1) 0%, rgba(244,239,255,0) 100%);
       position: absolute;
@@ -57,7 +56,6 @@
       background-color: $primary-color;
       box-shadow: -6px -6px 15px -3px rgba(0,0,0,0.1);
       color: white;
-
     }
 
     .img-box{
@@ -79,7 +77,6 @@
         background-color: $line-color;
         position: absolute;
         right: -0.5em;
-
       }
     }
 
@@ -90,10 +87,11 @@
         font-weight: 700;
         color: $secondary-color;
       }
-      .name{
+      .product-index-name-card-product{
         margin: 0;
         font-size: 1em;
-        margin-bottom: 8px;
+        margin: 0;
+        padding: 0;
       }
       .h5{
         margin-bottom: 8px;
