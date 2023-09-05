@@ -1,52 +1,60 @@
-<%# MAP %>
-<div style="width: 100%; height: 60vh; border-radius: 5px;"
+<%# ------- MAP ------- %>
+<div style="width: 100%; height: 50vh; border-radius: 5px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
 </div>
 
-<%# SHOPS CARDS %>
-<div class="shops-container mt-2">
-  <%# FAKE ACTIVE SHOP %>
-  <div class="card-shop active mb-2">
-    <% distance_km = Shop.first.distance_to([@user.latitude, @user.longitude]) %>
-    <% distance_min = distance_km*10 %>
-    <%= link_to shop_path(Shop.first.id) do%>
-      <div class="d-flex gap-2">
-        <i class="fa-solid fa-location-dot"></i>
-        <p><%= Shop.first.location %></p>
-      </div>
+<%# ------- SHOPS CARDS ------- %>
+<div class="shops-container">
+
+  <%# ------- FAKE ACTIVE SHOP ------- %>
+      <div class="shop-index-nom-magasin"> <%= image_tag 'pin-map.png', class: "duck-pin-card-shop-index" %>  <span> <%= Shop.first.location %></span> </div>
       <div class="d-flex justify-content-between align-items-end">
         <div>
-          <p><%= distance_km.round(3) %> km</p>
+          <p class="shop-index-distance-magasin"> <i class="fa-solid fa-location-pin"></i> <span><%= distance_km.round(3) %> km</span> </p>
         </div>
+
         <div class="d-flex gap-2">
           <i class="fa-solid fa-person-walking"></i>
           <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
         </div>
+
       </div>
+
     <% end %>
+
   </div>
-  <%# CORRECT SHOP ITERATIONS %>
+
+
+  <%# ------- CORRECT SHOP ITERATIONS ------- %>
   <% @shops.each do |shop| %>
+
     <div class="card-shop mb-2">
+
       <% distance_km = shop.distance_to([@user.latitude, @user.longitude]) %>
       <% distance_min = distance_km * 10 %>
+
+
       <%= link_to shop_path(shop.id) do%>
-        <div class="d-flex gap-2">
-          <i class="fa-solid fa-location-dot"></i>
-          <p><%= shop.location %></p>
-      </div>
+
+
+        <div class="shop-index-nom-magasin"> <%= image_tag 'pin-map.png', class: "duck-pin-card-shop-index" %>  <span> <%= shop.location %></span> </div>
+
       <div class="d-flex justify-content-between align-items-end">
         <div>
-          <p><%= distance_km.round(3) %> km</p>
+          <p class="shop-index-distance-magasin"> <i class="fa-solid fa-location-pin"></i> <span><%= distance_km.round(3) %> km</span> </p>
         </div>
         <div class="d-flex gap-2">
-          <i class="fa-solid fa-person-walking"></i>
+          <i class="fa-solid fa-person-walking bonome-qui-marche-shop-index"></i>
           <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
         </div>
       </div>
       <% end %>
     </div>
+
+
+
   <% end %>
 </div>
