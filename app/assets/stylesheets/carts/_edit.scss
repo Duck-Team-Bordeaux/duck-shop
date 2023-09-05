@@ -5,3 +5,15 @@ video {
 .main-container {
   padding: 0em;
 }
+
+.cart-item-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.cart-item {
+  @include box;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
