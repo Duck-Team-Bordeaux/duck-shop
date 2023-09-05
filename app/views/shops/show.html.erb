@@ -1,26 +1,27 @@
-<%# ---------- DuckShop Details ---------- %>
-
+<%#  ---------- BACK LINK  ----------  %>
 <div class="d-flex gap-2">
-
-<%# BACK LINK %>
   <%= link_to '< Retour à la carte', shops_path, class: 'back-btn' %>
+</div>
 
-<%# DuckShop Details %>
 <div class="d-flex gap-2 mt-2">
   <i class="fa-solid fa-location-dot"></i>
   <p><%= @shop.location %></p>
 </div>
-<% distance_km = @shop.distance_to([@user.latitude, @user.longitude]) %>
-<% distance_min = distance_km * 10 %>
-<div class="d-flex justify-content-between align-items-end">
-  <div>
-    <p><%= distance_km.round(3) %> km</p>
+
+    <% distance_km = @shop.distance_to([@user.latitude, @user.longitude]) %>
+    <% distance_min = distance_km * 10 %>
+
+
+  <div class="d-flex justify-content-between align-items-end">
+    <div>
+      <p><%= distance_km.round(3) %> km</p>
+    </div>
+    <div class="d-flex gap-2">
+      <i class="fa-solid fa-person-walking"></i>
+      <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
+    </div>
   </div>
-  <div class="d-flex gap-2">
-    <i class="fa-solid fa-person-walking"></i>
-    <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
-  </div>
-</div>
+
 
 
 <%#  ---------- Search Bar ----------  %>
@@ -119,4 +120,3 @@
     <%= link_to 'Connectez-vous !', new_user_session_path, class: "shop-button" %>
   <% end %>
 </div>
-
