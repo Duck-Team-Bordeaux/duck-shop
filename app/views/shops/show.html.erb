@@ -4,9 +4,12 @@
 </div>
 
 <div class="d-flex gap-2 mt-2">
-  <i class="fa-solid fa-location-dot"></i>
-  <p><%= @shop.location %></p>
+
+  <div class="shop-show-location-magasin-tittle-box"> <%= image_tag 'pin-map.png' %> <span><%= @shop.location %></span> </div>
+
+
 </div>
+
 
     <% distance_km = @shop.distance_to([@user.latitude, @user.longitude]) %>
     <% distance_min = distance_km * 10 %>
@@ -14,10 +17,10 @@
 
   <div class="d-flex justify-content-between align-items-end">
     <div>
-      <p><%= distance_km.round(3) %> km</p>
+      <div class="shop-show-distances-box"> <i class="fa-solid fa-location-pin"></i> </i> <%= distance_km.round(3) %> km</div>
     </div>
     <div class="d-flex gap-2">
-      <i class="fa-solid fa-person-walking"></i>
+      <i class="fa-solid fa-person-walking icon-shop-show-man"></i>
       <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
     </div>
   </div>
@@ -26,8 +29,8 @@
 
 <%#  ---------- Search Bar ----------  %>
 
-<div class="shop-show-container my-2">
-  <h3 class="mb-1">Voir disponibilité</h3>
+<div class="shop-show-container my-2 shop-show-search-box">
+  <h3 class="mb-1 shop-show-box-title">Voir disponibilité</h3>
 
   <%= form_with url: shop_path(@shop), method: :get, class: "search-bar-box" do %>
     <%= text_field_tag :query,
@@ -43,10 +46,10 @@
 
 
 <%# ---------- categories cards container ---------- %>
-<%# categories cards container%>
+
 <div class="shop-show-container" data-controller="see-all">
   <div class="d-flex justify-content-between align-items-end mb-1">
-    <h3>Rayon</h3>
+    <h3 class="shop-show-box-title">Rayon</h3>
     <button id="see-all" data-action="click->see-all#seeAll">tout voir</button>
   </div>
   <%#  ---------- 6 category cards ----------  %>
@@ -69,7 +72,7 @@
         <div class="card-category col-6">
         <%= link_to shop_category_products_path(@shop, category) do %>
           <%= cl_image_tag category.photo.key %>
-          <p><%= category.name %></p>
+          <p class="category-name-shop-show"><%= category.name %></p>
         <% end %>
         </div>
     <% end %>
