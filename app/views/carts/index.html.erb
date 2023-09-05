@@ -4,8 +4,12 @@ quand clic de nouveau bill %>
 <% @carts.each do |cart| %>
   <div class="card-shop active mb-2">
     <%= link_to cart_path(cart) do%>
+      <div class="cart-shop">
+          <%= image_tag 'pin-map.png', class: "duck-pin-card-shop-index" %>
+          <div class="location-carts"><%= cart.shop.location %></div>
+      </div>
 
-      <div class="location"><%= cart.shop.location %></div>
+      <p>terminé</p>
     <% end %>
   </div>
 <% end %>
