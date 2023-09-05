@@ -476,31 +476,31 @@ p 'creating items...'
 
 Item.create!(
   cart: cart,
-  quantity: (0..3).to_a.sample,
+  quantity: (1..3).to_a.sample,
   product_id: (0..31).to_a.sample
 )
 
 Item.create!(
   cart: cart,
-  quantity: (0..3).to_a.sample,
+  quantity: (1..3).to_a.sample,
   product_id: (0..31).to_a.sample
 )
 
 Item.create!(
   cart: cart,
-  quantity: (0..3).to_a.sample,
+  quantity: (1..3).to_a.sample,
   product_id: (0..31).to_a.sample
 )
 
 Item.create!(
   cart: cart,
-  quantity: (0..3).to_a.sample,
+  quantity: (1..3).to_a.sample,
   product_id: (0..31).to_a.sample
 )
 
 Item.create!(
   cart: cart,
-  quantity: (0..3).to_a.sample,
+  quantity: (1..3).to_a.sample,
   product_id: (0..31).to_a.sample
 )
 
