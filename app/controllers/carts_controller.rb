@@ -7,17 +7,19 @@ class CartsController < ApplicationController
 
   def new
     @user = User.last
-    # @user = current_user
     @cart = Cart.new
     @shop = Shop.find(params[:shop_id])
   end
 
   def create
     @user = User.last
-    @cart = Cart.new(user_id: @user.id, shop_id: params[:shop_id])
+    @shop = Shop.find(params[:shop_id])
+    @cart = Cart.new
+    @cart.user = @user
+    @cart.shop = @shop
     if @cart.save!
-      @cart.progress = 1
-      redirect_to edit_shop_cart_path(id: @cart.id)
+      @cart.update(progress: 1)
+      redirect_to edit_shop_cart_path(@shop, @cart)
     else
       render :new
     end
@@ -25,11 +27,11 @@ class CartsController < ApplicationController
 
   def edit
     @user = User.last
-    # @user = current_user
-    # @cart = Cart.new
-    @cart = Cart.last
+    @cart = Cart.find(params[:id])
     @shop = Shop.find(params[:shop_id])
-    @items = Item.where(cart: @user.cart_ids)
+    @item = Item.new
+    @items = Item.where(cart: @cart)
+    @total_price = @items.sum { |item| item.product[:price] }
   end
 
   def update

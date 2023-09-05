@@ -1,8 +1,8 @@
 require "open-uri"
 
 p 'Cleaning DB'
-User.destroy_all
 Shop.destroy_all
+User.destroy_all
 Product.destroy_all
 Item.destroy_all
 Cart.destroy_all
