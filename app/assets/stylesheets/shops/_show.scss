@@ -2,9 +2,7 @@
 
   @include box;
 
-  h3 {
-    font-weight: lighter;
-  }
+
   padding: 1em;
 }
 
@@ -63,7 +61,7 @@
 
   #see-all{
     color: $line-color;
-    font-size: 16px;
+    font-size: 0.8em;
     border: none;
     background-color: white;
 
@@ -72,3 +70,47 @@
     }
   }
 
+  .category-name-shop-show{
+    font-size: 1em;
+  }
+
+
+.shop-show-distances-box{
+
+  i{
+    color: $primary-color;
+    margin-left: 6px;
+  }
+}
+
+.shop-show-location-magasin-tittle-box{
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;
+
+  img{
+    width: 40px;
+    border: 6px solid white;
+    border-radius: 50%;
+  }
+
+  span{
+    font-weight: 700;
+    font-size: 1.3em;
+
+  }
+
+}
+
+.icon-shop-show-man{
+  color: $primary-color;
+}
+
+.shop-show-box-title{
+font-weight: 500;
+color: $line-color;
+font-size: 1em;
+margin-top: 0;
+margin-bottom: 6px;
+}
