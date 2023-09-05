@@ -3,7 +3,7 @@
     <h1>DuckShop</h1>
   <% end %>
   <% if current_user != nil %>
-    <%= link_to profils_path, :class => 'user-box' do %>
+    <%= link_to profil_path(current_user), :class => 'user-box' do %>
       <p class="username"><%= current_user.email[0..3] %></p>
       <%= image_tag "profile-pic.png", class: 'avatar' %>
     <% end %>
@@ -11,13 +11,3 @@
     <%= link_to 'Se connecter', new_user_session_path, :class=>"username" %>
   <% end %>
 </nav>
-
-
-<%# --------- CODE NATHEO --------------- %>
-
-<%# <%= link_to root_path, class: 'nav-profil' do %>
-<%# <%= image_tag "logo-home.svg", class: 'img' %>
-<%# <p class='pseudo-name'><%= current_user.email[0..3] %>
-<%# <% end %>
-<%# <%= link_to 'DuckShop', shops_path, :class => 'root-link' %>
-<%# <p>54<%= image_tag "duckcoin.svg", class: 'img'</p>   %>

@@ -1,0 +1,100 @@
+.display-coin {
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 10px;
+  padding-inline: 20px;
+  border-radius: $border-radius-l;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profil-btns {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .btn-profil {
+    width: 170px;
+    font-size: smaller;
+    border: none;
+    background-color: $primary-color;
+    padding: 10px;
+    padding-inline: 20px;
+    border-radius: $border-radius-l;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.display-profil {
+  background-color: white;
+  padding: 10px;
+  border-radius: $border-radius-l;
+
+  .container-img-profil {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .img-profil {
+      width: 150px;
+      border-radius: 50%;
+      border: 2px solid $primary-color;
+    }
+
+    div {
+      padding-inline: 20px;
+      border-left: 1px solid grey;
+
+      h2 {
+        font-size: x-large;
+      }
+    }
+  }
+
+  .display-info-user {
+    height: 300px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 5px;
+
+    h3 {
+      font-size: large;
+      color: rgb(199, 199, 199);
+      font-weight: 700;
+    }
+
+    p {
+      font-size: larger;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+  }
+
+  .profil-btns {
+    margin-inline: 10px;
+
+    .log-out {
+      color: $primary-color;
+      background-color: white;
+      border: 2px solid $primary-color;
+    }
+
+    .small {
+      width: 150px;
+    }
+  }
+}
