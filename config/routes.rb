@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :carts, only: %i[index show] do
     resources :items, only: %i[create edit update destroy]
   end
+  resources :profils, only: %i[index show]
 end

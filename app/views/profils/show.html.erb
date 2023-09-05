@@ -1,0 +1,17 @@
+<h1>Contact</h1>
+<h3>Mobile</h3>
+<p>/rajouter un numero de tel/</p>
+<h3>Email</h3>
+<p><%= current_user.email %></p>
+<h1>Identité</h1>
+<h3>Prénom</h3>
+<p>/rajouter un prénom/</p>
+<h3>Nom</h3>
+<p>/rajouter un nom/</p>
+<h1>Adresse</h1>
+<h3>Code postal</h3>
+<p><%= current_user.address.split(",")[1].split(" ")[0] %></p>
+<h3>Ville</h3>
+<p><%= current_user.address.split(",")[1].split(" ")[1] %></p>
+<%= link_to 'Edit', edit_user_registration_path, class: "btn" %>
+<%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'btn' %>
