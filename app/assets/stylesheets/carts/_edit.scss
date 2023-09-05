@@ -54,3 +54,34 @@ video {
     margin-left: 0.3em;
   }
 }
+
+.bottom {
+  background-color: white;
+  border-radius: 1em 1em 0 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0em 1em;
+
+  .pay-button {
+    padding: 1em 2em;
+    border: 0.5px solid $line-color;
+    border-radius: 25px;
+    @include secondary-gradient-background();
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: white;
+
+    a{
+      font-size: 1em;
+      font-weight: bold;
+    }
+  }
+
+  p {
+    font-size: 1em;
+    font-weight: bold;
+  }
+}

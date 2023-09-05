@@ -42,4 +42,7 @@
 <%= f.submit 'Add Item'%>
 <% end %>
 
-<%= @total_price %>
+<div class="bottom">
+<p>Totale:<%= @total_price %> €</p>
+<%= link_to "Payer", cart_path(@cart), class: "pay-button"%>
+</div>
