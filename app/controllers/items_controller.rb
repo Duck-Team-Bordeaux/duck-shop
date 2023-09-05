@@ -16,7 +16,11 @@ class ItemsController < ApplicationController
     @item = Item.new(quantity: 1)
     @item.cart = @cart
     @item.product = @product
-    @item.save!
+    if @item.save!
+      redirect_to edit_shop_cart_path(@shop, @cart)
+    else
+      render 'carts/edit'
+    end
   end
 
   def edit

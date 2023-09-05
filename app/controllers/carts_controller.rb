@@ -1,8 +1,7 @@
 class CartsController < ApplicationController
   def index
-    @user = User.last
-    # @user = current_user
-    @carts = Cart.where(user_id: @user.id).order(created_at: :asc)
+    @user = current_user
+    @carts = Cart.where(user: @user).reverse
   end
 
   def new
