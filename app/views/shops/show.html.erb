@@ -1,4 +1,4 @@
-<%# DuckShop Details %>
+<%# ---------- DuckShop Details ---------- %>
 <h3> DuckShop </h3>
 <div class="d-flex gap-2">
   <i class="fa-solid fa-location-dot"></i>
@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<%# Search Bar %>
+<%#  ---------- Search Bar ----------  %>
 <div class="shop-show-container my-2 p-3">
   <h3 class="my-2">Voir disponibilité</h3>
   <%= form_with url: shop_path(@shop), method: :get, class: "search-bar-box" do %>
@@ -31,13 +31,13 @@
   <% end %>
 </div>
 
-<%# categories cards container%>
+<%# ---------- categories cards container ---------- %>
 <div class="shop-show-container p-2" data-controller="see-all">
   <div class="d-flex justify-content-between my-2 align-items-end">
     <h3>Rayon</h3>
     <button id="see-all" data-action="click->see-all#seeAll">tout voir</button>
   </div>
-  <%# 4 category cards %>
+  <%#  ---------- 4 category cards ----------  %>
   <div class="category-container mb-1 row justify-content-around px-1"
           data-see-all-target="cards">
     <% @categories.each do |category| %>
@@ -49,7 +49,8 @@
       </div>
     <% end %>
   </div>
-  <%# All category cards %>
+
+  <%# ---------- All category cards ----------  %>
   <div class="category-container mb-1 row justify-content-around px-1 d-none"
           data-see-all-target="newCards">
     <% @all_categories.each do |category| %>
@@ -63,7 +64,7 @@
   </div>
 </div>
 
-<%# searched items cards %>
+<%#  ---------- searched items cards ----------  %>
 <% if params[:query].present? %>
   <div class="product-index-container">
 
@@ -98,5 +99,7 @@
 <% end %>
 
 
-<%# Go to Shop Button %>
+<%#  ---------- Go to Shop Button ----------  %>
+<div class="button-box">
 <%= link_to 'Entrer dans le magasin', new_shop_cart_path(@shop.id), class: "shop-button" %>
+</div>
