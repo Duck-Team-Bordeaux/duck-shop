@@ -14,22 +14,28 @@
   </div>
 </div>
 
-
+<%# Cart Items / Basket %>
 <div class="cart-items-container mt-3">
   <div class="d-flex justify-content-between align-items-end">
     <h3>Mon Panier</h3>
     <h3><i class="fa-solid fa-basket-shopping"></i></h3>
   </div>
-<%@items.each do |item| %>
-  <div class="cart-item">
+  <%@items.each do |item| %>
+  <div class="cart-item d-flex">
     <div class="img-box">
       <%= image_tag(item.product.image_url) %>
     </div>
     <div class="info-box">
       <h5 class="name"><%= item.product.name %></h5>
-      <h5 class="price"><%= item.product.price %>€</h5>
+      <div>
+        <i class="fa-solid fa-circle-minus"></i>
+        <%= item.quantity %>
+        <i class="fa-solid fa-circle-plus"></i>
+      </div>
+      <h5 class="price"><%= item.product.price * item.quantity%>€</h5>
+    </div>
   </div>
-<% end %>
+  <% end %>
 </div>
 
 <%= simple_form_for [@cart, @item] do |f|%>
