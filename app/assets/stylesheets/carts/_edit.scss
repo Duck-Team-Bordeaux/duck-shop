@@ -2,15 +2,34 @@ video {
   width: 100%;
 }
 
-.main-container {
-  padding: 0em;
-}
+.cart-items-container {
+  margin-bottom: 12vh;
 
+
+  .top-basket-box {
+    position: relative;
+    .top-basket {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: -12px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: $primary-color;
+      color: white;
+      z-index: 10;
+    }
+
+  }
+
+}
 .cart-item {
   @include box;
   display: flex;
   flex-direction: row;
-  margin-top: 1em;
+  margin-top: .5em;
   gap: 1em;
   position: relative;
 
@@ -63,8 +82,9 @@ video {
   align-items: center;
   position: fixed;
   bottom: 0;
+  left: -1px;
   width: 100%;
-  padding: 0em 1em;
+  height: 12vh;
 
   .pay-button {
     padding: 1em 2em;
@@ -73,15 +93,14 @@ video {
     @include secondary-gradient-background();
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: white;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: $body-font;
 
-    a{
-      font-size: 1em;
-      font-weight: bold;
-    }
   }
 
   p {
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: bold;
   }
 }

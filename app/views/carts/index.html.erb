@@ -1,8 +1,10 @@
-<h3>My cartss</h3>
+<h3>My carts</h3>
 <div class="carts-container">
   <% @carts.each do |cart| %>
     <div>
-      <p><%= cart.shop_id %></p>
+      <p><%= cart.id %></p>
+      <p><%= cart.created_at %></p>
+      <p>Items:<%= cart.items.count %></p>
     </div>
   <% end %>
 </div>
