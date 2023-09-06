@@ -12,3 +12,19 @@
     <p>Mes achats</p>
   <% end %>
 </div>
+
+
+<div class="input-group mb-3 add-duckcoins-input">
+  <div class="input-group-prepend">
+    <span class="input-group-text">$</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  <div class="input-group-append">
+    <span class="input-group-text">.00</span>
+  </div>
+</div>
+
+<%#  ---------- add duckoins Button ----------  %>
+<div class="add-duckoins-button-box">
+    <%= link_to 'Alimenter mon compte', new_user_session_path, class: "add-duckcoins-button" %>
+</div>

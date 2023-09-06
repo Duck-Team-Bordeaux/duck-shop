@@ -1,0 +1,104 @@
+.devise-new-box{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 16px;
+
+a{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 250px;
+padding: 0.5em 1em;
+background-color: white;
+color: $primary-color;
+border-radius: 36px;
+outline: 2px solid $primary-color;
+cursor: pointer;
+}
+
+.login-button{
+display: flex;
+justify-content: center;
+padding: 0.5em 1em;
+background-color: $primary-color;
+color: white;
+border-radius: 36px;
+height: 40px;
+width: 250px;
+margin-top: 2em;
+cursor: pointer;
+border: none;
+input{
+  margin: 0;
+  color: white;
+
+}
+&:hover{
+  background-color: $secondary-color;
+  color: white;
+
+}
+}
+
+
+
+.form-inputs{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 16px;
+}
+
+form{
+  input{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  label{
+    color: $text-color;
+    font-weight: 300px
+  }
+}
+
+.input{
+  width: 250px;
+  border: none;
+  border-radius: 36px;
+}
+
+.boolean{
+display: flex;
+flex-direction: row;
+gap: 6px;
+
+input{
+
+}
+label{
+
+}
+}
+
+.string{
+  width: 100%;
+}
+
+.password{
+  width: 100%;
+}
+
+#user_email #user_password{
+ border-radius: 36px;
+ border: none;
+}
+
+.btn{
+  padding: 0;
+}
+
+}

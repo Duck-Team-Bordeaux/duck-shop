@@ -1,0 +1,27 @@
+.add-duckoins-button-box{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+
+      .add-duckcoins-button {
+        width: 80%;
+        height: 60px;
+        margin-bottom: 30px;
+        background-color: $secondary-color;
+        border-radius: 2em;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
+        @include secondary-gradient-background();
+        font-weight: 700;
+        font-size: 1.3em;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover{
+          outline: 2px solid $secondary-color;
+          color: $secondary-color;
+          background: $white-color;
+        }
+      }
+    }
