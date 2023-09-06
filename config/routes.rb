@@ -21,4 +21,5 @@ Rails.application.routes.draw do
       get :duckcoin
     end
   end
+  resources :dashboards_manager, only: %i[index]
 end

@@ -15,7 +15,22 @@ p 'DB successfully cleaned'
 # -------------USER-------------------------------------------------------------
 
 p 'creating user'
-User.create!(email: 'toto@gmail.com', password: 'qwertyuiop', address: 'Rue Poquelin Molière, 33000 Bordeaux, France')
+User.create!(
+  email: 'fd@gmail.com',
+  first_name: 'François',
+  last_name: 'Damien',
+  password: 'qwertyuiop',
+  address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  role: 0
+)
+User.create!(
+  email: 'jcvd@gmail.com',
+  first_name: 'Jean-Claude',
+  last_name: 'Van Damme',
+  password: 'qwertyuiop',
+  address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  role: 1
+)
 
 # -------------SHOP-------------------------------------------------------------
 
