@@ -86,13 +86,14 @@ shops.each do |shop|
 
   Product.create!(
     name: 'Cup nouilles japonaises instantanées TANOSHI ',
-    description: 'La saveur “teriyaki”, qui accompagne ces nouilles, vient d’une technique culinaire utilisée au Japon qui consiste à faire griller une viande préalablement marinée dans une sauce soja sucrée au mirin.',
+    description: 'La saveur “teriyaki”, qui accompagne ces nouilles, vient d\'une technique culinaire utilisée au Japon qui consiste à faire griller une viande préalablement marinée dans une sauce soja sucrée au mirin.',
     unit: '65g',
     stock_quantity: (0..15).to_a.sample,
     price: 1.74,
     image_url: 'https://media.auchan.fr/A0220090227000612872PRIMARY_1200x1200/B2CD/',
     shop: shop,
-    category: snack
+    category: snack,
+    ean: '3800065711135'
   )
 
   Product.create!(
@@ -103,7 +104,8 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.99,
     image_url: 'https://media.auchan.fr/A0220100531000021019PRIMARY_1200x1200/B2CD/',
-    shop: shop
+    shop: shop,
+    ean: '0799418201542'
   )
 
   Product.create!(
@@ -299,7 +301,8 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.20,
     image_url: 'https://media.auchan.fr/A0220121004000405652PRIMARY_1200x1200/B2CD/',
-    shop: shop
+    shop: shop,
+    ean: '0712345678911'
   )
 
 
@@ -504,35 +507,35 @@ Item.create!(
   cart: cart,
   quantity: (1..3).to_a.sample,
   # product_id: (0..31).to_a.sample
-  product_id: 122
+  product: Product.all.sample
 )
 
 Item.create!(
   cart: cart,
   quantity: (1..3).to_a.sample,
-   # product_id: (0..31).to_a.sample
-   product_id: 3
+   # product: (0..31).to_a.sample
+  product: Product.all.sample
 )
 
 Item.create!(
   cart: cart,
   quantity: (1..3).to_a.sample,
-   # product_id: (0..31).to_a.sample
-   product_id: 75
+   # product: (0..31).to_a.sample
+   product: Product.all.sample
 )
 
 Item.create!(
   cart: cart,
   quantity: (1..3).to_a.sample,
-   # product_id: (0..31).to_a.sample
-   product_id: 33
+   # product: (0..31).to_a.sample
+  product: Product.all.sample
 )
 
 Item.create!(
   cart: cart,
   quantity: (1..3).to_a.sample,
-   # product_id: (0..31).to_a.sample
-   product_id: 12
+   # product: (0..31).to_a.sample
+  product: Product.all.sample
 )
 
 

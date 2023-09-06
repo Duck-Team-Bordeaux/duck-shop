@@ -21,7 +21,6 @@ video {
       color: white;
       z-index: 10;
     }
-
   }
 
 }
@@ -32,6 +31,25 @@ video {
   margin-top: .5em;
   gap: 1em;
   position: relative;
+
+  .delete-button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color:$error-color;
+  color: white;
+  transform: rotate(45deg);
+  }
+
+  .fa-solid {
+    color: $secondary-color;
+  }
 
   .price{
     position: absolute;
@@ -78,8 +96,9 @@ video {
   background-color: white;
   border-radius: 1em 1em 0 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 1em;
   position: fixed;
   bottom: 0;
   left: -1px;
@@ -89,7 +108,7 @@ video {
   .pay-button {
     padding: 1em 2em;
     border: 0.5px solid $line-color;
-    border-radius: 25px;
+    border-radius: 35px;
     @include secondary-gradient-background();
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: white;
