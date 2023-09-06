@@ -20,4 +20,4 @@
       <div class="total-price"><%= total_price.round(2) %>€</div>
   </div>
 </div>
-<div class="button">Payer</div>
+<%= link_to 'Payer', finish_shop_carts_path(@cart.shop_id), class: 'button' %>
