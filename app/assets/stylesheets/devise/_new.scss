@@ -15,6 +15,7 @@ background-color: white;
 color: $primary-color;
 border-radius: 36px;
 outline: 2px solid $primary-color;
+cursor: pointer;
 }
 
 .login-button{
@@ -27,9 +28,12 @@ border-radius: 36px;
 height: 40px;
 width: 250px;
 margin-top: 2em;
+cursor: pointer;
+border: none;
 input{
   margin: 0;
   color: white;
+
 }
 &:hover{
   background-color: $secondary-color;
