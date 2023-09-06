@@ -70,10 +70,10 @@
           data-see-all-target="newCards">
     <% @all_categories.each do |category| %>
         <div class="card-category col-6">
-        <%= link_to shop_category_products_path(@shop, category) do %>
-          <%= cl_image_tag category.photo.key %>
-          <p class="category-name-shop-show"><%= category.name %></p>
-        <% end %>
+          <%= link_to shop_category_products_path(@shop, category) do %>
+            <%= cl_image_tag category.photo.key %>
+            <p class="category-name-shop-show"><%= category.name %></p>
+          <% end %>
         </div>
     <% end %>
   </div>

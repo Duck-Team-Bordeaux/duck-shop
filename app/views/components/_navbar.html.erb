@@ -4,7 +4,7 @@
   <% end %>
   <% if current_user != nil %>
     <%= link_to profil_path(current_user), :class => 'user-box' do %>
-      <p class="username"><%= current_user.email[0..3] %></p>
+      <p class="username"><%= current_user.first_name %></p>
       <%= image_tag "profile-pic.png", class: 'avatar' %>
     <% end %>
   <% else %>

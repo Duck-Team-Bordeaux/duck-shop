@@ -1,8 +1,33 @@
+.cart-box-shop{
+  box-shadow: $primary-color 0px 1px 4px, $primary-color 0px 0px 0px 3px;
+  border-radius: 1em;
+  margin-top: 21px;
+  background-color: #ffffff8f;
+  height: 72px;
+}
+
 .cart-shop{
   display: flex;
   align-items: center;
 }
 
 .location-carts{
-  color: white;
+
+}
+
+#duck-pin-cart{
+  margin-left: 3px;
+  margin-top: 3px;
+}
+
+.products-price-finish{
+  display:flex;
+  margin-left: 11px;
+  margin-top: 11px;
+  font-size: small;
+  color: grey;
+  //justify-content: space-between;
+}
+#p{
+  color: grey;
 }
