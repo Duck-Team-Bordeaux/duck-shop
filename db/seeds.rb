@@ -31,6 +31,38 @@ User.create!(
   address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
   role: 1
 )
+User.create!(
+  email: 'fifi@gmail.com',
+  first_name: 'Fillibert',
+  last_name: 'Donacien',
+  password: 'qwertyuiop',
+  address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  role: 0
+)
+User.create!(
+  email: 'manu@gmail.com',
+  first_name: 'Emmanuel',
+  last_name: 'Macron',
+  password: 'qwertyuiop',
+  address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  role: 0
+)
+User.create!(
+  email: 'jeannette@gmail.com',
+  first_name: 'Jannette',
+  last_name: 'Roland',
+  password: 'qwertyuiop',
+  address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  role: 0
+)
+User.create!(
+  email: 'katy@gmail.com',
+  first_name: 'Katy',
+  last_name: 'Perry',
+  password: 'qwertyuiop',
+  address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  role: 0
+)
 
 # -------------SHOP-------------------------------------------------------------
 
@@ -479,61 +511,33 @@ end
 # -------------CART-------------------------------------------------------------
 
 p 'creating carts...'
+users = User.all
 
-cart = Cart.create!(
-  shop: Shop.first,
-  user: User.first
-)
-
-cart = Cart.create!(
-  shop: Shop.second,
-  user: User.first
-)
-
-cart = Cart.create!(
-  shop: Shop.last,
-  user: User.first
-)
+users.each do |user|
+  (1..10).to_a.sample.times do
+    Cart.create!(
+      shop: Shop.first,
+      user: user
+    )
+  end
+end
 
 p 'new carts are created'
 # -------------ITEM-------------------------------------------------------------
 p 'creating items...'
 
-Item.create!(
-  cart: cart,
-  quantity: (1..3).to_a.sample,
-  # product_id: (0..31).to_a.sample
-  product_id: 122
-)
 
-Item.create!(
-  cart: cart,
-  quantity: (1..3).to_a.sample,
-   # product_id: (0..31).to_a.sample
-   product_id: 3
-)
+carts = Cart.all
 
-Item.create!(
-  cart: cart,
-  quantity: (1..3).to_a.sample,
-   # product_id: (0..31).to_a.sample
-   product_id: 75
-)
-
-Item.create!(
-  cart: cart,
-  quantity: (1..3).to_a.sample,
-   # product_id: (0..31).to_a.sample
-   product_id: 33
-)
-
-Item.create!(
-  cart: cart,
-  quantity: (1..3).to_a.sample,
-   # product_id: (0..31).to_a.sample
-   product_id: 12
-)
-
+carts.each do |cart|
+  (2..6).to_a.sample.times do
+    Item.create!(
+      cart: cart,
+      quantity: 1,
+      product_id: Product.all.sample.id
+    )
+  end
+end
 
 p 'new items are created'
 
