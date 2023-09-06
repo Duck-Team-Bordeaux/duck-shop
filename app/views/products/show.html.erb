@@ -5,9 +5,17 @@
 <%# ------------ PRODUCT SHOP CONTAINER ------------ %>
 <div class="product-show-container">
 
+
+
   <%# ------------ PRODUCT IMG ------------ %>
   <div class="box product-img-box">
-    <img src="<%= @product.image_url %>" alt="">
+    <img class="product-show-main-img" src="<%= @product.image_url %>" alt="">
+    <div class="product-show-price-box">  <span> <%= @product.price %> </span>
+
+    <%= image_tag 'duckoin-a-remplacer.png', class: 'duckcoin-product-show'%>
+
+
+    </div>
   </div>
 
   <%# ------------ PRODUCT INFO ------------ %>
@@ -32,7 +40,8 @@
       <% else %>
         <h5 class="disponibility"><i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i><%= @product.stock_quantity %> pas en stock</h5>
       <% end %>
-      <p class="shop"><i class="fa-solid fa-location-dot "></i><%= @product.shop.location %> </p>
+      <p class="shop"><i class="fa-solid fa-location-dot "></i><%= @product.shop.location %>
+
     </div>
 
   <%# ------------ BTN Accéder au DuckShop ------------ %>

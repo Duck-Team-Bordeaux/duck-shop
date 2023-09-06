@@ -17,7 +17,7 @@ class CartsController < ApplicationController
     @cart.user = @user
     @cart.shop = @shop
     if @cart.save!
-      @cart.update(progress: 1)
+      @cart.created!
       redirect_to edit_shop_cart_path(@shop, @cart)
     else
       render :new
@@ -30,7 +30,7 @@ class CartsController < ApplicationController
     @shop = Shop.find(params[:shop_id])
     @item = Item.new
     @items = Item.where(cart: @cart)
-    @total_price = @items.sum { |item| item.product[:price] }
+    @total_price = @items.sum { |item| item.product.price * item.quantity }
   end
 
   def update
@@ -39,6 +39,7 @@ class CartsController < ApplicationController
   def show
     @cart = Cart.find(params[:id])
     @items = @cart.items
+    @cart.payment!
   end
 
   def finish() end

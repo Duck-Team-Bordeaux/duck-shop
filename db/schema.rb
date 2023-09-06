@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_04_094837) do
+
+ActiveRecord::Schema[7.0].define(version: 2023_09_06_134459) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,7 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_094837) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer "quantity"
+    t.integer "quantity", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "product_id"
@@ -79,6 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_094837) do
     t.string "unit"
     t.string "image_url"
     t.bigint "category_id"
+    t.string "ean"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["shop_id"], name: "index_products_on_shop_id"
   end
@@ -109,6 +112,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_094837) do
     t.float "latitude"
     t.integer "role"
     t.bigint "favorite_shop_id"
+    t.float "duckcoins"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["favorite_shop_id"], name: "index_users_on_favorite_shop_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

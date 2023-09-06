@@ -21,6 +21,7 @@ User.create!(
   last_name: 'Damien',
   password: 'qwertyuiop',
   address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  duckcoins: 98,
   role: 0
 )
 User.create!(
@@ -117,13 +118,14 @@ shops.each do |shop|
 
   Product.create!(
     name: 'Cup nouilles japonaises instantanées TANOSHI ',
-    description: 'La saveur “teriyaki”, qui accompagne ces nouilles, vient d’une technique culinaire utilisée au Japon qui consiste à faire griller une viande préalablement marinée dans une sauce soja sucrée au mirin.',
+    description: 'La saveur “teriyaki”, qui accompagne ces nouilles, vient d\'une technique culinaire utilisée au Japon qui consiste à faire griller une viande préalablement marinée dans une sauce soja sucrée au mirin.',
     unit: '65g',
     stock_quantity: (0..15).to_a.sample,
     price: 1.74,
     image_url: 'https://media.auchan.fr/A0220090227000612872PRIMARY_1200x1200/B2CD/',
     shop: shop,
-    category: snack
+    category: snack,
+    ean: '3800065711135'
   )
 
   Product.create!(
@@ -134,7 +136,8 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.99,
     image_url: 'https://media.auchan.fr/A0220100531000021019PRIMARY_1200x1200/B2CD/',
-    shop: shop
+    shop: shop,
+    ean: '0799418201542'
   )
 
   Product.create!(
@@ -330,7 +333,8 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.20,
     image_url: 'https://media.auchan.fr/A0220121004000405652PRIMARY_1200x1200/B2CD/',
-    shop: shop
+    shop: shop,
+    ean: '0712345678911'
   )
 
 
@@ -527,7 +531,9 @@ p 'new carts are created'
 p 'creating items...'
 
 
+
 carts = Cart.all
+
 
 carts.each do |cart|
   (2..6).to_a.sample.times do
