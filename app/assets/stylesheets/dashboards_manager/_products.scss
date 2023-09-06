@@ -1,0 +1,98 @@
+.container-all-products {
+  display: flex;
+  flex-direction: row;
+
+  .border-right {
+    border-right: 1px solid grey;
+  }
+}
+
+.container-neg-products {
+  margin-left: 20px;
+  margin-top: 30px;
+  padding-right: 20px;
+  width: 30vw;
+
+  h3 {
+    margin-bottom: 15px;
+  }
+
+  .product-card-box {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    gap: 1em;
+    cursor: pointer;
+
+    .price {
+      position: absolute;
+      margin: 0;
+      right: 0;
+      bottom: 1em;
+      padding: 0.5em 1em 0.5em 1em;
+      border-radius: 1em 0 0 1em;
+      background-color: $primary-color;
+      box-shadow: -6px -6px 15px -3px rgba(0,0,0,0.1);
+      color: white;
+    }
+
+    .img-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      img {
+        width: 60px;
+        height: 60px;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: $line-color;
+        position: absolute;
+        right: -0.5em;
+      }
+    }
+  }
+}
+
+.info {
+  margin-left: 0.3em;
+
+  a {
+    font-weight: 700;
+    color: $secondary-color;
+  }
+
+  .product-index-name-card-product {
+    margin: 0;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+  }
+
+  .h5 {
+    margin-bottom: 8px;
+  }
+
+  .stock_quantity {
+    margin: 0;
+  }
+}
+
+.info-box {
+  max-width: 200px;
+  margin-left: 0.3em;
+}
+
+.disponibility {
+  margin-top: 0.3em;
+
+  i {
+    margin-right: 0.3em;
+  }
+}

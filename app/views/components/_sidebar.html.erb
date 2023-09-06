@@ -1,0 +1,5 @@
+<div class='sidebar'>
+  <%= link_to 'Utilisateurs', dashboards_manager_users_path, class: "btn-sidebar #{ "actuel" if request.path == "/dashboards_manager/users" }" %>
+  <%= link_to 'Produits', dashboards_manager_products_path, class: "btn-sidebar #{ "actuel" if request.path == "/dashboards_manager/products" }" %>
+  <%= link_to 'Finances', dashboards_manager_wallet_path, class: "btn-sidebar #{ "actuel" if request.path == "/dashboards_manager/wallet" }" %>
+</div>
