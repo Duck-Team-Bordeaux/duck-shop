@@ -16,14 +16,17 @@
 <%# liste les achats de shop et les afficher (anciennes commandes)
 quand clic de nouveau bill %>
 <% @carts.each do |cart| %>
-  <div class="card-shop active mb-2">
+  <div class="cart-box-shop">
     <%= link_to cart_path(cart) do%>
       <div class="cart-shop">
-          <%= image_tag 'pin-map.png', class: "duck-pin-card-shop-index" %>
+          <%= image_tag 'pin-map.png', class: "duck-pin-card-shop-index", id:"duck-pin-cart" %>
           <div class="location-carts"><%= cart.shop.location %></div>
       </div>
-
-      <p>terminé</p>
+      <div class="products-price-finish">
+        <%= cart.items.count %> produits •
+        <%= cart.items.map{|item| item.quantity * item.product.price}.sum.round(2) %>€ •
+        <p id="p"> Terminé</p>
+      </div>
     <% end %>
   </div>
 <% end %>

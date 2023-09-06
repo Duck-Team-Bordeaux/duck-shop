@@ -2,10 +2,10 @@
 class ShopsController < ApplicationController
   def index
     @shops = Shop.limit(6)
-    @user = User.last
+    @user = User.first
     @markers = @shops.geocoded.map do |shop|
       @distance_km = shop.distance_to([@user.latitude, @user.longitude])
-      @distance_min = @distance_km*10
+      @distance_min = @distance_km * 10
       {
         lat: shop.latitude,
         lng: shop.longitude,
@@ -17,7 +17,7 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
-    @user = User.last
+    @user = User.first
     @distance = @shop.distance_to([@user.latitude, @user.longitude]).round(3)
     @walk_time = (@shop.distance_to([@user.latitude, @user.longitude]) * 10).round(0)
     @categories = Category.limit(6)
