@@ -3,7 +3,9 @@
 <div style="width: 100%; height: 50vh; border-radius: 5px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  class="map-idex-shop">
+
 </div>
 
 
@@ -17,7 +19,7 @@
     <% distance_min = distance_km*10 %>
     <%= link_to shop_path(Shop.first.id) do%>
 
-      <div class="shop-index-nom-magasin"> <%= image_tag 'pin-map.png', class: "duck-pin-card-shop-index" %>  <span> <%= Shop.first.location %></span> </div>
+      <div class="shop-index-nom-magasin"> <%= image_tag 'duck-icon-white.png', class: "duck-pin-card-shop-index" %>  <span> <%= Shop.first.location %></span> </div>
 
       <div class="d-flex justify-content-between align-items-end">
         <div>
@@ -46,7 +48,7 @@
       <% distance_min = distance_km * 10 %>
       <%= link_to shop_path(shop.id) do%>
 
-        <div class="shop-index-nom-magasin"> <%= image_tag 'pin-map.png', class: "duck-pin-card-shop-index" %>  <span> <%= shop.location %></span> </div>
+        <div class="shop-index-nom-magasin"> <%= image_tag 'duck-icon-text.png', class: "duck-pin-card-shop-index" %>  <span> <%= shop.location %></span> </div>
 
       <div class="d-flex justify-content-between align-items-end">
         <div>

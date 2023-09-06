@@ -1,12 +1,30 @@
-.shop-show-container {
+.shop-show-search-box{
+  animation: fadeInLeft;
+  animation-duration: 0.5s;
+  .shop-show-box-title{
 
-  @include box;
+  }
 
+  .input-search{
+    margin-top: 10px;
+  }
 
-  padding: 1em;
+  .search-bar-btn{
+    margin-top: 9px;
+  }
 }
 
+.shop-show-container {
+  @include box;
+  padding: 1em;
+
+}
+
+
 .card-category {
+  animation: fadeInRight;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
 
   border-radius: $border-radius;
   box-shadow: $btn-shadow;
@@ -32,33 +50,7 @@
   }
 
 
-  .button-box{
-  display: flex;
-  justify-content: center;
-  margin-top: 1em;
 
-    .shop-button {
-      width: 80%;
-      height: 60px;
-      margin-bottom: 30px;
-      background-color: $secondary-color;
-      border-radius: 2em;
-      box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
-      @include secondary-gradient-background();
-      font-weight: 700;
-      font-size: 1.3em;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      &:hover{
-        outline: 2px solid $secondary-color;
-        color: $secondary-color;
-        background: $white-color;
-      }
-    }
-  }
 
   #see-all{
     color: $line-color;
@@ -91,14 +83,14 @@
   margin-bottom: 6px;
 
   img {
-    width: 40px;
-    border: 6px solid white;
-    border-radius: 50%;
+    width: 20px;
+
   }
 
   span {
     font-weight: 700;
     font-size: 1.3em;
+    margin-left: 6px;
 
   }
 
@@ -115,3 +107,32 @@
   margin-top: 0;
   margin-bottom: 6px;
 }
+
+
+.button-box{
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+
+    .shop-button {
+      width: 80%;
+      height: 60px;
+      margin-bottom: 30px;
+      background-color: $secondary-color;
+      border-radius: 2em;
+      box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
+      @include secondary-gradient-background();
+      font-weight: 700;
+      font-size: 1.3em;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover{
+        outline: 2px solid $secondary-color;
+        color: $secondary-color;
+        background: $white-color;
+      }
+    }
+  }
