@@ -28,9 +28,13 @@
 @import "carts/edit";
 @import "carts/show";
 @import "carts/index";
+
 // CSS profils
 @import "profils/index";
 @import "profils/show";
+
+// CSS dashboards_manager
+@import "dashboards_manager/products";
 
 body {
   width: 100%;

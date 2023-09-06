@@ -35,7 +35,7 @@ User.create!(
 # -------------SHOP-------------------------------------------------------------
 
 p 'creating shop'
-Shop.create!(location: 'Place du Parlement')
+Shop.create!(location: 'Place du Parlement', manager_id: 2)
 Shop.create!(location: '36 Allées d\'Orléans')
 Shop.create!(location: '15 Cours Portal')
 Shop.create!(location: '24 Quai de Bacalan')

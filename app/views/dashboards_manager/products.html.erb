@@ -1,1 +1,60 @@
 <%= render 'components/sidebar' %>
+<div class='container-all-products'>
+  <div class='container-neg-products border-right'>
+    <h3>Produits en rupture de stock</h3>
+    <% @neg_products.each do |product| %>
+      <div class="product-card-box box mb-2">
+        <div class="img-box">
+          <%= image_tag(product.image_url) %>
+        </div>
+        <div class="info-box">
+          <h5 class="product-index-name-card-product"><%= product.name %></h5>
+          <% if product.stock_quantity > 0 %>
+            <h5 class="disponibility"><i class="fa-solid fa-circle-check in-stock" style="color: green;"></i><%= product.stock_quantity %> en stock</h5>
+          <% else %>
+            <h5 class="disponibility"><i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i><%= product.stock_quantity %> pas en stock</h5>
+          <% end %>
+        </div>
+        <h5 class="price"><%= product.price %>€</h5>
+      </div>
+    <% end %>
+  </div>
+  <div class='container-neg-products border-right'>
+    <h3>Produits les plus vendus</h3>
+    <% @best_products.each do |product| %>
+      <div class="product-card-box box mb-2">
+        <div class="img-box">
+          <%= image_tag(product.image_url) %>
+        </div>
+        <div class="info-box">
+          <h5 class="product-index-name-card-product"><%= product.name %></h5>
+          <% if product.stock_quantity > 0 %>
+            <h5 class="disponibility"><i class="fa-solid fa-circle-check in-stock" style="color: green;"></i><%= product.stock_quantity %> en stock</h5>
+          <% else %>
+            <h5 class="disponibility"><i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i><%= product.stock_quantity %> pas en stock</h5>
+          <% end %>
+        </div>
+        <h5 class="price"><%= product.price %>€</h5>
+      </div>
+    <% end %>
+  </div>
+  <div class='container-neg-products'>
+    <h3>Produits les moins vendus</h3>
+    <% @worst_products.each do |product| %>
+      <div class="product-card-box box mb-2">
+        <div class="img-box">
+          <%= image_tag(product.image_url) %>
+        </div>
+        <div class="info-box">
+          <h5 class="product-index-name-card-product"><%= product.name %></h5>
+          <% if product.stock_quantity > 0 %>
+            <h5 class="disponibility"><i class="fa-solid fa-circle-check in-stock" style="color: green;"></i><%= product.stock_quantity %> en stock</h5>
+          <% else %>
+            <h5 class="disponibility"><i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i><%= product.stock_quantity %> pas en stock</h5>
+          <% end %>
+        </div>
+        <h5 class="price"><%= product.price %>€</h5>
+      </div>
+    <% end %>
+  </div>
+</div>
