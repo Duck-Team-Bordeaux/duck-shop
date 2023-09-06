@@ -1,3 +1,5 @@
 class DashboardsManagerController < ApplicationController
-  def index() end
+  def users() end
+  def products() end
+  def wallet() end
 end
