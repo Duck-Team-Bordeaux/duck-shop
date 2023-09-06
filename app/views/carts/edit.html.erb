@@ -1,56 +1,8 @@
-<%# Barcode scanner accordion %>
-<div class="accordion" id="accordionPanelsStayOpenExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-        Open to Scan
-      </button>
-    </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-      <div class="accordion-body" data-controller="bar-code">
-        <video data-bar-code-target='video'></video>
-      </div>
-    </div>
-  </div>
-</div>
-
-<%= simple_form_for [@cart, @item] do |f|%>
-<%= f.submit 'Add Item'%>
-<% end %>
-
-<%# Cart Items / Basket %>
-<div class="cart-items-container mt-3">
-  <div class="d-flex justify-content-between align-items-end">
-    <h3>Mon Panier</h3>
-    <div class="top-basket-box">
-      <p class="top-basket"><%= @items.count %></p>
-      <h3><i class="fa-solid fa-basket-shopping"></i></h3>
-    </div>
-  </div>
-  <%@items.each do |item| %>
-  <div class="cart-item d-flex">
-    <div class="img-box">
-      <%= image_tag(item.product.image_url) %>
-    </div>
-    <div class="info-box">
-      <h5 class="name"><%= item.product.name %></h5>
-      <div>
-        <i class="fa-solid fa-circle-minus"></i>
-        <%= item.quantity %>
-        <i class="fa-solid fa-circle-plus"></i>
-      </div>
-      <h5 class="price"><%= item.product.price * item.quantity%>€</h5>
-    </div>
-  </div>
-  <% end %>
-</div>
+<%# --------------------- BARCODE SCANNER ACCORDION --------------------------%>
+<div data-controller="bar-code" data-bar-code-cart-value=<%= @cart.id %>>
+  <a class='barcode-button' data-bar-code-target='button' data-action='click->bar-code#startLecture'>Scanner un article</a>
+  <div data-bar-code-target='video' class='barcode-container d-none'></div>
 
 
-
-<div class="bottom">
-<div>
-  <p>Total:</p>
-  <p><%= @total_price.round(2) %> €</p>
-</div>
-<%= link_to "Payer", cart_path(@cart), class: "pay-button"%>
-</div>
+<%# --------------------------CART ITEMS -------------------------------------%>
+  <%= render 'items', items: @items, total_price: @total_price %>

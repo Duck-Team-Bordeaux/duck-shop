@@ -1,23 +1,79 @@
-import { Controller } from "@hotwired/stimulus"
-import QrScanner from 'qr-scanner';
+import { Controller } from "@hotwired/stimulus";
+import Quagga from 'quagga';
 
 // Connects to data-controller="bar-code"
 export default class extends Controller {
-  static targets = ["video"]
+  static targets = ['video', 'button', 'itemsContainer']
+  static values = {
+    cart: String
+  }
 
-  // connect() {
-  //   console.log('coucou')
-  //   this.qrScanner = new QrScanner(
-  //     this.videoTarget,
-  //     result => console.log('decoded qr code:', result),
-  //     { /* your options or returnDetailedScanResult: true if you're not specifying any other options */ },
-  // );
-  //   this.qrScanner.start().then(() => {
-  //     console.log(this.videoTarget)
-  //   });
-  // }
+  startLecture() {
+    this.buttonTarget.classList.add('d-none')
+    this.videoTarget.classList.remove('d-none')
+    this.initBarcodeScanner()
+    this.decodeBarCode()
+  }
 
-  // disconnect() {
-  //   this.qrScanner.stop();
-  // }
+  initBarcodeScanner() {
+    Quagga.init(
+      {
+        inputStream: {
+          name: 'Live',
+          type: 'LiveStream',
+          target: this.videoTarget,
+        },
+        decoder: {
+          readers: ['ean_reader'],
+          debug: {
+            drawBoundingBox: true,
+            showPattern: false,
+            drawScanline: false,
+          },
+          drawBoundingBoxOnCanvas: true,
+        },
+        locator: {
+          patchSize: 'medium',
+          halfSample: true,
+        },
+      },
+      function (err) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        Quagga.start()
+      }
+    );
+  }
+
+  decodeBarCode() {
+    Quagga.onDetected((result) => {
+      const eanCode = result.codeResult.code
+      Quagga.stop()
+      this.createItem(eanCode)
+      this.videoTarget.classList.add('d-none')
+      this.buttonTarget.classList.remove('d-none')
+    })
+  }
+
+  createItem(eanCode) {
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    fetch(`/carts/${this.cartValue}/items`, {
+      method: 'POST',
+      headers: {
+        "Accept": "text/plain",
+        'X-CSRF-Token': csrfToken,
+      },
+      body: JSON.stringify({barcode: eanCode})
+    })
+    .then(response => response.text())
+    .then((data) => {
+      console.log(eanCode)
+      this.itemsContainerTarget.innerHTML = data
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  }
 }
