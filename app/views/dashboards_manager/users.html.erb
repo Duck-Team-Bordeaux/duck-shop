@@ -1,1 +1,21 @@
 <%= render 'components/sidebar' %>
+<div class='container-users-title'>
+  <h3>Utilisateurs (<%= @users.count %>)</h3>
+  <div class='container-users'>
+    <% @users.each do |user| %>
+      <div class='info-user'>
+        <%= image_tag "profile-pic.png", class: 'img-user' %>
+        <div>
+          <h5><%= user.first_name %> <%= user.last_name %></h5>
+          <p><%= user.email %></p>
+          <% if user.manager? %>
+            <p class='manager'>manager</p>
+          <% else %>
+            <p class='utilisateur'>utilisateur</p>
+          <% end %>
+        </div>
+        <p>send mail</p>
+      </div>
+    <% end %>
+  </div>
+</div>
