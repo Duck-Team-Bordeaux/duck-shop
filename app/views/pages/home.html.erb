@@ -2,6 +2,10 @@
   <%= image_tag "logo-duckonly-duckshop.png", :class => "logo-home" %>
   <h1 class="txt-logo">DuckShop</h1>
   <h1>Trouve un Duckshop près de chez toi</h1>
-  <%= link_to 'Magasins près de moi', shops_path, :class=>"btn-shops-near" %>
+  <% if current_user != nil && current_user.manager? %>
+    <%= link_to 'Gérer le magasin', dashboards_manager_index_path, :class=>"btn-shops-near" %>
+  <% else %>
+    <%= link_to 'Magasins près de moi', shops_path, :class=>"btn-shops-near" %>
+  <% end %>
 </div>
 <%= render 'components/footer' unless @hide_footer == true%>
