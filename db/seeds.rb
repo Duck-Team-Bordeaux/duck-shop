@@ -30,6 +30,7 @@ User.create!(
   last_name: 'Van Damme',
   password: 'qwertyuiop',
   address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  duckcoins: 98,
   role: 1
 )
 User.create!(
@@ -38,6 +39,7 @@ User.create!(
   last_name: 'Donacien',
   password: 'qwertyuiop',
   address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  duckcoins: 98,
   role: 0
 )
 User.create!(
@@ -46,6 +48,7 @@ User.create!(
   last_name: 'Macron',
   password: 'qwertyuiop',
   address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  duckcoins: 98,
   role: 0
 )
 User.create!(
@@ -54,6 +57,7 @@ User.create!(
   last_name: 'Roland',
   password: 'qwertyuiop',
   address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  duckcoins: 98,
   role: 0
 )
 User.create!(
@@ -62,6 +66,7 @@ User.create!(
   last_name: 'Perry',
   password: 'qwertyuiop',
   address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  duckcoins: 98,
   role: 0
 )
 
