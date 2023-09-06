@@ -10,7 +10,7 @@
 
   border-radius: $border-radius;
   box-shadow: $btn-shadow;
-  margin-bottom: 1em;
+  margin-top: 0.5em;
   width: 47%;
   padding: 0;
 
@@ -35,6 +35,7 @@
   .button-box{
   display: flex;
   justify-content: center;
+  margin-top: 1em;
 
     .shop-button {
       width: 80%;
@@ -83,19 +84,19 @@
   }
 }
 
-.shop-show-location-magasin-tittle-box{
+.shop-show-location-magasin-tittle-box {
   display: flex;
   gap: 6px;
   align-items: center;
   margin-bottom: 6px;
 
-  img{
+  img {
     width: 40px;
     border: 6px solid white;
     border-radius: 50%;
   }
 
-  span{
+  span {
     font-weight: 700;
     font-size: 1.3em;
 
@@ -103,14 +104,14 @@
 
 }
 
-.icon-shop-show-man{
+.icon-shop-show-man {
   color: $primary-color;
 }
 
-.shop-show-box-title{
-font-weight: 500;
-color: $line-color;
-font-size: 1em;
-margin-top: 0;
-margin-bottom: 6px;
+.shop-show-box-title {
+  font-weight: 500;
+  color: $line-color;
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 6px;
 }
