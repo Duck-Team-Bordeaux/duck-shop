@@ -1,8 +1,29 @@
-<h3>My cartss</h3>
-<div class="carts-container">
-  <% @carts.each do |cart| %>
-    <div>
-      <p><%= cart.shop_id %></p>
-    </div>
+<div class='display-coin'>
+  <p>Mon solde duck coin</p>
+  <p>55 <%= image_tag "duckcoin.svg" %></p>
+</div>
+<div class='profil-btns'>
+  <%= link_to profil_path(current_user), :class => 'btn-profil' do %>
+    <%= image_tag "wallet.svg" %>
+    <p>Mon profil</p>
+  <% end %>
+  <%= link_to carts_path, :class => 'btn-profil' do %>
+    <%= image_tag "cart.svg" %>
+    <p>Mes achats</p>
   <% end %>
 </div>
+<h3>Mon historique</h3>
+<%# liste les achats de shop et les afficher (anciennes commandes)
+quand clic de nouveau bill %>
+<% @carts.each do |cart| %>
+  <div class="card-shop active mb-2">
+    <%= link_to cart_path(cart) do%>
+      <div class="cart-shop">
+          <%= image_tag 'pin-map.png', class: "duck-pin-card-shop-index" %>
+          <div class="location-carts"><%= cart.shop.location %></div>
+      </div>
+
+      <p>terminé</p>
+    <% end %>
+  </div>
+<% end %>

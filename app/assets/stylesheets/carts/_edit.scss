@@ -2,11 +2,105 @@ video {
   width: 100%;
 }
 
-.main-container {
-  padding: 0em;
+.cart-items-container {
+  margin-bottom: 12vh;
+
+
+  .top-basket-box {
+    position: relative;
+    .top-basket {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: -12px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: $primary-color;
+      color: white;
+      z-index: 10;
+    }
+
+  }
+
+}
+.cart-item {
+  @include box;
+  display: flex;
+  flex-direction: row;
+  margin-top: .5em;
+  gap: 1em;
+  position: relative;
+
+  .price{
+    position: absolute;
+    margin: 0;
+    right: 0;
+    bottom: 1em;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 1em 0 0 1em;
+    background-color: $primary-color;
+    box-shadow: -6px -6px 15px -3px rgba(0,0,0,0.1);
+    color: white;
+  }
+
+  .img-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    img{
+      width: 60px;
+      height: 60px;
+
+    }
+    &::after{
+      content: "";
+      display: block;
+      width: 1px;
+      height: 100%;
+      background-color: $line-color;
+      position: absolute;
+      right: -0.5em;
+
+    }
+  }
+
+  .info-box{
+    max-width: 200px;
+    margin-left: 0.3em;
+  }
 }
 
+.bottom {
+  background-color: white;
+  border-radius: 1em 1em 0 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: -1px;
+  width: 100%;
+  height: 12vh;
 
-#accordionFlushExample{
-  border-radius: 2em;
+  .pay-button {
+    padding: 1em 2em;
+    border: 0.5px solid $line-color;
+    border-radius: 25px;
+    @include secondary-gradient-background();
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: $body-font;
+
+  }
+
+  p {
+    font-size: 1.3em;
+    font-weight: bold;
+  }
 }

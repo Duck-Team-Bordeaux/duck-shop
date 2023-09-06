@@ -1,23 +1,31 @@
-<%# BACK LINK %>
-<%= link_to '< retour aux produits ', :back, class: 'back-btn' %>
+<%# ------------ BACK LINK ------------ %>
+<%= link_to '< Retour aux produits ', :back, class: 'back-btn' %>
 
+
+<%# ------------ PRODUCT SHOP CONTAINER ------------ %>
 <div class="product-show-container">
-<%= link_to shop_path(@shop), class:"btn-back-category" do %>
-   Accéder au DuckShop
- <% end %>
+
+  <%# ------------ PRODUCT IMG ------------ %>
   <div class="box product-img-box">
     <img src="<%= @product.image_url %>" alt="">
   </div>
-    <div class="box product-box">
-      <div class="name-price-box">
-        <h4 class="name"><%= @product.name %></h4>
-      </div>
-      <div class="unit-category-box">
-        <h5 class="unit">350g</h5>
-        <h5 class="category"><i class="fa-solid fa-tag"></i><%= @product.category.name %></h5>
-      </div>
+
+  <%# ------------ PRODUCT INFO ------------ %>
+  <div class="box product-box">
+
+    <div class="name-price-box">
+      <h4 class="name"><%= @product.name %></h4>
     </div>
 
+    <div class="unit-category-box">
+      <h5 class="unit">350g</h5>
+      <h5 class="category">
+        <i class="fa-solid fa-tag"></i><%= @product.category.name %>
+      </h5>
+    </div>
+  </div>
+
+  <%# ------------ PRODUCT STOCK ------------ %>
     <div class="box product-stock-box">
       <% if @product.stock_quantity > 0 %>
         <h5 class="disponibility"><i class="fa-solid fa-circle-check in-stock"></i><%= @product.stock_quantity %> en stock</h5>
@@ -26,4 +34,12 @@
       <% end %>
       <p class="shop"><i class="fa-solid fa-location-dot "></i><%= @product.shop.location %> </p>
     </div>
+
+  <%# ------------ BTN Accéder au DuckShop ------------ %>
+
+  <div class="button-box">
+  <%= link_to 'Accéder au DuckShop', shop_path(@shop), class: "shop-button" %>
+  </div>
+
+
 </div>

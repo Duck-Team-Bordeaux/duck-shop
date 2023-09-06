@@ -22,9 +22,9 @@ User.create!(email: 'toto@gmail.com', password: 'qwertyuiop', address: 'Rue Poqu
 p 'creating shop'
 Shop.create!(location: 'Place du Parlement')
 Shop.create!(location: '36 Allées d\'Orléans')
-Shop.create!(location: '15 Cours Portal, 33000 Bordeaux, France')
+Shop.create!(location: '15 Cours Portal')
 Shop.create!(location: '24 Quai de Bacalan')
-Shop.create!(location: '36 Rue de la Faïencerie, 33000 Bordeaux')
+Shop.create!(location: '36 Rue de la Faïencerie')
 
 p 'creating categories'
 snack = Category.new(name: "Snacks")
@@ -42,7 +42,7 @@ file = URI.open('https://res.cloudinary.com/ds1o2o82j/image/upload/v1693497311/f
 beauty.photo.attach(io: file, filename: "beauty.jpg", content_type: "image/jpg")
 beauty.save
 
-household = Category.new(name: "Produits d'entretien")
+household = Category.new(name: "Entretien")
 file = URI.open('https://res.cloudinary.com/ds1o2o82j/image/upload/v1693497326/y7bjsvhyugx7iin6mnlu.jpg')
 household.photo.attach(io: file, filename: "household.jpg", content_type: "image/jpg")
 household.save
@@ -469,39 +469,54 @@ cart = Cart.create!(
   shop: Shop.first,
   user: User.first
 )
+
+cart = Cart.create!(
+  shop: Shop.second,
+  user: User.first
+)
+
+cart = Cart.create!(
+  shop: Shop.last,
+  user: User.first
+)
+
 p 'new carts are created'
 # -------------ITEM-------------------------------------------------------------
 p 'creating items...'
 
-
 Item.create!(
   cart: cart,
   quantity: (1..3).to_a.sample,
-  product_id: (0..31).to_a.sample
+  # product_id: (0..31).to_a.sample
+  product_id: 122
 )
 
 Item.create!(
   cart: cart,
   quantity: (1..3).to_a.sample,
-  product_id: (0..31).to_a.sample
+   # product_id: (0..31).to_a.sample
+   product_id: 3
 )
 
 Item.create!(
   cart: cart,
   quantity: (1..3).to_a.sample,
-  product_id: (0..31).to_a.sample
+   # product_id: (0..31).to_a.sample
+   product_id: 75
 )
 
 Item.create!(
   cart: cart,
   quantity: (1..3).to_a.sample,
-  product_id: (0..31).to_a.sample
+   # product_id: (0..31).to_a.sample
+   product_id: 33
 )
 
 Item.create!(
   cart: cart,
   quantity: (1..3).to_a.sample,
-  product_id: (0..31).to_a.sample
+   # product_id: (0..31).to_a.sample
+   product_id: 12
 )
 
 

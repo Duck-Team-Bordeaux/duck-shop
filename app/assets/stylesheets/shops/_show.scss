@@ -1,69 +1,116 @@
 .shop-show-container {
 
-  border-radius: 1em;
-  background-color: white;
+  @include box;
 
-  h3 {
-    font-weight: lighter;
-  }
 
+  padding: 1em;
 }
 
 .card-category {
-  @include box;
+
   border-radius: $border-radius;
   box-shadow: $btn-shadow;
-  padding: 0;
   margin-bottom: 1em;
-  width: 48%;
+  width: 47%;
+  padding: 0;
 
+    img {
+      border-radius: 1em 1em 0 0;
+      width: 100%;
+      height: 10vh;
+      object-fit: cover;
+      object-position: center;
+    }
 
-  img {
-    border-radius: 1em 1em 0 0;
-    width: 100%;
-    height: 10vh;
-    object-fit: cover;
-    object-position: center;
+    p {
+      font-weight: bold;
+      padding: 3px 8px;
+      color: black;
+      font-size: 15px;
+      //font size
+    }
   }
 
-  p {
-    font-weight: bold;
-    padding: 3px 8px;
-    color: black;
-    font-size: 15px;
-    //font size
+
+  .button-box{
+  display: flex;
+  justify-content: center;
+
+    .shop-button {
+      width: 80%;
+      height: 60px;
+      margin-bottom: 30px;
+      background-color: $secondary-color;
+      border-radius: 2em;
+      box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
+      @include secondary-gradient-background();
+      font-weight: 700;
+      font-size: 1.3em;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover{
+        outline: 2px solid $secondary-color;
+        color: $secondary-color;
+        background: $white-color;
+      }
+    }
+  }
+
+  #see-all{
+    color: $line-color;
+    font-size: 0.8em;
+    border: none;
+    background-color: white;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  .category-name-shop-show{
+    font-size: 1em;
+  }
+
+
+.shop-show-distances-box{
+
+  i{
+    color: $primary-color;
+    margin-left: 6px;
   }
 }
 
-.shop-button {
-  text-align: center;
-  font-weight: 500;
-  font-size: 1em;
-  margin-top: 2em;
-  padding: 0.5em 1em 0.5em 1em ;
-  @include secondary-gradient-background;
-  border-radius: 2em;
-  color: white;
-  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
-  position: absolute;
-  bottom: 1em;
-  width: 358px;
-  outline: none;
+.shop-show-location-magasin-tittle-box{
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;
 
-  &:hover {
-    color: $secondary-color;
-    outline: 2px solid $secondary-color;
-    background: $white-color;
+  img{
+    width: 40px;
+    border: 6px solid white;
+    border-radius: 50%;
   }
+
+  span{
+    font-weight: 700;
+    font-size: 1.3em;
+
+  }
+
 }
 
-#see-all{
-  color: $line-color;
-  font-size: 16px;
-  border: none;
-  background-color: white;
+.icon-shop-show-man{
+  color: $primary-color;
+}
 
-  &:hover{
-    text-decoration: underline;
-  }
+.shop-show-box-title{
+font-weight: 500;
+color: $line-color;
+font-size: 1em;
+margin-top: 0;
+margin-bottom: 6px;
 }

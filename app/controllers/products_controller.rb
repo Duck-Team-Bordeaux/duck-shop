@@ -1,9 +1,8 @@
 class ProductsController < ApplicationController
   def index
     @shop = Shop.find(params[:shop_id])
-    @category = Category.find(params[:category])
-    @products = @shop.products.where(category: params[:category])
-    # raise
+    @category = Category.find(params[:category_id])
+    @products = @shop.products.where(category: @category)
   end
 
   def show

@@ -1,7 +1,7 @@
 # shops_controller
 class ShopsController < ApplicationController
   def index
-    @shops = Shop.limit(4)
+    @shops = Shop.limit(6)
     @user = User.last
     @markers = @shops.geocoded.map do |shop|
       @distance_km = shop.distance_to([@user.latitude, @user.longitude])
@@ -9,7 +9,8 @@ class ShopsController < ApplicationController
       {
         lat: shop.latitude,
         lng: shop.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { shop: shop })
+        info_window_html: render_to_string(partial: "info_window", locals: { shop: shop }),
+        marker_html: render_to_string(partial: "marker")
       }
     end
   end
@@ -19,7 +20,7 @@ class ShopsController < ApplicationController
     @user = User.last
     @distance = @shop.distance_to([@user.latitude, @user.longitude]).round(3)
     @walk_time = (@shop.distance_to([@user.latitude, @user.longitude]) * 10).round(0)
-    @categories = Category.limit(4)
+    @categories = Category.limit(6)
     @all_categories = Category.all
   end
 end
