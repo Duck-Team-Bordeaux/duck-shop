@@ -1,3 +1,5 @@
+// --------------- PRODUCT SHOW CONTAINER ---------------
+
 .product-show-container{
   display: flex;
   flex-direction: column;
@@ -5,14 +7,24 @@
   margin-top: 1em;
 }
 
-.product-img-box{
-max-height: 220px;
-position: relative;
-padding: 0;
-display: flex;
-justify-content: center;
+// --------------- PRODUCT IMG BOX ---------------
 
-  .price{
+.product-img-box {
+
+  max-height: 220px;
+  position: relative;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+
+  .product-show-main-img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 2em;
+    padding: 1em;
+  }
+
+  .product-show-price-box{
     margin: 0;
     font-size: 1.5em;
     font-weight: 300;
@@ -20,52 +32,25 @@ justify-content: center;
     text-align: right;
     position: absolute;
     background-color: $primary-color;
-    padding: 0.5em 1em 0.5em 1em ;
+    padding: 0.5em 0.5em 0.5em 1em ;
     right: 0;
     bottom: 1em;
     border-radius: 1em 0 0 1em;
     color: $white-color;
     box-shadow: -6px -6px 15px -3px rgba(0,0,0,0.1);
-  }
 
-  img{
-    max-width: 100%;
-    max-height: 220px;
-    border-radius: 2em;
-    padding: 1em;
-
-  }
-}
-
-.product-img-box {
-  width: 355px;
-  height: 240px;
-  position: relative;
-
-  img {
-    width: 355px;
-    object-fit: contain;
-  }
-
-  .product-show-price-box{
-
-    position: absolute;
-    margin: 0;
-    right: 0;
-    bottom: 1em;
-    padding: 0.5em 1em 0.5em 1em;
-    border-radius: 1em 0 0 1em;
-    background-color: $primary-color;
-    box-shadow: -6px -6px 15px -3px rgba(0,0,0,0.1);
-    color: white;
-
-    img{
-      background-color: aliceblue;
-      width: 16px;
+    .duckcoin-product-show{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      // outline: 1px solid red;
     }
-}
+  }
+
+
 
 }
+// --------------- PRODUCT INFO BOX ---------------
 
 .product-box{
 
@@ -112,6 +97,9 @@ justify-content: center;
 
 }
 
+
+// --------------- PRODUCT STOCK BOX ---------------
+
 .product-stock-box{
 
   i{
@@ -135,14 +123,16 @@ justify-content: center;
 }
 
 
-
+// --------------- PRODUCT SHOW BUTTON ---------------
 
 .button-box{
+  bottom: 1em;
   display: flex;
   justify-content: center;
-
+  height: max-content;
 
     .shop-button {
+      align-self: flex-end;
       width: 80%;
       height: 60px;
       margin-top: 0;
