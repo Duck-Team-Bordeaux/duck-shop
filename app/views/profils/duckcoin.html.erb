@@ -1,0 +1,14 @@
+<div class='display-coin'>
+  <p>Mon solde duck coin</p>
+  <p>55 <%= image_tag "duckcoin.svg" %></p>
+</div>
+<div class='profil-btns'>
+  <%= link_to profil_path(current_user), :class => 'btn-profil' do %>
+    <%= image_tag "wallet.svg" %>
+    <p>Mon profil</p>
+  <% end %>
+  <%= link_to carts_path, :class => 'btn-profil' do %>
+    <%= image_tag "cart.svg" %>
+    <p>Mes achats</p>
+  <% end %>
+</div>
