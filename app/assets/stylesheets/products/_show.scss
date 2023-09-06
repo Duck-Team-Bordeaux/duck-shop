@@ -40,11 +40,31 @@ justify-content: center;
 .product-img-box {
   width: 355px;
   height: 240px;
+  position: relative;
 
   img {
     width: 355px;
     object-fit: contain;
   }
+
+  .product-show-price-box{
+
+    position: absolute;
+    margin: 0;
+    right: 0;
+    bottom: 1em;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 1em 0 0 1em;
+    background-color: $primary-color;
+    box-shadow: -6px -6px 15px -3px rgba(0,0,0,0.1);
+    color: white;
+
+    img{
+      background-color: aliceblue;
+      width: 16px;
+    }
+}
+
 }
 
 .product-box{
