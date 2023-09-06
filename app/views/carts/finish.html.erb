@@ -1,5 +1,5 @@
-<div class='new-cart-container'>
-  <h1>Scan</h1>
-  <%= image_tag "qr-code.svg" %>
-  <%= link_to 'Finish shopping', carts_path,  :class=>"btn" %>
+<div class='new-cart-container mt-5'>
+  <h3 class="text-center">Scannez le QR code pour sortir dans le magasin</h3>
+  <%= image_tag "qr-code.svg", class: "box" %>
+  <%= link_to 'Finir vos achats', carts_path,  :class=>"btn" %>
 </div>

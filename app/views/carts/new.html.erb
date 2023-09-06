@@ -1,8 +1,8 @@
 <div class='new-cart-container mt-5'
       data-controller= "qrcode">
-  <h1 class="text-center">Scan</h1>
+  <h3 class="text-center">Scannez le QR code pour rentrez dans le magasin</h3>
   <%= image_tag "qr-code.svg", class: "box", data: { qrcode_target: 'qrcode'} %>
   <%= simple_form_for @cart, url: shop_carts_path(user_id: @user.id, shop_id: @shop.id), method: :post do |f| %>
-    <%= f.button :submit, 'Start shopping', class: 'btn'%>
+    <%= f.button :submit, 'Commencez vos achats', class: 'btn'%>
   <% end %>
 </div>
