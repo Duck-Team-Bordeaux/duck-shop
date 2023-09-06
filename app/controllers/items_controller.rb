@@ -10,13 +10,14 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @product = Product.find_by(ean: params[:barcode])
     @cart = Cart.find(params[:cart_id])
+    @shop = @cart.shop
+    @product = Product.find_by(ean: params[:barcode])
     @item = Item.find_or_initialize_by(product: @product, cart: @cart)
     @item.quantity += 1
-    @items = Item.where(cart: @cart)
-    @total_price = @items.sum { |item| item.product.price * item.quantity }
     if @item.save
+      @items = Item.where(cart: @cart)
+      @total_price = @items.sum { |item| item.product.price * item.quantity }
       respond_to do |format|
         format.json
         format.text { render partial: "carts/items", locals: {items: @items, total_price: @total_price }, formats: [:html] }

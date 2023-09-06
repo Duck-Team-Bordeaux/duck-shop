@@ -51,15 +51,16 @@ export default class extends Controller {
     Quagga.onDetected((result) => {
       const eanCode = result.codeResult.code
       Quagga.stop()
-      this.createItem(eanCode)
       this.videoTarget.classList.add('d-none')
       this.buttonTarget.classList.remove('d-none')
-    })
+
+      this.createItem(eanCode);
+    });
   }
 
   createItem(eanCode) {
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    fetch(`/carts/${this.cartValue}/items`, {
+    fetch(`/carts/${this.cartValue}/items?barcode=${eanCode}`, {
       method: 'POST',
       headers: {
         "Accept": "text/plain",
@@ -70,6 +71,7 @@ export default class extends Controller {
     .then(response => response.text())
     .then((data) => {
       console.log(eanCode)
+      console.log(data)
       this.itemsContainerTarget.innerHTML = data
     })
     .catch(error => {
