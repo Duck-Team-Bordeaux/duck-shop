@@ -4,47 +4,88 @@ nav {
   height: 60px;
   border-radius: 0 0 1em 1em;
   padding: 1em;
-
   background: rgb(255,239,184);
   background: linear-gradient(90deg, rgba(255,239,184,1) 0%, rgba(253,204,39,1) 100%);
   color: $text-color;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-
   position: sticky;
 
+
+  // ----------------- LOGO -----------------
   h1{
     font-weight: 700;
     font-size: 1.5em;
   }
 
-  .user-box{
+  // ----------------- DUCKCOINS USER BOX -----------------
+  .duckcoins-user-box{
 
     display: flex;
-    flex-direction: row;
-    justify-content: end;
-    gap: 0.5em;
+    justify-content: space-between;
     align-items: center;
+    gap:32px;
 
-    .username{
-      font-size: 1.1em;
-      font-weight: 400;
+    // ----------------- DUCKCOINS -----------------
+    .display-duckcoins-navbar{
+      position: relative;
+      height:28px;
+      width: 60px;
+      background: #ffefb8;
+      border-radius: 36px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      box-shadow: inset 0px 0px 3px -3px rgba(0,0,0,0.1);
+      border: 2px solid white;
+
+      span{
+        font-family: 'Fira Code', monospace;
+      }
+      img{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin: 4px;
+      }
+      &::after{
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: $text-color;
+        position: absolute;
+        right: -16px;
+      }
     }
 
-    .avatar{
-      border-radius: 50%;
-      border: 2px solid #ffefb8;
-      box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.1);
+    // ----------------- USER PROFILE / LOG IN -----------------
+    .user-box{
+
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      gap: 0.5em;
+      align-items: center;
+
+      .username{
+        font-size: 1.1em;
+        font-weight: 400;
+      }
+
+      .avatar{
+        border-radius: 50%;
+        border: 2px solid #ffefb8;
+        box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.1);
+      }
     }
   }
 
-
 }
+
 
 
 
