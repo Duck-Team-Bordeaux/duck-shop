@@ -1,35 +1,44 @@
-<div class='display-coin'>
-  <p>Mon solde duck coin</p>
-  <p>55 <%= image_tag "duckcoin.svg" %></p>
-</div>
+
 <div class='profil-btns'>
   <%= link_to duckcoin_profils_path, :class => 'btn-profil' do %>
-    <%= image_tag "wallet.svg" %>
+    <i class="fa-solid fa-wallet"></i>
     <p>Duckcoins</p>
   <% end %>
   <%= link_to carts_path, :class => 'btn-profil' do %>
-    <%= image_tag "cart.svg" %>
+    <i class="fa-solid fa-cart-arrow-down"></i>
     <p>Mes achats</p>
   <% end %>
 </div>
+
+<div class='display-coin'>
+  <p>Mon portefeuille</p>
+  <p class='solde'>55 <%= image_tag "duckcoin.svg" %></p>
+</div>
+
+
 <div class="display-profil">
+
   <div class='container-img-profil'>
-    <%= image_tag "gabi-pp.png", class: "img-profil" %>
+    <%= image_tag "gabi-pp.jpg", class: "img-profil" %>
     <div>
-      <h2>François</h2>
-      <h2>Damiens</h2>
+      <h2>Gabriel</h2>
+      <h2>Leblond</h2>
     </div>
   </div>
+
   <div class='display-info-user'>
     <h3>mail</h3>
     <p><%= current_user.email %></p>
     <h3>adresse</h3>
-    <p><%= current_user.address.split(",")[1].split(" ")[0] %></p>
-    <h3>ville</h3>
-    <p><%= current_user.address.split(",")[1].split(" ")[1] %></p>
+    <p><%= current_user.address %></p>
   </div>
+
   <div class='profil-btns'>
-    <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'btn-profil small log-out' %>
-    <%= link_to 'Modifier', edit_user_registration_path, class: "btn-profil small" %>
+    <%= button_to destroy_user_session_path, method: :delete, class: 'btn-profil small log-out' do %>
+      <i class="fa-solid fa-right-from-bracket"></i><span>Déconnexion</span>
+    <% end %>
+    <%= link_to edit_user_registration_path, class: "btn-profil small" do %>
+      <i class="fa-solid fa-pen-to-square"></i><span>Modifier</span>
+    <% end %>
   </div>
 </div>
