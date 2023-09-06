@@ -3,6 +3,12 @@
   flex-direction: column;
   gap: 1em;
 
+  .disponibility{
+    font-weight: 300;
+  }
+
+
+
   .category-banner{
     position: relative;
     background-size: cover;
@@ -16,9 +22,9 @@
     margin-bottom: 2em;
 
     h1{
-      font-size: 1.5em;
+      font-size: 2em;
       color: $white-color;
-      filter: drop-shadow(0 0 0.4em black);
+      filter: drop-shadow(0 0 0.75rem black);
       position: absolute;
     }
 
@@ -51,11 +57,22 @@
       margin: 0;
       right: 0;
       bottom: 1em;
-      padding: 0.5em 1em 0.5em 1em;
+      padding: 0.5em 0.5em 0.5em 1em;
       border-radius: 1em 0 0 1em;
       background-color: $primary-color;
       box-shadow: -6px -6px 15px -3px rgba(0,0,0,0.1);
-      color: white;
+
+      span{
+      color: $text-color;
+      font-family: 'Fira Code', monospace;
+      font-weight: bold;
+      }
+
+      img{
+        width: 16px;
+        margin-left: 6px;
+      }
+
     }
 
     .img-box{

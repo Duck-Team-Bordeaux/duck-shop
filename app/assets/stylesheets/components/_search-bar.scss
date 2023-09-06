@@ -30,6 +30,7 @@
       color: #ffffff;
     }
     &:hover{
+      color: $primary-color;
       .fa-solid{
         color: $primary-color;
       }
