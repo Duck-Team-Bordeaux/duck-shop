@@ -16,18 +16,18 @@ p 'DB successfully cleaned'
 
 p 'creating user'
 User.create!(
-  email: 'fd@gmail.com',
-  first_name: 'François',
-  last_name: 'Damien',
+  email: 'gabriel@gmail.com',
+  first_name: 'Gabriel',
+  last_name: 'Leblond',
   password: 'qwertyuiop',
   address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
   duckcoins: 98,
   role: 0
 )
 User.create!(
-  email: 'jcvd@gmail.com',
-  first_name: 'Jean-Claude',
-  last_name: 'Van Damme',
+  email: 'armi@gmail.com',
+  first_name: 'Armi',
+  last_name: 'Piamonte',
   password: 'qwertyuiop',
   address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
   duckcoins: 98,

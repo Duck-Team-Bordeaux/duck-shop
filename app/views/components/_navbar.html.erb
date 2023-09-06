@@ -18,7 +18,7 @@
     <% if current_user != nil %>
       <%= link_to profil_path(current_user), :class => 'user-box' do %>
         <p class="username"><%= current_user.first_name %></p>
-        <%= image_tag "francois-pp.png", class: 'avatar' %>
+        <%= image_tag "gabi-pp.png", class: 'avatar' %>
       <% end %>
     <% else %>
       <%= link_to 'Se connecter', new_user_session_path, :class=>"username" %>

@@ -14,7 +14,7 @@
 </div>
 <div class="display-profil">
   <div class='container-img-profil'>
-    <%= image_tag "francois-pp.png", class: "img-profil" %>
+    <%= image_tag "gabi-pp.png", class: "img-profil" %>
     <div>
       <h2>François</h2>
       <h2>Damiens</h2>
@@ -23,7 +23,7 @@
   <div class='display-info-user'>
     <h3>mail</h3>
     <p><%= current_user.email %></p>
-    <h3>code postal</h3>
+    <h3>adresse</h3>
     <p><%= current_user.address.split(",")[1].split(" ")[0] %></p>
     <h3>ville</h3>
     <p><%= current_user.address.split(",")[1].split(" ")[1] %></p>
