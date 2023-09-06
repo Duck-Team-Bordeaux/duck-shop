@@ -21,6 +21,7 @@ User.create!(
   last_name: 'Damien',
   password: 'qwertyuiop',
   address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
+  duckcoins: 98,
   role: 0
 )
 User.create!(

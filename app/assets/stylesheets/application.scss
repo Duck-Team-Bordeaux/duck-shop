@@ -28,9 +28,14 @@
 @import "carts/edit";
 @import "carts/show";
 @import "carts/index";
+
 // CSS profils
 @import "profils/index";
 @import "profils/show";
+@import "profils/duckcoins";
+
+// CSS devise
+@import "devise/new";
 
 body {
   width: 100%;
