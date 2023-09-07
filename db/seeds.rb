@@ -533,7 +533,8 @@ users.each do |user|
     Cart.create!(
       shop: Shop.first,
       user: user,
-      date_achat: DateTime.new(2023, 8, rand(30))
+      date_achat: DateTime.new(2023, rand(1..12), rand(1..30)),
+      progress: 4
     )
   end
 end
