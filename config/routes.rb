@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :shops, only: %i[index show] do
-    resources :carts, only: %i[new create edit update destroy] do
-      collection do
+    resources :carts, only: %i[new create edit update destroy finish] do
+      member do
         get :finish
       end
     end

@@ -12,9 +12,9 @@
     <p>Mon profil</p>
   <% end %>
 </div>
+
+<%#---------------------------- ALL CARTS ------------------------------------%>
 <h3>Mon historique</h3>
-<%# liste les achats de shop et les afficher (anciennes commandes)
-quand clic de nouveau bill %>
 <% @carts.each do |cart| %>
   <div class="cart-box-shop">
     <%= link_to cart_path(cart) do%>

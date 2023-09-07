@@ -3,7 +3,7 @@ import Quagga from 'quagga';
 
 // Connects to data-controller="bar-code"
 export default class extends Controller {
-  static targets = ['video', 'button', 'itemsContainer']
+  static targets = ['video', 'button', 'itemsContainer', 'empty']
   static values = {
     cart: String
   }
@@ -55,6 +55,7 @@ export default class extends Controller {
       this.buttonTarget.classList.remove('d-none')
 
       this.createItem(eanCode);
+      this.emptyTarget.classList.add('d-none')
     });
   }
 

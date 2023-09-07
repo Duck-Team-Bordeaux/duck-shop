@@ -130,7 +130,7 @@ shops.each do |shop|
     image_url: 'https://media.auchan.fr/A0220090227000612872PRIMARY_1200x1200/B2CD/',
     shop: shop,
     category: snack,
-    ean: '3800065711135'
+    ean: '3229820762043'
   )
 
   Product.create!(
@@ -141,8 +141,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.99,
     image_url: 'https://media.auchan.fr/A0220100531000021019PRIMARY_1200x1200/B2CD/',
-    shop: shop,
-    ean: '0799418201542'
+    shop: shop
   )
 
   Product.create!(
@@ -236,7 +235,8 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 1.54,
     image_url: 'https://media.auchan.fr/A0220150721000623554PRIMARY_1200x1200/B2CD/',
-    shop: shop
+    shop: shop,
+    ean: '7622210449283'
   )
 
   Product.create!(
@@ -338,8 +338,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.20,
     image_url: 'https://media.auchan.fr/A0220121004000405652PRIMARY_1200x1200/B2CD/',
-    shop: shop,
-    ean: '0712345678911'
+    shop: shop
   )
 
 
@@ -351,7 +350,8 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 2.03,
     image_url: 'https://media.auchan.fr/A0220190321000539344PRIMARY_1200x1200/B2CD/',
-    shop: shop
+    shop: shop,
+    ean: '5449000284617'
   )
 
   Product.create!(
@@ -405,7 +405,8 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 4.75,
     image_url: 'https://media.auchan.fr/P02000000001MDMPRIMARY_1200x1200/B2CD/',
-    shop: shop
+    shop: shop,
+    ean: '3600551053677'
   )
 
 
@@ -526,7 +527,8 @@ users.each do |user|
   (1..10).to_a.sample.times do
     Cart.create!(
       shop: Shop.first,
-      user: user
+      user: user,
+      progress: 4
     )
   end
 end

@@ -25,9 +25,9 @@ h3{
   background-color: white;
   @include box;
   box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.1);
-  animation: fadeInLeft;
-  animation-duration: 0.5s;
-  animation-delay: 0.7s;
+  // animation: fadeInLeft;
+  // animation-duration: 0.5s;
+  // animation-delay: 0.7s;
   h3, p, i{
     // color: black;
   }
