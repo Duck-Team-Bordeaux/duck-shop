@@ -31,7 +31,7 @@
 
 
 
-  <%= form_with url: shop_path(@shop), method: :get, class: "search-bar-box" do %>
+  <%= form_with url: shop_path(@shop), method: :get, class: "search-bar-box search-bar-box-show-shop" do %>
     <%= text_field_tag :query,
         params[:query],
         class: "input-search",

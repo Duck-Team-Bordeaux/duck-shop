@@ -6,7 +6,7 @@ nav {
   padding: 1em;
   background: rgb(255,239,184);
   background: linear-gradient(90deg, rgba(255,239,184,1) 0%, rgba(253,204,39,1) 100%);
-  color: $text-color;
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -17,6 +17,7 @@ nav {
 
   // ----------------- LOGO -----------------
   h1{
+    color: $text-color;
     font-weight: 700;
     font-size: 1.5em;
   }
@@ -34,29 +35,35 @@ nav {
       position: relative;
       height:28px;
       width: 60px;
-      background: #ffefb8;
+      // background: #ffefb8;
+      background: white;
       border-radius: 36px;
       display: flex;
       justify-content: end;
       align-items: center;
       box-shadow: inset 0px 0px 3px -3px rgba(0,0,0,0.1);
-      border: 2px solid white;
+      // border: 2px solid white;
 
       span{
         font-family: 'Fira Code', monospace;
+        font-weight: 700;
+        color: $primary-color;
       }
+
       img{
         width: 20px;
         height: 20px;
         border-radius: 50%;
         margin: 4px;
       }
+
       &::after{
         content: "";
         display: block;
         width: 1px;
         height: 100%;
-        background-color: $text-color;
+        background-color: white;
+
         position: absolute;
         right: -16px;
       }
@@ -74,6 +81,7 @@ nav {
       .username{
         font-size: 1.1em;
         font-weight: 400;
+        color: $text-color;
       }
 
       .avatar{

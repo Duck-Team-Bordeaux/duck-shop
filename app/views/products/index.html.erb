@@ -9,7 +9,7 @@
     </div>
 
   <%# Search Bar %>
-    <%= form_with url: shop_category_products_path(@shop, @category), method: :get, class: "search-bar-box" do %>
+    <%= form_with url: shop_category_products_path(@shop, @category), method: :get, class: "search-bar-box search-bar-box-product-index" do %>
       <%= text_field_tag :query,
           params[:query],
           class: "input-search",

@@ -36,8 +36,8 @@ User.create!(
 )
 User.create!(
   email: 'fifi@gmail.com',
-  first_name: 'Fillibert',
-  last_name: 'Donacien',
+  first_name: 'Émile',
+  last_name: 'Meunier',
   password: 'qwertyuiop',
   address: 'Rue Poquelin Molière, 33000 Bordeaux, France',
   duckcoins: 98,
