@@ -5,6 +5,10 @@
   .border-right {
     border-right: 1px solid grey;
   }
+
+  h3 {
+    margin-bottom: 15px;
+  }
 }
 
 .container-neg-products {
@@ -12,10 +16,6 @@
   margin-top: 30px;
   padding-right: 20px;
   width: 30vw;
-
-  h3 {
-    margin-bottom: 15px;
-  }
 
   .product-card-box {
     display: flex;
@@ -95,4 +95,121 @@
   i {
     margin-right: 0.3em;
   }
+}
+
+.grid {
+  position: relative;
+  width: 35vw;
+}
+.item {
+  position: absolute;
+  margin-left: 10px;
+  width: 25vw;
+  z-index: 1;
+  line-height: 100px;
+
+  &:first-child {
+    margin-top: 10px;
+  }
+  &:last-child {
+    margin-bottom: 10px;
+  }
+}
+.item.muuri-item-hidden {
+  z-index: 0;
+}
+.item.muuri-item-releasing {
+  z-index: 2;
+}
+.item.muuri-item-dragging {
+  z-index: 3;
+}
+.item-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.item.muuri-item-dragging .item-content,
+.item.muuri-item-releasing .item-content {
+  .product-card-box {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    gap: 1em;
+    cursor: pointer;
+
+    .price {
+      position: absolute;
+      margin: 0;
+      right: 0;
+      bottom: 1em;
+      padding: 0.5em 1em 0.5em 1em;
+      border-radius: 1em 0 0 1em;
+      background-color: $primary-color;
+      box-shadow: -6px -6px 15px -3px rgba(0,0,0,0.1);
+      color: white;
+    }
+
+    .img-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      img {
+        width: 60px;
+        height: 60px;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: $line-color;
+        position: absolute;
+        right: -0.5em;
+      }
+    }
+  }
+}
+
+.voila {
+  margin-left: 20px;
+  margin-top: 30px;
+  padding-right: 20px;
+  width: 30vw;
+}
+
+.red {
+  max-width: 400px;
+  max-height: 300px;
+  min-height: 300px;
+  background-color: rgb(192, 111, 111);
+  border-radius: 1em;
+}
+
+.green {
+  max-width: 400px;
+  max-height: 300px;
+  min-height: 300px;
+  background-color: rgb(138, 192, 111);
+  border-radius: 1em;
+}
+
+#bottom-m {
+  margin-bottom: 33px;
+}
+
+.box-img-de-malade-plus {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-none {
+  display: none;
 }
