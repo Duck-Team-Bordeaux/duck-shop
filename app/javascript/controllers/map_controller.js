@@ -9,6 +9,10 @@ export default class extends Controller {
     markers: Array
   }
 
+  // Define shopCardMarkers as a property of the class
+  shopCardMarkers = {};
+  selectedMarker = null; // Track the currently selected marker
+
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
 
@@ -16,11 +20,6 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     })
-
-    // this.map = new maplibregl.Map({
-    //   container: this.element,
-    //   style: `https://maps.geoapify.com/v1/styles/klokantech-basic/style.json?apiKey=${ENV[MAPBOX_API_KEY]}`,
-    // });
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
@@ -31,18 +30,39 @@ export default class extends Controller {
   }
 
   #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
+    this.markersValue.forEach((marker, index) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
 
       const customMarker = document.createElement("div")
       customMarker.innerHTML = marker.marker_html
 
-      new mapboxgl.Marker(customMarker)
+      const anchor = 'bottom';
+
+      customMarker.addEventListener("click", () => {
+        // Retrieve the associated shop card using the object
+        const shopCard = this.shopCardMarkers[index + 1];
+
+        // Check if a marker was previously selected
+        if (this.selectedMarker) {
+          // Remove the 'active' class from the previously selected marker
+          this.selectedMarker.classList.remove("active");
+        }
+
+        // Toggle the 'active' class on the currently selected shop card
+        shopCard.classList.toggle("active");
+
+        // Update the currently selected marker
+        this.selectedMarker = shopCard;
+      });
+
+      new mapboxgl.Marker(customMarker, { anchor })
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
-        .addTo(this.map)
+        .addTo(this.map);
 
-    })
+      // Store the association in the object
+      this.shopCardMarkers[index + 1] = document.querySelector(`[data-shop-id="${index + 1}"]`);
+    });
   }
 
   #fitMapToMarkers() {

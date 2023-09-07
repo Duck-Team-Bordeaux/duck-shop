@@ -23,7 +23,12 @@ class ItemsController < ApplicationController
         format.text { render partial: "carts/items", locals: {items: @items, total_price: @total_price }, formats: [:html] }
       end
     else
-      render 'carts/edit', status: :unprocessable_entity
+      @items = Item.where(cart: @cart)
+      @total_price = @items.sum { |item| item.product.price * item.quantity }
+      respond_to do |format|
+        format.json
+        format.text { render partial: "carts/items", locals: {items: @items, total_price: @total_price }, formats: [:html] }
+      end
     end
   end
 

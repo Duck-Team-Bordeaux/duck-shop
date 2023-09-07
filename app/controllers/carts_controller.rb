@@ -4,6 +4,18 @@ class CartsController < ApplicationController
     @carts = Cart.where(user: @user).reverse
   end
 
+  def show
+    @cart = Cart.find(params[:id])
+    @shop = @cart.shop
+    @items = @cart.items
+  end
+
+  def paid
+    @cart = Cart.find(params[:id])
+    @shop = @cart.shop
+    @items = @cart.items
+  end
+
   def new
     @user = User.last
     @cart = Cart.new
@@ -34,13 +46,21 @@ class CartsController < ApplicationController
   end
 
   def update
-  end
-
-  def show
     @cart = Cart.find(params[:id])
-    @items = @cart.items
     @cart.payment!
+    redirect_to cart_path(@cart)
   end
 
-  def finish() end
+
+  def finish
+    @shop = Shop.find(params[:shop_id])
+    @cart = Cart.find(params[:id])
+    items = Item.where(cart: @cart)
+
+    items.each do |item|
+      product = item.product
+      product.update(stock_quantity: product.stock_quantity - item.quantity)
+    end
+    @cart.paid!
+  end
 end

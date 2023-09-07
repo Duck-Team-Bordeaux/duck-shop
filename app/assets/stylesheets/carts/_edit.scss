@@ -123,3 +123,22 @@ video {
     font-weight: bold;
   }
 }
+
+.empty-cart {
+  background-color: #e9e9ff;
+  border-radius: $border-radius-l;
+  padding: 4em 2em;
+  width: 100%;
+  text-align: center;
+
+  i {
+    font-size: 110px;
+    color: #CCCCDF;
+    margin-bottom: 0.2em;
+  }
+
+  h3 {
+    color: $line-color;
+    font-size: 30px;
+  }
+}

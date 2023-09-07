@@ -5,3 +5,10 @@
 
 <%# --------------------------CART ITEMS -------------------------------------%>
   <%= render 'items', items: @items, total_price: @total_price %>
+
+  <% if @items.empty? %>
+    <div class="empty-cart" data-bar-code-target="empty">
+      <i class="fa-solid fa-basket-shopping"></i>
+      <h3>Panier vide</h3>
+    </div>
+  <% end %>

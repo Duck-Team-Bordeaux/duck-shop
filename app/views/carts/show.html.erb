@@ -1,8 +1,5 @@
 <h3 id="h3">Mon ticket de caisse</h3>
 <div class="show-item">
-  <%# lister les items de la carts et l'afficher
-  pour chaque item afficher leur prix
-  faire le total des prix des items  %>
   <% total_price = 0 %>
   <% @items.each do |item| %>
     <div class= "item-box">
@@ -20,4 +17,6 @@
       <div class="total-price"><%= total_price.round(2) %>€</div>
   </div>
 </div>
-<%= link_to 'Payer', finish_shop_carts_path(@cart.shop_id), class: 'button' %>
+<% if !@cart.paid? %>
+  <%= link_to 'Payer', finish_shop_cart_path(@shop, @cart), class: 'button' %>
+<% end %>
