@@ -136,6 +136,9 @@
   display: flex;
   justify-content: center;
   height: max-content;
+  align-items: start;
+  margin-top: 0;
+
 
     .shop-button {
       align-self: flex-end;
@@ -164,4 +167,9 @@
         background: $white-color;
       }
     }
+  }
+
+
+  .neg-m-top{
+    margin-top: 0px;
   }
