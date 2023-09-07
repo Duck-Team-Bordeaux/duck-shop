@@ -32,6 +32,14 @@
   }
 }
 
-canvas{
-  height: 504px;
+.graphique {
+  height: 60vh;
+  width: 97vw;
+  padding: 40px;
+}
+
+canvas {
+  background-color: white;
+  height: 50vh;
+  padding: 15px;
 }
