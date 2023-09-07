@@ -1,8 +1,22 @@
-<div class='new-cart-container mt-5'
-      data-controller= "qrcode">
+<div class='new-cart-container' data-controller= "qrcode">
+
   <h3 class="text-center">Scannez le QR code pour rentrez dans le magasin</h3>
-  <%= image_tag "qr-code.svg", class: "box", data: { qrcode_target: 'qrcode'} %>
-  <%= simple_form_for @cart, url: shop_carts_path(user_id: @user.id, shop_id: @shop.id), method: :post do |f| %>
-    <%= f.button :submit, 'Commencez vos achats', class: 'btn'%>
-  <% end %>
+
+  <%= image_tag "qr-code.svg", class: "qr-code-img", data: { qrcode_target: 'qrcode'} %>
+
+  <%# <div class="qr-code-icons">
+      <i class="fa-solid fa-mobile-screen-button"></i>
+      <i class="fa-solid fa-qrcode"></i>
+      <i class="fa-solid fa-arrow-right fleche-droite"></i>
+      <i class="fa-solid fa-door-open"></i>
+  </div> %>
+
+<%= simple_form_for @cart, url: shop_carts_path(user_id: @user.id, shop_id: @shop.id), method: :post do |f| %>
+
+<%= f.button :submit, 'Commencez vos achats', class: 'btn'%>
+
+<% end %>
+
+
+
 </div>

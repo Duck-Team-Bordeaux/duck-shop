@@ -1,8 +1,7 @@
 <%# --------------------- BARCODE SCANNER ACCORDION --------------------------%>
 <div data-controller="bar-code" data-bar-code-cart-value=<%= @cart.id %>>
   <a class='barcode-button' data-bar-code-target='button' data-action='click->bar-code#startLecture'>Scanner un article</a>
-  <div data-bar-code-target='video' class='barcode-container d-none'></div>
-
+<div data-bar-code-target='video' class='barcode-container d-none'></div>
 
 <%# --------------------------CART ITEMS -------------------------------------%>
   <%= render 'items', items: @items, total_price: @total_price %>
