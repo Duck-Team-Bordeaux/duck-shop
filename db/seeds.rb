@@ -526,8 +526,6 @@ end
 p 'creating carts...'
 users = User.all
 
-random_day = (0..30).to_a.sample
-
 users.each do |user|
   (1..10).to_a.sample.times do
     Cart.create!(
