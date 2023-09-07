@@ -9,28 +9,48 @@
   justify-content: space-between;
   align-items: center;
 
+
   p {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 5px;
+    font-size: 18px;
+    font-family: 'Fira Code', Courier, monospace;
+    position: relative;
+  }
+
+  .solde{
+    font-weight: bold;
+    font-size: 24px;
+    &::before{
+      display: block;
+      content: " ";
+      background: $line-color;
+      width: 59px;
+      height: 1px;
+      position: absolute;
+      left: -72px;
+    }
   }
 }
 
 .profil-btns {
-  margin-bottom: 10px;
+
+  margin-bottom: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap:16px;
 
   .btn-profil {
     height: 55px;
-    width: 170px;
+    width: 100%;
     font-size: smaller;
     border: none;
-    background-color: $primary-color;
+    cursor: pointer;
     padding: 10px;
     padding-inline: 20px;
     border-radius: $border-radius-l;
@@ -40,10 +60,42 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
+    @include secondary-gradient-background;
+    box-shadow: 0px 6px 15px -3px rgba(0,0,0,0.1);
+
+    i{
+      font-size: 16px;
+      color: white;
+    }
+    p{
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    span{
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    &:hover{
+      outline: 2px $secondary-color solid;
+      background: white;
+      i{
+        color: $secondary-color;
+      }
+      p{
+        color: $secondary-color;
+      }
+      span{
+        color: $secondary-color;
+      }
+    }
   }
 }
 
 .display-profil {
+  margin-top: 16px;
   background-color: white;
   padding: 10px;
   border-radius: $border-radius-l;
@@ -52,18 +104,19 @@
     padding-top: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: start;
     align-items: center;
 
     .img-profil {
-      width: 150px;
+      width: 100px;
       border-radius: 50%;
       border: 2px solid $primary-color;
+      margin-left: 17px;
     }
 
     div {
       padding-inline: 20px;
-      border-left: 1px solid grey;
+
 
       h2 {
         font-size: x-large;
@@ -72,7 +125,7 @@
   }
 
   .display-info-user {
-    height: 300px;
+    height: 215px;
     padding-left: 20px;
     display: flex;
     flex-direction: column;
@@ -95,15 +148,34 @@
 
   .profil-btns {
     margin-inline: 10px;
+    display: flex;
+    gap: 16px;
 
     .log-out {
-      color: $primary-color;
-      background-color: white;
-      border: 2px solid $primary-color;
+      background:none;
+      outline: none;
+      box-shadow: none;
+      span{
+        color: $secondary-color;
+      }
+      i{
+        color: $secondary-color;
+      }
+     cursor: pointer;
+     &:hover{
+      background:none;
+      span{
+        color: $line-color;
+      }
+     }
     }
 
+
     .small {
-      width: 150px;
+      width: 100%;
+    }
+    .btn-profil{
+      min-width: 140px;
     }
   }
 }

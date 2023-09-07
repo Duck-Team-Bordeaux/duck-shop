@@ -1,5 +1,10 @@
 class ProfilsController < ApplicationController
-  def show() end
 
-  def duckcoin() end
+  def show
+    @user = current_user
+    # raise
+  end
+
+  def duckcoin
+  end
 end

@@ -39,6 +39,12 @@
     color: $white-color;
     box-shadow: -6px -6px 15px -3px rgba(0,0,0,0.1);
 
+    span{
+      font-family: 'Fira Code', monospace;
+      font-weight: bold;
+    }
+
+
     .duckcoin-product-show{
       width: 30px;
       height: 30px;
