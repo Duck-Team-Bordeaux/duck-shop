@@ -532,12 +532,20 @@ end
 p 'creating carts...'
 users = User.all
 
+
 users.each do |user|
   (1..10).to_a.sample.times do
+    year = 2023
+    month = rand(1..12)
+    max_day = Date.new(year, month, -1).day
+    day = rand(1..max_day)
+    date_achat_date = Date.new(year, month, day)  # Use Date class here
+    formatted_date = date_achat_date.strftime("%d/%m/%Y")
     Cart.create!(
       shop: Shop.first,
       user: user,
-      date_achat: DateTime.new(2023, 8, rand(1..30))
+      date_achat: formatted_date,
+      progress: 4
     )
   end
 end

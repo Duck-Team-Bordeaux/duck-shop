@@ -1,32 +1,38 @@
-<div class='display-coin'>
-  <p>Mon solde duck coin</p>
-  <p>55 <%= image_tag "duckcoin.svg" %></p>
+<div class='display-coin mb-3'>
+  <p>Mon portefeuille</p>
+  <p class='solde'>55 <%= image_tag "duckcoin.svg" %></p>
 </div>
 <div class='profil-btns'>
-  <%= link_to duckcoin_profils_path, :class => 'btn-profil' do %>
-    <%= image_tag "wallet.svg" %>
-    <p>Mes duckcoins</p>
+  <%= link_to duckcoin_profils_path, class: 'btn-profil' do %>
+    <i class="fa-solid fa-wallet"></i>
+    <p>Duckcoins</p>
   <% end %>
-  <%= link_to profil_path(current_user), :class => 'btn-profil' do %>
-    <%= image_tag "user.svg" %>
+  <%= link_to profil_path(current_user), class: 'btn-profil' do %>
+    <i class="fa-solid fa-user"></i>
     <p>Mon profil</p>
   <% end %>
 </div>
-<h3>Mon historique</h3>
-<%# liste les achats de shop et les afficher (anciennes commandes)
-quand clic de nouveau bill %>
-<% @carts.each do |cart| %>
-  <div class="cart-box-shop">
+
+<%#---------------------------- ALL CARTS ------------------------------------%>
+<h3 class="mb-2">Mon historique</h3>
+
+<div class="carts-container">
+  <% @carts.each do |cart| %>
     <%= link_to cart_path(cart) do%>
-      <div class="cart-shop">
-          <%= image_tag 'pin-map.png', class: "duck-pin-card-shop-index", id:"duck-pin-cart" %>
-          <div class="location-carts"><%= cart.shop.location %></div>
+    <div class="cart-box-shop d-flex">
+      <div>
+          <h3><%= image_tag 'logo-duckonly-duckshop.png' %>  <%= cart.shop.location %></h3>
+        <div class="d-flex justify-content-around mt-1">
+          <p><%= cart.items.count %> produits •</p>
+          <p><%= cart.items.map{|item| item.quantity * item.product.price}.sum.round(2) %>€ •</p>
+          <p id="p"> Terminé</p>
+        </div>
       </div>
-      <div class="products-price-finish">
-        <%= cart.items.count %> produits •
-        <%= cart.items.map{|item| item.quantity * item.product.price}.sum.round(2) %>€ •
-        <p id="p"> Terminé</p>
+
+      <div id="date">
+        <%= cart.date_achat %>
       </div>
-    <% end %>
-  </div>
-<% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

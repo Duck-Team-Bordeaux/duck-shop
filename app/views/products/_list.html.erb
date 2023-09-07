@@ -1,0 +1,21 @@
+<%# SEARCHED ITEMS %>
+<div class="product-index-container" data-search-target="list">
+  <h3 class="my-2">Produits</h3>
+  <% search_results = @products.global_search(params[:query]) %>
+    <% search_results.each do |product| %>
+      <div class="product-card-box box">
+        <div class="img-box">
+          <%= image_tag(product.image_url) %>
+        </div>
+        <div class="info-box">
+          <h5 class="name"><%= product.name %></h5>
+          <% if product.stock_quantity > 0 %>
+            <h5 class="disponibility"><i class="fa-solid fa-circle-check in-stock" style="color: green;"></i><%= product.stock_quantity %> en stock</h5>
+          <% else %>
+            <h5 class="disponibility"><i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i><%= product.stock_quantity %> pas en stock</h5>
+          <% end %>
+          <h5 class="price"><%= product.price %>€</h5>
+        </div>
+      </div>
+    <% end %>
+</div>

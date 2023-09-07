@@ -33,6 +33,6 @@
     <div>
       <p>Total: <%= total_price.round(2) %> €</p>
     </div>
-    <%= link_to "Payer", cart_path(@cart), class: "pay-button"%>
+    <%= link_to "Payer", cart_path(@cart), turbo_method: 'path', class: "pay-button"%>
   </div>
 </div>
