@@ -8,10 +8,12 @@
   <%# ----------------- DUCKCOINS USER BOX ----------------- %>
   <div class="duckcoins-user-box">
     <%# ----------------- DUCKCOINS ----------------- %>
-    <div class="display-duckcoins-navbar">
-    <span>55</span>
-    <%= image_tag 'duckoin-a-remplacer.png' %>
-    </div>
+    <%= link_to fun_path do %>
+      <div class="display-duckcoins-navbar">
+      <span>55</span>
+      <%= image_tag 'duckoin-a-remplacer.png' %>
+      </div>
+    <% end %>
 
 
     <%# ----------------- USER PROFILE / LOG IN ----------------- %>
