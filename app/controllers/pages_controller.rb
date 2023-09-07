@@ -3,4 +3,8 @@ class PagesController < ApplicationController
     @hide_navbar = true
     @hide_footer = true
   end
+
+  def fun
+    @hide_navbar = true
+  end
 end

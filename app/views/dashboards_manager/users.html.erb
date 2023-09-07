@@ -4,7 +4,7 @@
   <div class='container-users'>
     <% @users.each do |user| %>
       <div class='info-user'>
-        <%= image_tag "profile-pic.png", class: 'img-user' %>
+        <img src="<%= user.url_photo %>" alt="" class='img-user'>
         <div>
           <h5><%= user.first_name %> <%= user.last_name %></h5>
           <p><%= user.email %></p>

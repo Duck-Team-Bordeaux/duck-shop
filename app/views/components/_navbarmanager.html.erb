@@ -1,0 +1,21 @@
+<div class='navbar-manager'>
+  <%= link_to shops_path, :class => 'root-link' do %>
+    <h1>DuckShop Manager</h1>
+    <h1><%= image_tag "duck-icon-white.png", class: "img-navbar" %>Place du parlement</h1>
+  <% end %>
+
+  <%# ----------------- DUCKCOINS USER BOX ----------------- %>
+  <div class="duckcoins-user-box">
+
+
+    <%# ----------------- USER PROFILE / LOG IN ----------------- %>
+    <% if current_user != nil %>
+      <%= link_to profil_path(current_user), :class => 'user-box' do %>
+        <p class="username"><%= current_user.first_name %></p>
+        <%= image_tag "armi-pp.jpg", class: 'avatar' %>
+      <% end %>
+    <% else %>
+      <%= link_to 'Se connecter', new_user_session_path, :class=>"username" %>
+    <% end %>
+  </div>
+</div>

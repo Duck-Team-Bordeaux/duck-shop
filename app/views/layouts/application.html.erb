@@ -2,7 +2,25 @@
 <html>
   <head>
     <title>DuckShop</title>
+    <meta name="description" content="Duckshop : Le magasin connecté">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="DuckShop">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="duck-shop-cc307d684f5c.herokuapp.com">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="Duckshop : Le magasin connecté">
+    <meta property="og:site_name" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="DuckShop">
+    <meta name="twitter:description" content="Duckshop : Le magasin connecté">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image:src" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag asset_path('duck-icon-text.png') %>
@@ -18,11 +36,42 @@
 
   <body>
     <%= render 'components/navbar' unless @hide_navbar == true %>
+    <%= render 'components/navbarmanager' if @navbarmanager == true %>
     <div class="main-container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script>
+      var grid1 = new Muuri('.grid-1', {
+        dragEnabled: true,
+        dragContainer: document.body,
+        dragSort: function () {
+          return [grid1, grid2]
+        }
+      });
+
+      var grid2 = new Muuri('.grid-2', {
+        dragEnabled: true,
+        dragContainer: document.body,
+        dragSort: function () {
+          return [grid1, grid2]
+        }
+      });
+
+      const itemsDrag = document.querySelectorAll(".drag");
+      itemsDrag.forEach(function (item) {
+        item.addEventListener("mouseup", () => {
+          item.innerHTML = '<i class="fa-solid fa-circle-check in-stock" style="color: green;"></i>10 en commande'
+          window.alert('Produits commandés')
+        });
+        item.addEventListener("mousedown", () => {
+          document.querySelector(".box-img-de-malade").remove();
+        });
+      });
+    </script>
   </body>
 </html>
