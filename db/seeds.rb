@@ -1,4 +1,5 @@
-require "open-uri"
+require 'open-uri'
+require 'date'
 
 p 'Cleaning DB'
 Shop.destroy_all
@@ -121,16 +122,18 @@ shops.each do |shop|
 
   p 'creating snacks'
 
+
+  # DEMO PRODUCT BELOW
   Product.create!(
     name: 'Cup nouilles japonaises instantanées TANOSHI ',
     description: 'La saveur “teriyaki”, qui accompagne ces nouilles, vient d\'une technique culinaire utilisée au Japon qui consiste à faire griller une viande préalablement marinée dans une sauce soja sucrée au mirin.',
     unit: '65g',
-    stock_quantity: (0..15).to_a.sample,
+    stock_quantity: 5,
     price: 1.74,
     image_url: 'https://media.auchan.fr/A0220090227000612872PRIMARY_1200x1200/B2CD/',
     shop: shop,
     category: snack,
-    ean: '3800065711135'
+    ean: '3229820762043'
   )
 
   Product.create!(
@@ -141,8 +144,7 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.99,
     image_url: 'https://media.auchan.fr/A0220100531000021019PRIMARY_1200x1200/B2CD/',
-    shop: shop,
-    ean: '0799418201542'
+    shop: shop
   )
 
   Product.create!(
@@ -227,16 +229,17 @@ shops.each do |shop|
     image_url: 'https://media.auchan.fr/P02000000000WD2PRIMARY_1200x1200/B2CD/',
     shop: shop
   )
-
+  # DEMO PRODUCT BELOW
   Product.create!(
     name: "Biscuits fourrés goût chocolat PRINCE",
     description: "Biscuits fourrés (35 %) parfum chocolat. Prince Goût Chocolat est un délicieux biscuit croustillant au blé complet et au bon goût de chocolat. Adapté au goûter des enfants, c’est le compagnon idéal des pauses gourmandes !",
     unit: '300g',
     category: pasta,
-    stock_quantity: (0..15).to_a.sample,
+    stock_quantity: 3,
     price: 1.54,
     image_url: 'https://media.auchan.fr/A0220150721000623554PRIMARY_1200x1200/B2CD/',
-    shop: shop
+    shop: shop,
+    ean: '7622210449283'
   )
 
   Product.create!(
@@ -338,20 +341,20 @@ shops.each do |shop|
     stock_quantity: (0..15).to_a.sample,
     price: 3.20,
     image_url: 'https://media.auchan.fr/A0220121004000405652PRIMARY_1200x1200/B2CD/',
-    shop: shop,
-    ean: '0712345678911'
+    shop: shop
   )
 
-
+  # DEMO PRODUCT BELOW
   Product.create!(
-    name: 'Bouteille Coca-Cola Cherry',
-    description: 'Boisson rafraîchissante aux extraits végétaux et arôme cerise.',
+    name: 'Bouteille Coca-Cola Vanille',
+    description: 'Boisson rafraîchissante aux extraits végétaux et arôme vanille.',
     unit: '1.25l',
     category: drinks,
-    stock_quantity: (0..15).to_a.sample,
+    stock_quantity: 12,
     price: 2.03,
-    image_url: 'https://media.auchan.fr/A0220190321000539344PRIMARY_1200x1200/B2CD/',
-    shop: shop
+    image_url: 'https://faistoilivrer.fr/694-large_default/coca-cola-vanille-355-ml.jpg',
+    shop: shop,
+    ean: '5449000284617'
   )
 
   Product.create!(
@@ -396,27 +399,28 @@ shops.each do |shop|
     shop: shop
   )
 
-
+  # DEMO PRODUCT BELOW
   Product.create!(
-    name: 'Déodorant stick 24h homme musk anti-traces Mennen',
+    name: 'Gel douche Brasil USHUAIA',
     description: 'déodorant pour homme',
     unit: '60ml',
     category: beauty,
-    stock_quantity: (0..15).to_a.sample,
+    stock_quantity: 2,
     price: 4.75,
     image_url: 'https://media.auchan.fr/P02000000001MDMPRIMARY_1200x1200/B2CD/',
-    shop: shop
+    shop: shop,
+    ean: '3600551053677'
   )
 
 
   Product.create!(
     name: 'Original Care déodorant bille anti transpirant Dove',
     description: 'déodorant pour femme',
-    unit: '50ml',
+    unit: '250ml',
     category: beauty,
     stock_quantity: (0..15).to_a.sample,
     price: 3.20,
-    image_url: 'https://media.auchan.fr/S010000000403NNPRIMARY_1200x1200/B2CD/',
+    image_url: 'https://media.auchan.fr/MEDIASTEP80009741_1200x1200/B2CD/',
     shop: shop
   )
 
@@ -522,11 +526,14 @@ end
 p 'creating carts...'
 users = User.all
 
+random_day = (0..30).to_a.sample
+
 users.each do |user|
   (1..10).to_a.sample.times do
     Cart.create!(
       shop: Shop.first,
-      user: user
+      user: user,
+      date_achat: DateTime.new(2023, 8, rand(30))
     )
   end
 end
