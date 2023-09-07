@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   get '/dashboards_manager/users', to: 'dashboards_manager#users'
   get '/dashboards_manager/products', to: 'dashboards_manager#products'
   get '/dashboards_manager/wallet', to: 'dashboards_manager#wallet'
+  get '/fun', to: 'pages#fun'
 end
