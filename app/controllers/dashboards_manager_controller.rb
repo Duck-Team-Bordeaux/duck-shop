@@ -2,7 +2,7 @@ class DashboardsManagerController < ApplicationController
   def users
     @hide_navbar = true
     @navbarmanager = true
-    @users = User.all.reverse
+    @users = User.all
   end
 
   def products
