@@ -1,4 +1,5 @@
-require "open-uri"
+require 'open-uri'
+require 'date'
 
 p 'Cleaning DB'
 Shop.destroy_all
@@ -525,11 +526,14 @@ end
 p 'creating carts...'
 users = User.all
 
+random_day = (0..30).to_a.sample
+
 users.each do |user|
   (1..10).to_a.sample.times do
     Cart.create!(
       shop: Shop.first,
-      user: user
+      user: user,
+      date_achat: DateTime.new(2023, 8, rand(30))
     )
   end
 end
