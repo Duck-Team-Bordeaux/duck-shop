@@ -22,14 +22,18 @@ class DashboardsManagerController < ApplicationController
     end
     @turnover = result.round(2)
     @moy_cart = (result / Cart.all.count).round(2)
+    data_chart = []
+    Cart.all.each do |cart|
+      data_chart << cart.items.map { |item| item.quantity * item.product.price }.sum.round(2)
+    end
 
     @chart_data = {
-      labels: %w[January February March April May June July],
+      labels: %w[01/07/23 05/07/23 10/07/23 15/07/23 20/07/23 25/07/23 30/07/23],
       datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'transparent',
-        borderColor: '#3B82F6',
-        data: [37, 83, 78, 54, 12, 5, 99]
+        label: "Chiffre d'affaire du mois de Juillet",
+        backgroundColor: 'white',
+        borderColor: '#4614CD',
+        data: data_chart
       }]
     }
 
