@@ -24,5 +24,35 @@
       <%= yield %>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script>
+      var grid1 = new Muuri('.grid-1', {
+        dragEnabled: true,
+        dragContainer: document.body,
+        dragSort: function () {
+          return [grid1, grid2]
+        }
+      });
+
+      var grid2 = new Muuri('.grid-2', {
+        dragEnabled: true,
+        dragContainer: document.body,
+        dragSort: function () {
+          return [grid1, grid2]
+        }
+      });
+
+      const itemsDrag = document.querySelectorAll(".drag");
+      itemsDrag.forEach(function (item) {
+        item.addEventListener("mouseup", () => {
+          item.innerHTML = '<i class="fa-solid fa-circle-check in-stock" style="color: green;"></i>10 en commande'
+        });
+        item.addEventListener("mousedown", () => {
+          console.log("oui")
+          document.querySelector(".box-img-de-malade").remove();
+        });
+      });
+    </script>
   </body>
 </html>

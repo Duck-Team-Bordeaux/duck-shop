@@ -6,7 +6,6 @@ class DashboardsManagerController < ApplicationController
   def products
     @neg_products = Product.where(stock_quantity: 0, shop: 1)
     @best_products = Product.where('stock_quantity <= 3 AND shop_id = 1')
-    @worst_products = Product.where('stock_quantity >= 13 AND shop_id = 1')
   end
 
   def wallet
