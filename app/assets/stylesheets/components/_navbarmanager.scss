@@ -1,0 +1,173 @@
+.navbar-manager {
+
+  width: 100vw;
+  height: 60px;
+  border-radius: 0 0 1em 1em;
+  padding: 1em;
+  background: rgb(255,239,184);
+  @include secondary-gradient-background;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  position: sticky;
+
+
+
+  .root-link {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  // ----------------- LOGO -----------------
+  h1 {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: white;
+
+    &:first-child {
+      padding-right: 20px;
+      border-right: 2px solid white;
+    }
+  }
+
+  // ----------------- DUCKCOINS USER BOX -----------------
+  .duckcoins-user-box{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:32px;
+
+    // ----------------- DUCKCOINS -----------------
+    .display-duckcoins-navbar{
+      position: relative;
+      height:28px;
+      width: 60px;
+      background: #ffefb8;
+      border-radius: 36px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      box-shadow: inset 0px 0px 3px -3px rgba(0,0,0,0.1);
+      border: 2px solid white;
+
+      span{
+        font-family: 'Fira Code', monospace;
+      }
+      img{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin: 4px;
+      }
+      &::after{
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: $text-color;
+        position: absolute;
+        right: -16px;
+      }
+    }
+
+    // ----------------- USER PROFILE / LOG IN -----------------
+    .user-box{
+
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      gap: 0.5em;
+      align-items: center;
+      color: white;
+
+      .username {
+        font-size: 1.1em;
+        font-weight: 400;
+        color: white;
+      }
+
+      .avatar{
+        border-radius: 50%;
+        border: 2px solid #ffefb8;
+        box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.1);
+      }
+    }
+  }
+}
+
+.img-navbar {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+
+
+
+
+// -------------------- CODE NATEO ----------------------
+
+// nav {
+//   display: flex;
+//   flex-direction: column;
+
+//   .margin-top {
+//     width: 100vw;
+//     height: 60px;
+//     padding-inline: 3vw;
+//     background-color: $primary-color;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+
+//     p {
+//       color: white;
+//     }
+//   }
+
+//   .nav-box {
+//     width: 100vw;
+//     height: 60px;
+//     border-radius: 0 0 $border-radius $border-radius;
+//     background-color: white;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-around;
+//     align-items: center;
+
+//     .nav-profil {
+//       width: 30vw;
+//       height: 60px;
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: space-between;
+//       align-items: center;
+
+//       .img {
+//         height: 2em;
+//         width: 2em;
+//         border-radius: 50%;
+//         border: solid 2.5px $primary-color;
+//         object-fit: cover;
+//       }
+//     }
+
+//     .root-link {
+//       color: black;
+//       font-weight: 700;
+//     }
+
+//     p {
+//       width: 30vw;
+//       height: 60px;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       gap: 5px;
+//     }
+//   }
+// }
