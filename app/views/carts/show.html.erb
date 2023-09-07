@@ -17,4 +17,6 @@
       <div class="total-price"><%= total_price.round(2) %>€</div>
   </div>
 </div>
-<%= link_to 'Payer', finish_shop_cart_path(@shop, @cart), class: 'button' %>
+<% if !@cart.paid? %>
+  <%= link_to 'Payer', finish_shop_cart_path(@shop, @cart), class: 'button' %>
+<% end %>

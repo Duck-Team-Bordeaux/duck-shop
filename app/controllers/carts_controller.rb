@@ -2,14 +2,18 @@ class CartsController < ApplicationController
   def index
     @user = current_user
     @carts = Cart.where(user: @user).reverse
-    raise
   end
 
   def show
     @cart = Cart.find(params[:id])
     @shop = @cart.shop
     @items = @cart.items
-    @cart.payment!
+  end
+
+  def paid
+    @cart = Cart.find(params[:id])
+    @shop = @cart.shop
+    @items = @cart.items
   end
 
   def new
@@ -42,6 +46,9 @@ class CartsController < ApplicationController
   end
 
   def update
+    @cart = Cart.find(params[:id])
+    @cart.payment!
+    redirect_to cart_path(@cart)
   end
 
 

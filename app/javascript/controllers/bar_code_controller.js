@@ -11,6 +11,7 @@ export default class extends Controller {
   startLecture() {
     this.buttonTarget.classList.add('d-none')
     this.videoTarget.classList.remove('d-none')
+    this.inProgress = false
     this.initBarcodeScanner()
     this.decodeBarCode()
   }
@@ -49,17 +50,35 @@ export default class extends Controller {
 
   decodeBarCode() {
     Quagga.onDetected((result) => {
+      console.log(this.inProgress)
+      if (this.inProgress) {
+        console.log('Return!');
+        return
+      }
+      this.inProgress = true
+      console.log(result)
       const eanCode = result.codeResult.code
       Quagga.stop()
       this.videoTarget.classList.add('d-none')
       this.buttonTarget.classList.remove('d-none')
+      setTimeout(() => {
+        this.createItem(eanCode);
+      }, 100);
+      // this.createItem(eanCode);
 
-      this.createItem(eanCode);
-      this.emptyTarget.classList.add('d-none')
+      if (this.hasEmptyTarget) {
+        this.emptyTarget.classList.add('d-none')
+      }
     });
   }
 
   createItem(eanCode) {
+      console.log(this.inProgress)
+      console.log(eanCode)
+    // if (this.inProgress) {
+    //   console.log('Return!');
+    //   return
+    // }
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     fetch(`/carts/${this.cartValue}/items?barcode=${eanCode}`, {
       method: 'POST',
@@ -71,12 +90,16 @@ export default class extends Controller {
     })
     .then(response => response.text())
     .then((data) => {
-      console.log(eanCode)
       console.log(data)
+      console.log('dans le then');
       this.itemsContainerTarget.innerHTML = data
     })
     .catch(error => {
       console.error(error);
-    });
+    })
+    .finally(() => {
+      console.log('finnaly');
+      this.inProgress = false
+    })
   }
 }
