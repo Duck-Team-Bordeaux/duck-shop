@@ -18,6 +18,7 @@
 
   <body>
     <%= render 'components/navbar' unless @hide_navbar == true %>
+    <%= render 'components/navbarmanager' if @navbarmanager == true %>
     <div class="main-container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
@@ -47,9 +48,9 @@
       itemsDrag.forEach(function (item) {
         item.addEventListener("mouseup", () => {
           item.innerHTML = '<i class="fa-solid fa-circle-check in-stock" style="color: green;"></i>10 en commande'
+          window.alert('Produits commandés')
         });
         item.addEventListener("mousedown", () => {
-          console.log("oui")
           document.querySelector(".box-img-de-malade").remove();
         });
       });
