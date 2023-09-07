@@ -29,8 +29,7 @@
 
 <%#  ---------- Search Bar ----------  %>
 
-<div class="shop-show-container my-2 shop-show-search-box">
-  <h3 class="mb-1 shop-show-box-title">Voir disponibilité</h3>
+
 
   <%= form_with url: shop_path(@shop), method: :get, class: "search-bar-box" do %>
     <%= text_field_tag :query,
@@ -42,16 +41,16 @@
     <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
     <% end %>
   <% end %>
-</div>
+
 
 
 <%# ---------- categories cards container ---------- %>
 
 <div class="shop-show-container" data-controller="see-all">
-  <div class="d-flex justify-content-between align-items-end mb-1">
-    <h3 class="shop-show-box-title">Rayon</h3>
-    <button id="see-all" data-action="click->see-all#seeAll">tout voir</button>
-  </div>
+  <%# <div class="d-flex justify-content-between align-items-end mb-1"> %>
+    <%# <h3 class="shop-show-box-title">Rayon</h3> %>
+    <%# <button id="see-all" data-action="click->see-all#seeAll">tout voir</button> %>
+  <%# </div> %>
   <%#  ---------- 6 category cards ----------  %>
   <div class="category-container mb-1 row justify-content-around"
           data-see-all-target="cards">

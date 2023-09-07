@@ -1,25 +1,36 @@
 .shop-show-search-box{
   animation: fadeInLeft;
   animation-duration: 0.5s;
-  .shop-show-box-title{
 
+
+
+  .shop-show-box-title{
   }
 
   .input-search{
-    margin-top: 10px;
+    margin-top: 32px;
+
   }
 
   .search-bar-btn{
-    margin-top: 9px;
+    margin-top: 32px;
   }
 }
+
+
+
 
 .shop-show-container {
   @include box;
   padding: 1em;
-
+  margin-bottom: 1em;
+  padding-bottom: 6px;
 }
 
+.category-container{
+  margin-top: -16px;
+  padding-bottom: 0px;
+}
 
 .card-category {
   animation: fadeInRight;
@@ -136,3 +147,7 @@
       }
     }
   }
+
+.search-bar-box{
+  margin: 16px 0 16px 0;
+}
