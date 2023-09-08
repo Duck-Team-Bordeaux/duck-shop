@@ -30,7 +30,7 @@ video {
 
 }
 .cart-item {
-  animation: zoomInDown;
+  animation: fadeIn;
   animation-duration: 1s;
   @include box;
   display: flex;

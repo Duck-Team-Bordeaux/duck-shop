@@ -17,13 +17,13 @@ class CartsController < ApplicationController
   end
 
   def new
-    @user = User.last
+    @user = current_user
     @cart = Cart.new
     @shop = Shop.find(params[:shop_id])
   end
 
   def create
-    @user = User.last
+    @user = current_user
     @shop = Shop.find(params[:shop_id])
     @cart = Cart.new
     @cart.user = @user
