@@ -201,11 +201,23 @@
 }
 
 .box-img-de-malade-plus {
-  margin-top: 90px;
+  margin-top: 35px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  i{
+    color: white;
+    font-size: 100px;
+  }
+  p{
+    margin-top: 16px;
+    color: white;
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    width: 200px;
+  }
 }
 
 .display-none {
