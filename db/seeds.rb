@@ -354,7 +354,7 @@ shops.each do |shop|
   Product.create!(
     name: 'Bouteille Coca-Cola Vanille',
     description: 'Boisson rafraîchissante aux extraits végétaux et arôme vanille.',
-    unit: '1.25l',
+    unit: '33cl',
     category: drinks,
     stock_quantity: 12,
     price: 2.03,

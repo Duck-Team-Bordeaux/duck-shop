@@ -20,6 +20,8 @@
     position: relative;
     border-radius: 1em 1em 0 0;
     margin-bottom: 2em;
+    animation: fadeInUp;
+    animation-duration: 1s;
 
     h1{
       font-size: 2em;
@@ -135,4 +137,6 @@
 
 .search-bar-box-product-index{
   margin-top: -32px;
+  animation: zoomIn;
+  animation-duration: 1s;
 }

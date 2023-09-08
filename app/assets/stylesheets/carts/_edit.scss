@@ -1,6 +1,11 @@
 video {
   width: 100%;
+  border-radius: 16px;
+  box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.2);
+  border: 2px solid white;
 }
+
+
 
 .cart-items-container {
   margin-bottom: 12vh;
@@ -25,6 +30,8 @@ video {
 
 }
 .cart-item {
+  animation: zoomInDown;
+  animation-duration: 1s;
   @include box;
   display: flex;
   flex-direction: row;
@@ -130,6 +137,7 @@ video {
   padding: 4em 2em;
   width: 100%;
   text-align: center;
+  margin-top: -67px;
 
   i {
     font-size: 110px;

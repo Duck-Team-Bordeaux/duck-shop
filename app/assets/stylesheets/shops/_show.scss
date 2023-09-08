@@ -1,6 +1,5 @@
 .shop-show-search-box{
-  animation: fadeInLeft;
-  animation-duration: 0.5s;
+
 
 
 
@@ -30,12 +29,18 @@
 .category-container{
   margin-top: -16px;
   padding-bottom: 0px;
+
+}
+
+.p-index-down{
+animation: fadeInDown;
+animation-duration: 1s;
 }
 
 .card-category {
-  animation: fadeInRight;
-  animation-duration: 0.5s;
-  animation-delay: 0.5s;
+  // animation: fadeInRight;
+  // animation-duration: 0.5s;
+  // animation-delay: 0.5s;
 
   border-radius: $border-radius;
   box-shadow: $btn-shadow;
@@ -59,8 +64,6 @@
       //font size
     }
   }
-
-
 
 
   #see-all{
@@ -150,4 +153,50 @@
 
 .search-bar-box-show-shop{
   margin: 16px 0 16px 0;
+}
+
+
+
+// ---------- ANIMATAION ----------
+
+.a-result-product{
+  animation: fadeInLeft;
+  animation-duration: 1s;
+
+}
+
+.a-shop-show-left-nom-magasin{
+  animation: pulse;
+  animation-duration: 1s;
+
+}
+
+.a-shop-show-left-2-km{
+  animation: fadeInRight;
+  animation-duration: 1s;
+
+}
+
+.a-shop-show-pulse{
+  animation: pulse;
+  animation-duration: 1s;
+
+}
+
+.a-shop-show-appear-search-bar{
+  animation: fadeIn;
+  animation-duration: 1s;
+
+}
+
+.a-shop-show-right{
+  animation: fadeInRight;
+  animation-duration: 1s;
+
+}
+
+.a-shop-show-pop-button{
+  animation: pulse;
+  animation-duration: 1s;
+
 }

@@ -3,7 +3,7 @@
   <%= link_to '< Retour à la carte', shops_path, class: 'back-btn' %>
 </div>
 
-<div class="d-flex gap-2 mt-2">
+<div class="d-flex gap-2 mt-2 a-shop-show-left-nom-magasin">
 
   <div class="shop-show-location-magasin-tittle-box"> <%= image_tag 'duck-icon-text.png' %> <span><%= @shop.location %></span> </div>
 
@@ -15,11 +15,13 @@
     <% distance_min = distance_km * 10 %>
 
 
-  <div class="d-flex justify-content-between align-items-end">
+  <div class="d-flex justify-content-between align-items-end .a-shop-show-left-nom-magasin">
     <div>
       <div class="shop-show-distances-box"> <i class="fa-solid fa-location-pin"></i> </i> <%= distance_km.round(3) %> km</div>
     </div>
-    <div class="d-flex gap-2">
+
+
+    <div class="d-flex gap-2 .a-shop-show-left-nom-magasin">
       <i class="fa-solid fa-person-walking icon-shop-show-man"></i>
       <p style="font-weight: bold;"><%= distance_min.round(0) %> min</p>
     </div>
@@ -29,9 +31,7 @@
 
 <%#  ---------- Search Bar ----------  %>
 
-
-
-  <%= form_with url: shop_path(@shop), method: :get, class: "search-bar-box search-bar-box-show-shop" do %>
+  <%= form_with url: shop_path(@shop), method: :get, class: "search-bar-box search-bar-box-show-shop ." do %>
     <%= text_field_tag :query,
         params[:query],
         class: "input-search",
@@ -43,10 +43,43 @@
   <% end %>
 
 
+<%#  ---------- searched items cards ---------- MES RESULTAT QUI POP %>
+<% if params[:query].present? %>
+  <div class="product-index-container">
+
+  <% search_results = @shop.products.global_search(params[:query]) %>
+  <% if search_results.empty? %>
+
+    <div class="product-card-box box">
+    <p>Aucun prouduit trouvé pour "<%= params[:query] %>".</p>
+    </div>
+  <% else %>
+  <div class="mb-1">
+    <h3 class="tittle-shop-show-result-produit">Produits</h3>
+    <% search_results.each do |product| %>
+    <div class="product-card-box box mb-2 a-result-product">
+      <div class="img-box">
+        <%= image_tag(product.image_url) %>
+      </div>
+      <div class="info-box">
+        <h5 class="name"><%= product.name %></h5>
+        <% if product.stock_quantity > 0 %>
+          <h5 class="disponibility"><i class="fa-solid fa-circle-check in-stock" style="color: green;"></i><%= product.stock_quantity %> en stock</h5>
+        <% else %>
+          <h5 class="disponibility"><i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i><%= product.stock_quantity %> pas en stock</h5>
+        <% end %>
+        <h5 class="price"><%= product.price %>€</h5>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+  </div>
+<% end %>
 
 <%# ---------- categories cards container ---------- %>
 
-<div class="shop-show-container" data-controller="see-all">
+<div class="shop-show-container a-shop-show-right" data-controller="see-all">
   <%# <div class="d-flex justify-content-between align-items-end mb-1"> %>
     <%# <h3 class="shop-show-box-title">Rayon</h3> %>
     <%# <button id="see-all" data-action="click->see-all#seeAll">tout voir</button> %>
@@ -78,44 +111,11 @@
   </div>
 </div>
 
-<%#  ---------- searched items cards ----------  %>
-<% if params[:query].present? %>
-  <div class="product-index-container">
-
-  <% search_results = @shop.products.global_search(params[:query]) %>
-  <% if search_results.empty? %>
-    <h3 class="my-2">Produits</h3>
-    <div class="product-card-box box">
-    <p>Aucun prouduit trouvé pour "<%= params[:query] %>".</p>
-    </div>
-  <% else %>
-  <div class="mb-5">
-    <h3 class="my-2">Produits</h3>
-    <% search_results.each do |product| %>
-    <div class="product-card-box box mb-2">
-      <div class="img-box">
-        <%= image_tag(product.image_url) %>
-      </div>
-      <div class="info-box">
-        <h5 class="name"><%= product.name %></h5>
-        <% if product.stock_quantity > 0 %>
-          <h5 class="disponibility"><i class="fa-solid fa-circle-check in-stock" style="color: green;"></i><%= product.stock_quantity %> en stock</h5>
-        <% else %>
-          <h5 class="disponibility"><i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i><%= product.stock_quantity %> pas en stock</h5>
-        <% end %>
-        <h5 class="price"><%= product.price %>€</h5>
-      </div>
-    </div>
-    <% end %>
-  </div>
-  <% end %>
-  </div>
-<% end %>
 
 
 
 <%#  ---------- Go to Shop Button ----------  %>
-<div class="button-box">
+<div class="button-box .a-shop-show-pop-button">
   <% if current_user != nil %>
     <%= link_to 'Entrer dans le magasin', new_shop_cart_path(@shop.id), class: "shop-button" %>
   <% else %>
