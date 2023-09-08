@@ -1,6 +1,6 @@
 <%= render 'components/sidebar' %>
 <div class='container-users-title'>
-  <h3>Utilisateurs (<%= @users.count %>)</h3>
+  <h3 class="user-tittle-box">Utilisateurs <span class="user-number-manager"> <i class="fa-solid fa-users"></i> <%= @users.count %><span></h3>
   <div class='container-users'>
     <% @users.each do |user| %>
       <div class='info-user'>
