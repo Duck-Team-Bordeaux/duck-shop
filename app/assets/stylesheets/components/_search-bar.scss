@@ -2,7 +2,14 @@
   width: 100%;
   display: flex;
   justify-content: end;
-  align-items: center;
+  align-items: start;
+
+
+  input:focus {
+    color: $secondary-color;
+    font-weight: 500;
+    outline: $primary-color 2px solid;
+  }
 
   .input-search {
     width: 150vw;
@@ -13,6 +20,8 @@
     padding-left: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     position: relative;
+
+
   }
 
   .search-bar-btn{
@@ -37,5 +46,5 @@
       background-color: $white-color;
     }
   }
-  //search bar de m**
+
 }

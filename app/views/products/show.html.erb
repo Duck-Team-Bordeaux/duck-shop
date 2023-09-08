@@ -26,7 +26,7 @@
     </div>
 
     <div class="unit-category-box">
-      <h5 class="unit">350g</h5>
+      <h5 class="unit"><%= @product.unit %></h5>
       <h5 class="category">
         <i class="fa-solid fa-tag"></i><%= @product.category.name %>
       </h5>
@@ -46,7 +46,7 @@
 
   <%# ------------ BTN Accéder au DuckShop ------------ %>
 
-  <div class="button-box">
+  <div class="button-box neg-m-top">
   <%= link_to 'Accéder au DuckShop', shop_path(@shop), class: "shop-button" %>
   </div>
 

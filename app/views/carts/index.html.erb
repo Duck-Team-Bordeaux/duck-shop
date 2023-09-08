@@ -1,8 +1,8 @@
-<div class='display-coin mb-3'>
+<div class='display-coin mb-3 c-a-1'>
   <p>Mon portefeuille</p>
   <p class='solde'>55 <%= image_tag "duckcoin.svg" %></p>
 </div>
-<div class='profil-btns'>
+<div class='profil-btns c-a-2'>
   <%= link_to duckcoin_profils_path, class: 'btn-profil' do %>
     <i class="fa-solid fa-wallet"></i>
     <p>Duckcoins</p>
@@ -14,9 +14,9 @@
 </div>
 
 <%#---------------------------- ALL CARTS ------------------------------------%>
-<h3 class="mb-2">Mon historique</h3>
+<h3 class="mb-2 historique c-a-3">Mon historique</h3>
 
-<div class="carts-container">
+<div class="carts-container c-a-4">
   <% @carts.each do |cart| %>
     <%= link_to cart_path(cart) do%>
     <div class="cart-box-shop d-flex">
@@ -31,6 +31,7 @@
 
       <div id="date">
         <%= cart.date_achat %>
+
       </div>
       <% end %>
     </div>

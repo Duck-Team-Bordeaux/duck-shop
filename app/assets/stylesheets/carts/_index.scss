@@ -16,7 +16,7 @@
     width: 90%;
     height: 1px;
     position: absolute;
-    bottom: -10px;
+    bottom: -7px;
   }
   img {
     width: 25px;
@@ -34,9 +34,15 @@
 
   #date {
     position: absolute;
-    top: 1.2em;
+    top: 21px;
     right: 1.2em;
     color: black;
     font-size: 12px;
   }
+}
+
+.historique{
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 0px;
 }

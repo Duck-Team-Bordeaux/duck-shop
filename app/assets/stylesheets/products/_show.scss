@@ -17,11 +17,16 @@
   display: flex;
   justify-content: center;
 
+  animation: fadeInLeft;
+  animation-duration: 1s;
+
   .product-show-main-img {
     width: 100%;
     object-fit: contain;
     border-radius: 2em;
     padding: 1em;
+
+
   }
 
   .product-show-price-box{
@@ -38,6 +43,8 @@
     border-radius: 1em 0 0 1em;
     color: $white-color;
     box-shadow: -6px -6px 15px -3px rgba(0,0,0,0.1);
+
+
 
     span{
       font-family: 'Fira Code', monospace;
@@ -59,6 +66,9 @@
 // --------------- PRODUCT INFO BOX ---------------
 
 .product-box{
+
+  animation: fadeInRight;
+  animation-duration: 1s;
 
   .name-price-box{
     width: 100%;
@@ -108,6 +118,9 @@
 
 .product-stock-box{
 
+  animation: fadeInLeft;
+  animation-duration: 1s;
+
   i{
     margin-right: 0.3em;
   }
@@ -136,6 +149,12 @@
   display: flex;
   justify-content: center;
   height: max-content;
+  align-items: start;
+  margin-top: 0;
+
+  animation: zoomIn;
+  animation-duration: 1s;
+
 
     .shop-button {
       align-self: flex-end;
@@ -164,4 +183,9 @@
         background: $white-color;
       }
     }
+  }
+
+
+  .neg-m-top{
+    margin-top: 0px;
   }

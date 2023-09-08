@@ -9,7 +9,7 @@
     </div>
 
   <%# Search Bar %>
-    <%= form_with url: shop_category_products_path(@shop, @category), method: :get, class: "search-bar-box", data: {search_target: "form"} do %>
+    <%= form_with url: shop_category_products_path(@shop, @category), method: :get, class: "search-bar-box search-bar-box-product-index", data: {search_target: "form"} do %>
       <%= text_field_tag :query,
           params[:query],
           class: "input-search",
@@ -26,7 +26,7 @@
   <div data-search-target="currentList">
     <% @products.each do |product| %>
       <%= link_to shop_category_product_path(@shop, @category, product) do%>
-        <div class="product-card-box box mb-2">
+        <div class="product-card-box box mb-2 p-index-down">
           <div class="img-box">
             <%= image_tag(product.image_url) %>
           </div>
